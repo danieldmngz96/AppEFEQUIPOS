@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <br>
+      <h1>Reportes</h1>
+    </div>
+    <div class="col-sm">
+
+    </div>
+    <div class="col-sm" style="display: flex;">
+      <br>
+      <h1 style="margin-top: 15px;">Filtros:</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Cars</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </mat-form-field>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Cars</mat-label>
+          <select matNativeControl required>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <mat-divider></mat-divider>
+    <canvas baseChart class="chart"
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [type]="barChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+</canvas>
+  </div>
+</div>
+<app-footer></app-footer>

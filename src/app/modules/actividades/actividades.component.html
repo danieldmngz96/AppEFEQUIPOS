@@ -1,0 +1,217 @@
+<app-menu></app-menu>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <form action="">
+        <div class="row">
+          <div class="col col-2"></div>
+          <div class="col col-8">
+
+            <div class="row pb-5">
+              <div class="col">
+                <h1>
+                  BIENVENID@ {{name[0]?.name_user | uppercase}}
+                </h1>
+              </div>
+              <div class="col col-md-12 col-lg-6 col-xl-5 ">
+                <img src="../../../assets/obra.jpg" class="img-fluid" alt="obra de efequips">
+              </div>
+            </div>
+
+
+            <mat-horizontal-stepper [linear]="isLinear">
+              <mat-step [stepControl]="stepOneForm">
+                <ng-template matStepLabel>Informacion del cultivo</ng-template>
+                <form [formGroup]="stepOneForm">
+                  <!-- <mat-form-field>
+                    <input matInput formControlName="firstName" placeholder="First name">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput formControlName="lastName" placeholder="Last name">
+                  </mat-form-field> -->
+                  <div class="row">
+                    <div class="col col-12">
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre del cultivo</mat-label>
+                        <input matInput placeholder="Ej 3 hectarias de PapApp" formControlName="nameCultivo">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="col col-12">
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Seleccionar mes de inicio del cultivo</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dateCultivo">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="month"></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+
+                  <!--   <mat-form-field appearance="standard" [ngClass]="jpCustomFormFieldClass">
+                      <mat-label>{{label + "hholi"}}</mat-label>
+                      <input matInput (click)="_openDatepickerOnClick(datepicker)"
+                        (keydown.arrowdown)="_openDatepickerOnClick(datepicker)"
+                        (keydown.enter)="_openDatepickerOnClick(datepicker)" [formControl]="_inputCtrl"
+                        [matDatepickerFilter]="_customFilter" [matDatepicker]="datepicker" [max]="_max" [min]="_min"
+                        readonly>
+                    </mat-form-field>
+                    <mat-datepicker #datepicker (closed)="_takeFocusAway(datepicker)"
+                      (monthSelected)="_monthSelectedHandler($event,datepicker)" [touchUi]="touchUi"
+                      panelClass="jp-month-picker" startView="multi-year">
+                    </mat-datepicker> -->
+
+                    <!--  <div class="col col-12">
+                      <jp-multi-datepicker *ngIf="visible" mode="MONTH" label="Choose a month" touchUi="true" formControlName="dateCultivoOnlyMonth"
+                      ></jp-multi-datepicker>
+                    </div> -->
+
+                    <div class="col col-12">
+                      <div class="col col-12">
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Número de hectareás a cultivar</mat-label>
+                          <input matInput type="number" placeholder="Ej 30 hectarias de terreno"
+                            formControlName="mumberHectaria">
+                        </mat-form-field>
+                      </div>
+
+                    </div>
+                    <div class="col col-12">
+                      <mat-radio-group formControlName="checkMachine">
+                        <mat-label>¿Tiene maquinaria?</mat-label>
+                        <mat-radio-button class="m-3" value="1" [color]="'accent'">SI</mat-radio-button>
+                        <mat-radio-button class="m-3" value="0">NO</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="col col-12" *ngIf="stepOneForm.controls.checkMachine.value == '1'">
+                      <ng-container #inputFields></ng-container>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineOne">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineTwo">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineThere">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineFour">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineFive">
+                      </mat-form-field>
+                      <!--   <div  color="primary" class="btn-success" style="border-radius: 100%;cursor: pointer;" (click)="addMachine()"><mat-icon style="position: relative;
+                        left: 6px;
+                        color: green;" >add_circle</mat-icon>  </div> -->
+
+
+                      <div class="col col-12">
+                        <mat-radio-group formControlName="addMachine">
+                          <mat-label>¿Deseas agregar mas maquinaria?</mat-label>
+                          <mat-radio-button class="m-3" value="1" [color]="'accent'">SI</mat-radio-button>
+                          <mat-radio-button class="m-3" value="0">NO</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+
+                      <div class="col col-12" *ngIf="formAddMachine.controls.checkMachine.value == '1'">
+                        <ng-container #inputFields></ng-container>
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Nombre de maquinaria</mat-label>
+                          <input matInput placeholder="Ej 3 tractores" formControlName="machineOneAdd">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Nombre de maquinaria</mat-label>
+                          <input matInput placeholder="Ej 3 tractores" formControlName="machineTwoAdd">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Nombre de maquinaria</mat-label>
+                          <input matInput placeholder="Ej 3 tractores" formControlName="machineThereAdd">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Nombre de maquinaria</mat-label>
+                          <input matInput placeholder="Ej 3 tractores" formControlName="machineFourAdd">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Nombre de maquinaria</mat-label>
+                          <input matInput placeholder="Ej 3 tractores" formControlName="machineFiveAdd">
+                        </mat-form-field>
+                      </div>
+
+
+                    </div>
+                  </div>
+                  <div class="col col-12">
+                    <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-success">Siguiente</button>
+                  </div>
+
+
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="stepTwoForm">
+                <ng-template matStepLabel>Seleciona las actividades de producción</ng-template>
+                <form [formGroup]="stepTwoForm">
+
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Preparacón de suelo</mat-label>
+                    <mat-select formControlName="preparacionSuelo" (selectionChange)="lookForActivity($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity1">
+                        <span style="color: black;">{{item}}</span>
+                      </mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Siembra</mat-label>
+                    <mat-select formControlName="siembraCultivo" (selectionChange)="lookForActivity2($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity2">
+                        <span style="color: black;">{{item}}</span></mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Labores de cultivo</mat-label>
+                    <mat-select formControlName="laboresCultivo" (selectionChange)="lookForActivity2($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity3"> <span
+                          style="color: black;">{{item}}</span></mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Cosecha</mat-label>
+                    <mat-select formControlName="cosecha" (selectionChange)="lookForActivity3($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity4"> <span
+                          style="color: black;">{{item}}</span></mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Empaque</mat-label>
+                    <mat-select formControlName="empaqueCultivo" (selectionChange)="lookForActivity3($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity5"> <span
+                          style="color: black;">{{item}}</span></mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <div class="col col-12">
+                    <button style="height: 48px;" class="mt-5 w-100 btn btn-success"
+                      (click)="saveForm()">Guardar</button>
+                  </div>
+                </form>
+              </mat-step>
+            </mat-horizontal-stepper>
+          </div>
+          <div class="col col-2"></div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</section>

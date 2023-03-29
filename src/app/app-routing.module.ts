@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './module/login/login.component';
+import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: HomeComponent,
     children: [
       {
         path: '',
@@ -14,7 +14,7 @@ const routes: Routes = [
       },
     ],
   },
-/*   {
+  {
     path: 'Activity',
     loadChildren: () => import('./modules/actividades/actividades.module').then(m => m.ActividadesModule)
   },
@@ -29,7 +29,11 @@ const routes: Routes = [
   {
     path: 'reportes',
     loadChildren: () => import('./modules/reportes/reportes.module').then(m => m.ReportesModule)
-  }, */
+  },
+  {
+    path: 'movimientos',
+    loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
+  },
 ];
 
 @NgModule({

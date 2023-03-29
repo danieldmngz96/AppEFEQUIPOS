@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+ * {
+  font-family: 'PT Sans', sans-serif !important;
+ }
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: green !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    /*change color of underline*/
+    background-color: green !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: green !important;
+}
+
+

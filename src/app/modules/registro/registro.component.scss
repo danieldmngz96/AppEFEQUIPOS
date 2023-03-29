@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+
+ .register-p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 38px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+button{
+  background: #012D04;
+  color: white;
+}
+
+input{
+  width: 100%;
+}
+
+.mat-dialog-container{
+  color: #012D04;
+}
+
+.title-register{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 75px;
+color: #012D04;
+margin-bottom: 0px;
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: green !important;
+}
+

@@ -42,7 +42,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -58,6 +58,7 @@ import { NgModule } from '@angular/core';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    NgChartsModule
   ],
   exports: [
     MatCardModule,

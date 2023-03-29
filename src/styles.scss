@@ -1,67 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 
 body {
-  margin: 0px 0px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 :root {
-  /* Colores verde */
-  --green-dark: #2B580C;
-  --green-good: #639A67;
-  --green-light: #efffe4;
-  --green-lighter: #e6f8ea;
-  --green-lightest: #f5fffa;
+    /* Colores verde */
+    --orange-dark: #ff6200;
+    --orange-good: #e07f00;
+    --orange-light: #d98900;
+    --orange-lighter: #e6f8ea;
+    --orange-lightest: #f5fffa;
 
-  /* Colores amarillo */
-  --yellow: #D9BF77;
-  --yellow-light: #F5ECCE;
-  --yellow-dark: #B19664;
+    /* Colores amarillo */
+    --yellow: #D9BF77;
+    --yellow-light: #F5ECCE;
+    --yellow-dark: #B19664;
 
-  /* Colores naranja */
-  --orange: #FFA500;
-  --orange-light: #FFDAB9;
+    /* Colores naranja */
+    --orange: #FFA500;
+    --orange-light: #FFDAB9;
 
-  /* Colores rojo */
-  --red: #FF0000;
-  --red-light: #FFC1C1;
+    /* Colores rojo */
+    --red: #FF0000;
+    --red-light: #FFC1C1;
 
-  /* Colores gris */
-  --gray-light: #F2F2F2;
-  --gray: #BEBEBE;
-  --gray-dark: #A9A9A9;
+    /* Colores gris */
+    --gray-light: #F2F2F2;
+    --gray: #BEBEBE;
+    --gray-dark: #A9A9A9;
 
-  /* Colores azul */
-  --blue: #0072C6;
-  --blue-light: #B2D1EC;
+    /* Colores azul */
+    --blue: #0072C6;
+    --blue-light: #B2D1EC;
 }
 
 html {
 
-  height: 100%;
+    height: 100%;
 }
 
 footer {
-  margin-top: auto;
+    margin-top: auto;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: green !important;
+    /*change color of label*/
+    color: green !important;
 }
 
 ::ng-deep .mat-form-field-underline {
-  /*change color of underline*/
-  background-color: green !important;
+    /*change color of underline*/
+    background-color: green !important;
 }
 
 ::ng-deep .mat-form-field-ripple {
-  /*change color of underline when focused*/
-  background-color: green !important;
+    /*change color of underline when focused*/
+    background-color: green !important;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

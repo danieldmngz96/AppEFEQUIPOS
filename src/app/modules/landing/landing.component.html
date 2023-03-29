@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h1 style="font-size: 46px; line-height: 60px;">
+          BIENVENID@ a papAppcost {{name[0]?.name_user | uppercase}}
+        </h1>
+        <h3 style="font-size: 28px; color: #717171;">
+          Ahora en <b>EFEQUIPOS</b> podras ver el inventario actual, hacer despachos y registrar inventario.
+        </h3>
+      </div>
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../../../assets/obra.jpg" class="img-fluid w-100 h-100" alt="obra EFEQUIPOS">
+      </div>
+    </div>
+  </div>
+  <div style="position: relative; bottom: -5px;"
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-success">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright ©    <i>{{fecha | date:'dd-MM.yyyy HH:mm:ss'}}</i>. All rights reserved.
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+
+    <!-- Right -->
+  </div>
+</section>

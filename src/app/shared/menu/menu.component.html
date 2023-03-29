@@ -1,0 +1,68 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"
+    style="color: white; background-color: var(--orange-good);">
+    <mat-toolbar style="color: white !important; background-color: var(--orange-good);">Menú</mat-toolbar>
+    <mat-nav-list>
+      <div style="padding-bottom: 75%;">
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Nuevo cultivo</a>
+
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Registros
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          <ul>
+            <li>Costos</li>
+            <li>Terminar Produccion</li>
+            <li>Consultar</li>
+          </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Calculos
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          <ul>
+            <li>Precio Venta</li>
+            <li>Consultar</li>
+          </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+        <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"
+        [ngStyle]="{'color': 'white'}" routerLink="/">Reporte de costos</button>
+
+      </div>
+      <button mat-raised-button style=" display: flex; margin: 0 auto;"
+        [ngStyle]="{'color': 'red'}" routerLink="/">Salir</button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: var(--orange-good);height: 84px;color: white;">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Sistema de Invetarios de <b>EFEQUIPOS</b></span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
