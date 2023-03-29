@@ -5,13 +5,13 @@
     <mat-toolbar style="color: white !important; background-color: var(--orange-good);">Menú</mat-toolbar>
     <mat-nav-list>
       <div style="padding-bottom: 75%;">
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Nuevo cultivo</a>
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Nuevo-inventario">Registrar Nuevo <br>Inventario</a>
 
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Registros
+                Despachos
               </mat-panel-title>
               <mat-panel-description>
 
@@ -19,7 +19,7 @@
             </mat-expansion-panel-header>
           <ul>
             <li>Costos</li>
-            <li>Terminar Produccion</li>
+            <li>Ubicacion</li>
             <li>Consultar</li>
           </ul>
           </mat-expansion-panel>
@@ -32,7 +32,7 @@
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Calculos
+                Consultar inventario actual
               </mat-panel-title>
               <mat-panel-description>
 
@@ -49,7 +49,7 @@
         </mat-accordion>
         <br>
         <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"
-        [ngStyle]="{'color': 'white'}" routerLink="/">Reporte de costos</button>
+        [ngStyle]="{'color': 'var(--orange-good)'}" routerLink="/">Reporte de costos</button>
 
       </div>
       <button mat-raised-button style=" display: flex; margin: 0 auto;"

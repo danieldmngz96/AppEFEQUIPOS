@@ -14,61 +14,55 @@
                 </h1>
               </div>
               <div class="col col-md-12 col-lg-6 col-xl-5 ">
-                <img src="../../../assets/obra.jpg" class="img-fluid" alt="obra de efequips">
+                <img src="../../../assets/obra2.jpg" class="img-fluid" alt="obra de efequips">
               </div>
             </div>
 
 
             <mat-horizontal-stepper [linear]="isLinear">
               <mat-step [stepControl]="stepOneForm">
-                <ng-template matStepLabel>Informacion del cultivo</ng-template>
+                <ng-template matStepLabel>Informacion del Inventario</ng-template>
                 <form [formGroup]="stepOneForm">
-                  <!-- <mat-form-field>
-                    <input matInput formControlName="firstName" placeholder="First name">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Tipo de inventario</mat-label>
+                    <mat-select>
+                      <mat-option>
+                        <span style="color: black;"> <ul>Invetario liviano</ul></span>
+                      </mat-option>
+                      <mat-option>
+                        <span style="color: black;"> <ul>Invetario pesado</ul></span>
+                      </mat-option>
+                      <mat-option>
+                        <span style="color: black;"> <ul>......</ul></span>
+                      </mat-option>
+                    </mat-select>
                   </mat-form-field>
-                  <mat-form-field>
-                    <input matInput formControlName="lastName" placeholder="Last name">
-                  </mat-form-field> -->
+                  <br>
                   <div class="row">
                     <div class="col col-12">
                       <mat-form-field appearance="fill" class="w-100">
-                        <mat-label>Nombre del cultivo</mat-label>
-                        <input matInput placeholder="Ej 3 hectarias de PapApp" formControlName="nameCultivo">
+                        <mat-label>Nombre del Inventario</mat-label>
+                        <input matInput placeholder="Ejemplo: Nuevo equipo" formControlName="nameCultivo">
                       </mat-form-field>
                     </div>
 
                     <div class="col col-12">
                       <mat-form-field appearance="fill" class="w-100">
-                        <mat-label>Seleccionar mes de inicio del cultivo</mat-label>
+                        <mat-label>Seleccionarla fecha para el registro del inventario</mat-label>
                         <input matInput [matDatepicker]="picker" formControlName="dateCultivo">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker startView="month"></mat-datepicker>
                       </mat-form-field>
                     </div>
 
-                  <!--   <mat-form-field appearance="standard" [ngClass]="jpCustomFormFieldClass">
-                      <mat-label>{{label + "hholi"}}</mat-label>
-                      <input matInput (click)="_openDatepickerOnClick(datepicker)"
-                        (keydown.arrowdown)="_openDatepickerOnClick(datepicker)"
-                        (keydown.enter)="_openDatepickerOnClick(datepicker)" [formControl]="_inputCtrl"
-                        [matDatepickerFilter]="_customFilter" [matDatepicker]="datepicker" [max]="_max" [min]="_min"
-                        readonly>
-                    </mat-form-field>
-                    <mat-datepicker #datepicker (closed)="_takeFocusAway(datepicker)"
-                      (monthSelected)="_monthSelectedHandler($event,datepicker)" [touchUi]="touchUi"
-                      panelClass="jp-month-picker" startView="multi-year">
-                    </mat-datepicker> -->
 
-                    <!--  <div class="col col-12">
-                      <jp-multi-datepicker *ngIf="visible" mode="MONTH" label="Choose a month" touchUi="true" formControlName="dateCultivoOnlyMonth"
-                      ></jp-multi-datepicker>
-                    </div> -->
 
                     <div class="col col-12">
                       <div class="col col-12">
                         <mat-form-field appearance="fill" class="w-100">
-                          <mat-label>Número de hectareás a cultivar</mat-label>
-                          <input matInput type="number" placeholder="Ej 30 hectarias de terreno"
+                          <mat-label>Número a registrar</mat-label>
+                          <input matInput type="number" placeholder="Ejemplo 30 tableros"
                             formControlName="mumberHectaria">
                         </mat-form-field>
                       </div>
@@ -144,14 +138,16 @@
                     </div>
                   </div>
                   <div class="col col-12">
-                    <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-success">Siguiente</button>
+                    <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-warning">Siguiente</button>
                   </div>
 
 
                 </form>
               </mat-step>
+
+
               <mat-step [stepControl]="stepTwoForm">
-                <ng-template matStepLabel>Seleciona las actividades de producción</ng-template>
+                <ng-template matStepLabel>Seleciona los registros</ng-template>
                 <form [formGroup]="stepTwoForm">
 
 

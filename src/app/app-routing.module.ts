@@ -15,7 +15,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'Activity',
+    path: 'Nuevo-inventario',
     loadChildren: () => import('./modules/actividades/actividades.module').then(m => m.ActividadesModule)
   },
   {
