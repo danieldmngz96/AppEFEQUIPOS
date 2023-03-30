@@ -23,15 +23,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
   },
   {
-    path: 'cultivos',
-    loadChildren: () => import('./modules/cultivos/cultivos.module').then(m => m.CultivosModule)
-  },
-  {
     path: 'reportes',
     loadChildren: () => import('./modules/reportes/reportes.module').then(m => m.ReportesModule)
   },
   {
-    path: 'movimientos',
+    path: 'movimientos-inventario',
     loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
   },
 ];

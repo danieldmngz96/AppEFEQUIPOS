@@ -12,6 +12,7 @@
                 <h1>
                   BIENVENID@ {{name[0]?.name_user | uppercase}}
                 </h1>
+                <i style="font-size: 22px;">Acá podras registrar el inventario</i>
               </div>
               <div class="col col-md-12 col-lg-6 col-xl-5 ">
                 <img src="../../../assets/obra2.jpg" class="img-fluid" alt="obra de efequips">
@@ -28,17 +29,23 @@
                     <mat-label>Tipo de inventario</mat-label>
                     <mat-select>
                       <mat-option>
-                        <span style="color: black;"> <ul>Invetario liviano</ul></span>
+                        <span style="color: black;">
+                          <ul>Invetario liviano</ul>
+                        </span>
                       </mat-option>
                       <mat-option>
-                        <span style="color: black;"> <ul>Invetario pesado</ul></span>
+                        <span style="color: black;">
+                          <ul>Invetario pesado</ul>
+                        </span>
                       </mat-option>
                       <mat-option>
-                        <span style="color: black;"> <ul>......</ul></span>
+                        <span style="color: black;">
+                          <ul>......</ul>
+                        </span>
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                  <br>
+
                   <div class="row">
                     <div class="col col-12">
                       <mat-form-field appearance="fill" class="w-100">
@@ -152,50 +159,74 @@
 
 
                   <mat-form-field appearance="fill">
-                    <mat-label>Preparacón de suelo</mat-label>
-                    <mat-select formControlName="preparacionSuelo" (selectionChange)="lookForActivity($event)">
-                      <mat-option [value]="item" *ngFor="let item of name_activity1">
-                        <span style="color: black;">{{item}}</span>
+                    <mat-label>Herrmienta de suelo</mat-label>
+                    <mat-select formControlName="preparacionSuelo">
+                      <mat-option>
+                        <span style="color: black;">La excavadora.
+                        </span>
+                      </mat-option>
+                      <mat-option>
+                        <span style="color: black;">La retroexcavadora.
+                        </span>
                       </mat-option>
 
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
-                    <mat-label>Siembra</mat-label>
-                    <mat-select formControlName="siembraCultivo" (selectionChange)="lookForActivity2($event)">
-                      <mat-option [value]="item" *ngFor="let item of name_activity2">
-                        <span style="color: black;">{{item}}</span></mat-option>
+                    <mat-label>Herramienta de pared</mat-label>
+                    <mat-select formControlName="siembraCultivo">
+                      <mat-option>
+                        <span style="color: black;">Dragas.
+                        </span></mat-option>
+                      <mat-option>
+                        <span style="color: black;">La dragalina..
+                        </span></mat-option>
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
-                    <mat-label>Labores de cultivo</mat-label>
-                    <mat-select formControlName="laboresCultivo" (selectionChange)="lookForActivity2($event)">
-                      <mat-option [value]="item" *ngFor="let item of name_activity3"> <span
-                          style="color: black;">{{item}}</span></mat-option>
+                    <mat-label>La maquinaria semipesada</mat-label>
+                    <mat-select formControlName="laboresCultivo">
+                      <mat-option>
+                        <span style="color: black;">Motoniveladoras
+
+
+                        </span></mat-option>
+                      <mat-option>
+                        <span style="color: black;"> Máquinas forestales
+                        </span></mat-option>
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
-                    <mat-label>Cosecha</mat-label>
-                    <mat-select formControlName="cosecha" (selectionChange)="lookForActivity3($event)">
-                      <mat-option [value]="item" *ngFor="let item of name_activity4"> <span
-                          style="color: black;">{{item}}</span></mat-option>
+                    <mat-label>Los equipos ligeros</mat-label>
+                    <mat-select formControlName="cosecha">
+                      <mat-option>
+                        <span style="color: black;">Excavadoras de ataque frontal eléctricas con cable
+                        </span></mat-option>
+                      <mat-option>
+                        <span style="color: black;"> Excavadoras de minería hidráulicas
+                        </span></mat-option>
 
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
-                    <mat-label>Empaque</mat-label>
-                    <mat-select formControlName="empaqueCultivo" (selectionChange)="lookForActivity3($event)">
-                      <mat-option [value]="item" *ngFor="let item of name_activity5"> <span
-                          style="color: black;">{{item}}</span></mat-option>
+                    <mat-label>Según los equipos y trabajos a realizar</mat-label>
+                    <mat-select formControlName="empaqueCultivo">
+                      <mat-option>
+                        <span style="color: black;">Cargadoras compactas
+
+                        </span></mat-option>
+                      <mat-option>
+                        <span style="color: black;"> Cargadores forestales de pluma recta
+                        </span></mat-option>
                     </mat-select>
                   </mat-form-field>
 
                   <div class="col col-12">
-                    <button style="height: 48px;" class="mt-5 w-100 btn btn-success"
+                    <button style="height: 48px;" class="mt-5 w-100 btn btn-warning"
                       (click)="saveForm()">Guardar</button>
                   </div>
                 </form>
