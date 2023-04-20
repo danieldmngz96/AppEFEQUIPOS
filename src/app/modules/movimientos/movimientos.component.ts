@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovimientosService } from 'src/app/services/movimientos.service';
 
 @Component({
   selector: 'app-movimientos',
@@ -21,12 +22,20 @@ displayedColumns: string[] = ['Id', 'Tipo de inventario', 'Nombre del inventario
     {position: 8, name: 'Inventario 8', weight: "22/03/2023", symbol: 'O',w: 1.0079, s: 'H'},
     {position: 9, name: 'Inventario 9', weight: "22/03/2023", symbol: 'F',w: 1.0079, s: 'H'},
     {position: 10, name: 'Inventario 10', weight: "22/03/2023", symbol: 'Ne',w: 1.0079, s: 'H'},
-  ];;
-  constructor() { }
+  ];
+  constructor(private movimiento: MovimientosService,) { }
 
   ngOnInit() {
-
+    this.listarEquipo();
   }
-
+  //Aca traemos del servicio movimiento los equipos
+  listarEquipo(){
+    this.movimiento.getEquipos().subscribe(
+      res=>{
+        console.log(res)
+      },
+      err=> console.log(err)
+    );
+  }
 
 }
