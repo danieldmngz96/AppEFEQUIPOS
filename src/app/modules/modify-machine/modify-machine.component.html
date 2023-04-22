@@ -3,21 +3,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm mt-3">
-      <h1>Gestion de Inventario</h1>
+      <h1>Modificar Inventario</h1>
     </div>
     <div class="col-sm">
 
     </div>
-    <div class="col-sm">
-      <br>
-      <button class="btn btn-warning">Agregar Equipo </button>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <button class="btn btn-warning">Eliminar Equipo</button>
-    </div>
+
     <mat-divider></mat-divider>
 
     <br>
@@ -28,14 +19,18 @@
           <th scope="col">Nombre Material</th>
           <th scope="col">Foto de Material</th>
           <th scope="col">Nombre Cliente</th>
+          <th scope="col">Modificar Equipo</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let numberWork of lista">
-          <th>{{numberWork.id_equipo}}</th>
-          <th>{{numberWork.nombre}}</th>
-          <th>{{numberWork.logo}}</th>
-          <th>{{numberWork.nombreCliente}}</th>
+          <td>{{numberWork.id_equipo}}</td>
+          <td>{{numberWork.nombre}}</td>
+          <td>{{numberWork.logo}}</td>
+          <td>{{numberWork.nombreCliente}}</td>
+          <td>
+            <button class="btn btn-warning">Modificar</button>
+          </td>
 
         </tr>
 

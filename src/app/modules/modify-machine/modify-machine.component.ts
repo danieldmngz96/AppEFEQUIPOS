@@ -4,7 +4,7 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
 @Component({
   selector: 'app-modify-machine',
   templateUrl: './modify-machine.component.html',
-  styleUrls: ['./modify-machine.component.css']
+  styleUrls: ['./modify-machine.component.scss']
 })
 export class ModifyMachineComponent implements OnInit {
 

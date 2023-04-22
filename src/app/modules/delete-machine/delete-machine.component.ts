@@ -4,7 +4,7 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
 @Component({
   selector: 'app-delete-machine',
   templateUrl: './delete-machine.component.html',
-  styleUrls: ['./delete-machine.component.css']
+  styleUrls: ['./delete-machine.component.scss']
 })
 export class DeleteMachineComponent implements OnInit {
 
