@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MovimientosService } from 'src/app/services/movimientos.service';
+import { ModalAddComponent } from '../modal-add/modal-add.component';
 
 @Component({
   selector: 'app-add-machine',
@@ -9,7 +11,8 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
 export class AddMachineComponent implements OnInit {
 
   lista:any;
-  constructor(private movimiento: MovimientosService,) { }
+  constructor(private movimiento: MovimientosService,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.listarEquipo();
@@ -23,5 +26,11 @@ export class AddMachineComponent implements OnInit {
       },
       err=> console.log(err)
     );
+  }
+  //Redirigir a modal de añadir maquinaria
+  openModal(){
+    const dialogRef = this.dialog.open(ModalAddComponent, {
+
+    });
   }
 }

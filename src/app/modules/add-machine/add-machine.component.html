@@ -27,7 +27,7 @@
           <th>{{numberWork.logo}}</th>
           <th>{{numberWork.nombreCliente}}</th>
           <td>
-            <button class="btn btn-success">Añadir</button>
+            <button class="btn btn-success" (click)="openModal()"  [routerLink]="['/add-equipo', numberWork.id_equipo]">Añadir</button>
           </td>
         </tr>
 
