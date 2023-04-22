@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'modificar-inventario',
     loadChildren: () => import('./modules/modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
   },
+  {
+    path: 'add-equipo',
+    loadChildren: () => import('./modules/add-machine/add-machine.module').then(m => m.AddMachineModule)
+  },
 ];
 
 @NgModule({

@@ -10,13 +10,13 @@
     </div>
     <div class="col-sm">
       <br>
-      <button class="btn btn-warning" routerLink="/modificar-inventario">Modificar Equipo </button>
+      <button class="btn btn-warning col" routerLink="/modificar-inventario">Modificar Equipo </button>
       &nbsp;
+
+      <button class="btn btn-danger col" routerLink="/eliminar-equipo">Eliminar Equipo</button>
       &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <button class="btn btn-warning" routerLink="/eliminar-equipo">Eliminar Equipo</button>
+
+      <button class="btn btn-success col" routerLink="/add-equipo">Añadir Equipo</button>
     </div>
     <mat-divider></mat-divider>
 
@@ -32,10 +32,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let numberWork of lista">
-          <th>{{numberWork.id_equipo}}</th>
-          <th>{{numberWork.nombre}}</th>
-          <th>{{numberWork.logo}}</th>
-          <th>{{numberWork.nombreCliente}}</th>
+          <td>{{numberWork.id_equipo}}</td>
+          <td>{{numberWork.nombre}}</td>
+          <td>{{numberWork.logo}}</td>
+          <td>{{numberWork.nombreCliente}}</td>
 
         </tr>
 
