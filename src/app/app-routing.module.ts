@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'movimientos-inventario',
     loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
   },
+  {
+    path: 'eliminar-equipo',
+    loadChildren: () => import('./modules/delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
+  },
+  {
+    path: 'modificar-inventario',
+    loadChildren: () => import('./modules/modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
+  },
 ];
 
 @NgModule({

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MovimientosService } from 'src/app/services/movimientos.service';
 
 @Component({
-  selector: 'app-movimientos',
-  templateUrl: './movimientos.component.html',
-  styleUrls: ['./movimientos.component.scss']
+  selector: 'app-delete-machine',
+  templateUrl: './delete-machine.component.html',
+  styleUrls: ['./delete-machine.component.css']
 })
-export class MovimientosComponent implements OnInit {
+export class DeleteMachineComponent implements OnInit {
 
   lista:any;
   constructor(private movimiento: MovimientosService,) { }
@@ -24,5 +24,4 @@ export class MovimientosComponent implements OnInit {
       err=> console.log(err)
     );
   }
-
 }
