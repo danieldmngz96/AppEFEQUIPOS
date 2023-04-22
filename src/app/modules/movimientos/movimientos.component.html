@@ -21,50 +21,28 @@
     <mat-divider></mat-divider>
 
     <br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table class="mat-elevation-z8 table" >
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre Material</th>
+          <th scope="col">Foto de Material</th>
+          <th scope="col">Nombre Cliente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let numberWork of lista">
+          <th>{{numberWork.id_equipo}}</th>
+          <th>{{numberWork.nombre}}</th>
+          <th>{{numberWork.logo}}</th>
+          <th>{{numberWork.nombreCliente}}</th>
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
+        </tr>
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="Id">
-        <th mat-header-cell *matHeaderCellDef>Id</th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
+      </tbody>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="Tipo de inventario">
-        <th mat-header-cell *matHeaderCellDef> Tipo de inventario </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="Nombre del inventario">
-        <th mat-header-cell *matHeaderCellDef> Nombre del inventario </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="Fecha del registro">
-        <th mat-header-cell *matHeaderCellDef> Fecha del registro </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="cantidad de material">
-        <th mat-header-cell *matHeaderCellDef> cantidad de material </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="Herramienta de suelo">
-        <th mat-header-cell *matHeaderCellDef> Herramienta de suelo </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-      </ng-container>
-
-
-
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
   </div>
 </div>
 <app-footer></app-footer>
