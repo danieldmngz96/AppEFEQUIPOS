@@ -35,7 +35,7 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-  addEquipo(equipo:Equipo){
+  saveMachine(equipo:Equipo){
     return this.http.post(this.api , equipo);
   }
 
@@ -64,6 +64,6 @@ constructor(private http: HttpClient) { }
 export interface Equipo{
   id_equipo?:string;
   nombre?:string;
-  logo?:string;
+  logo?:boolean;
   nombreCliente?:string;
 }

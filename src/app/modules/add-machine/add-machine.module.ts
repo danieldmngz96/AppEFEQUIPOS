@@ -5,6 +5,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { MenuModule } from 'src/app/shared/menu/menu.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { AddMachineRoutes } from './add-machine.routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { AddMachineRoutes } from './add-machine.routing.module';
     MaterialModule,
     MenuModule,
     FooterModule,
-    AddMachineRoutes
+    AddMachineRoutes,
+    FormsModule
   ],
   declarations: [AddMachineComponent]
 })

@@ -8,6 +8,7 @@ import { MenuComponent } from 'src/app/shared/menu/menu.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({

@@ -30,6 +30,7 @@ export class AddMachineComponent implements OnInit {
   //Redirigir a modal de añadir maquinaria
   openModal(){
     const dialogRef = this.dialog.open(ModalAddComponent, {
+      width: '550px',
 
     });
   }

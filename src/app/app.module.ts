@@ -11,12 +11,15 @@ import { MaterialModule } from './shared/material/material.module';
 import { HomeComponent } from './modules/home/home.component';
 import { RegistroComponent } from './modules/registro/registro.component';
 import { FooterModule } from './shared/footer/footer.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalAddComponent } from './modules/modal-add/modal-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegistroComponent
+    RegistroComponent,
+    ModalAddComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ import { FooterModule } from './shared/footer/footer.module';
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FooterModule
+    FooterModule,
+    MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

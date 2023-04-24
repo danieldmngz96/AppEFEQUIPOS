@@ -97,25 +97,7 @@ export class ActividadesComponent implements OnInit {
     let data = JSON.parse(localStorage.getItem('id_user') || '');
 
 
-  let body = {
-    "id_user": data.id_user,
-    "crop_name": this.stepOneForm.controls.nameCultivo.value,
-    "month_begin_prod": this.stepOneForm.controls.dateCultivo.value,
-    "area_field_prod_m2": this.stepOneForm.controls.mumberHectaria.value,
-    "own_machines": this.stepOneForm.controls.checkMachine.value == "1" ? 'si':'no',
-    "machine_name": this.stepOneForm.controls.machineOne.value,
-    "machines_cost": "75|2.1",
-    "machine_expect_time_life": "7|3",
-    "field_preparation": "0|1|2|3",
-    "planting_process": "0|1",
-    "crop_processes": "0|1|3|4",
-    "harvest_process": "0|1",
-    "packing_process": "0|1",
-    "is_crop_active": "Si",
-    "close_crop_date": "",
-    "record_date_table": "",
-    "last_update_date": ""
-  };
+
   }
   //tratamos de convertir DD/MM/YYYY a MM/YYYY
  /*  dateCultivo(event: MatDatepickerInputEvent<Date>) {

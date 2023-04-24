@@ -1,3 +1,31 @@
-<p>
-AÑADIR HPTAS MAQUINAS
-</p>
+<h2 mat-dialog-title>Añadir Maquinaria</h2>
+<div mat-dialog-content style="padding-left: 50px;">
+  <div class="container">
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de Equipo</mat-label>
+        <input matInput [(ngModel)]="machineNew.nombre">
+      </mat-form-field>
+      <br>
+      <br>
+      <label for="logo">Estado de Equipo</label>
+      <div class="col">
+        <span>Entregado: </span>
+        <input type="checkbox" id="logo" name="logo" [(ngModel)]="machineNew.logo" >
+      </div>
+      <div class="col">
+        <span>N/A</span>
+        <input type="checkbox" id="logo" name="logo" [(ngModel)]="machineNew.logo" >
+
+      </div>
+
+      <br>
+      <br><br>
+      <div class="col">
+        <button mat-button  >Guardar</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
