@@ -15,8 +15,8 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Nombre Material</th>
-          <th scope="col">Foto de Material</th>
           <th scope="col">Nombre Cliente</th>
+          <th scope="col">Foto de Material</th>
           <th scope="col">Añadir Equipo</th>
         </tr>
       </thead>
@@ -24,8 +24,8 @@
         <tr *ngFor="let numberWork of lista">
           <td>{{numberWork.id_equipo}}</td>
           <td>{{numberWork.nombre}}</td>
-          <td>{{numberWork.logo}}</td>
-          <td>{{numberWork.nombreCliente}}</td>
+          <td> {{numberWork.nombreCliente}}</td>
+          <td><a href="">{{numberWork.logo}}</a></td>
           <td>
             <button class="btn btn-success" (click)="openModal()" >Añadir</button>
           </td>

@@ -66,4 +66,5 @@ export interface Equipo{
   nombre?:any;
   logo?:any;
   nombreCliente?:any;
+
 }

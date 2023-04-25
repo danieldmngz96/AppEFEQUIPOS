@@ -12,11 +12,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./modal-add.component.scss']
 })
 export class ModalAddComponent implements OnInit {
-  selectedFile: any = null;
-  multiple: boolean = false;
-  color: ThemePalette = 'primary';
-  accept!: string;
-  machineForm?: FormGroup;
+
+
+
+  machineForm: FormGroup;
   machineNew: Equipo = {
     id_equipo: '',
     nombre: '',
@@ -27,14 +26,15 @@ export class ModalAddComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: "",
     private movimiento: MovimientosService,
     private router:Router,
-    private fb: FormBuilder,) { }
+    private fb: FormBuilder,) {  this.machineForm = this.fb.group({
 
-  ngOnInit() {
-    this.machineForm = this.fb.group({
-      id_equipo: ['', Validators.required],
+      nombre: ['', Validators.required],
       logo: ['', Validators.required],
       nombreCliente: ['', Validators.required]
-    });
+    });}
+
+  ngOnInit() {
+
   }
 
   addMachine(){
