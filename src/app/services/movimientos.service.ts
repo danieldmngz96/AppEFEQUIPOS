@@ -62,8 +62,8 @@ constructor(private http: HttpClient) { }
 }
 
 export interface Equipo{
-  id_equipo?:string;
-  nombre?:string;
-  logo?:boolean;
-  nombreCliente?:string;
+  id_equipo?:any;
+  nombre?:any;
+  logo?:any;
+  nombreCliente?:any;
 }

@@ -22,10 +22,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let numberWork of lista">
-          <th>{{numberWork.id_equipo}}</th>
-          <th>{{numberWork.nombre}}</th>
-          <th>{{numberWork.logo}}</th>
-          <th>{{numberWork.nombreCliente}}</th>
+          <td>{{numberWork.id_equipo}}</td>
+          <td>{{numberWork.nombre}}</td>
+          <td>{{numberWork.logo}}</td>
+          <td>{{numberWork.nombreCliente}}</td>
           <td>
             <button class="btn btn-success" (click)="openModal()" >Añadir</button>
           </td>

@@ -4,26 +4,29 @@
     <form>
       <mat-form-field appearance="fill">
         <mat-label>Nombre de Equipo</mat-label>
-        <input matInput [(ngModel)]="machineNew.nombre">
+        <input matInput [(ngModel)]="machineNew.nombre" name="nombre" id="nombre">
       </mat-form-field>
       <br>
       <br>
-      <label for="logo">Estado de Equipo</label>
-      <div class="col">
-        <span>Entregado: </span>
-        <input type="checkbox" id="logo" name="logo" [(ngModel)]="machineNew.logo" >
-      </div>
-      <div class="col">
-        <span>N/A</span>
-        <input type="checkbox" id="logo" name="logo" [(ngModel)]="machineNew.logo" >
-
-      </div>
-
+      <mat-form-field appearance="fill">
+        <mat-label>Foto de Equipo (URL)</mat-label>
+        <input matInput type="text"  [(ngModel)]="machineNew.logo" name="logo" id="logo">
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de Cliente</mat-label>
+        <input matInput [(ngModel)]="machineNew.nombreCliente" name="nombreCliente" id="nombreCliente">
+      </mat-form-field>
       <br>
       <br><br>
       <div class="col">
-        <button mat-button  >Guardar</button>
-        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button class="mat-raised-button mat-primary" style="background-color: green; color: white;" (click)="addMachine()">Guardar</button>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base" disabled>Cancelar</button>
       </div>
 
     </form>
