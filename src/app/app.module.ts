@@ -14,6 +14,8 @@ import { FooterModule } from './shared/footer/footer.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/modal-add/modal-add.component';
 
+import { ModalModifyComponent } from './modules/modal-modify/modal-modify.component';
+
 
 @NgModule({
   declarations: [
@@ -21,8 +23,8 @@ import { ModalAddComponent } from './modules/modal-add/modal-add.component';
     HomeComponent,
     RegistroComponent,
     ModalAddComponent,
-
-  ],
+    ModalModifyComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

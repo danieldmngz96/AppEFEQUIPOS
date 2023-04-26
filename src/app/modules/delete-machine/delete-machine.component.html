@@ -22,10 +22,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let numberWork of lista">
-          <th>{{numberWork.id_equipo}}</th>
-          <th>{{numberWork.nombre}}</th>
-          <th>{{numberWork.logo}}</th>
-          <th>{{numberWork.nombreCliente}}</th>
+          <td>{{numberWork.id_equipo}}</td>
+          <td>{{numberWork.nombre}}</td>
+          <td> <a href="">
+            {{numberWork.logo}}
+          </a></td>
+          <td>{{numberWork.nombreCliente}}</td>
           <td>
             <button mat-button class="mat-raised-button mat-primary" style="background-color: red; color: white;" (click)="DeleteMachine(numberWork.id_equipo)">Eliminar</button>
           </td>

@@ -24,4 +24,5 @@ export class ModifyMachineComponent implements OnInit {
       err=> console.log(err)
     );
   }
+
 }
