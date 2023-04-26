@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MovimientosService } from 'src/app/services/movimientos.service';
+import { ModalDeleteComponent } from '../modal-delete/modal-delete.component';
 
 @Component({
   selector: 'app-delete-machine',
@@ -9,7 +11,8 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
 export class DeleteMachineComponent implements OnInit {
 
   lista:any;
-  constructor(private movimiento: MovimientosService,) { }
+  constructor(private movimiento: MovimientosService,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.listarEquipo();
@@ -23,5 +26,11 @@ export class DeleteMachineComponent implements OnInit {
       },
       err=> console.log(err)
     );
+  }
+  deleteOpenModal(){
+    const dialogRef = this.dialog.open(ModalDeleteComponent, {
+      width: '350px',
+
+    });
   }
 }
