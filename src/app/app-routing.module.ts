@@ -35,12 +35,16 @@ const routes: Routes = [
     loadChildren: () => import('./modules/delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
   },
   {
-    path: 'modificar-inventario',
+    path: 'modificar-inventario/:id',
     loadChildren: () => import('./modules/modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
   },
   {
     path: 'add-equipo',
     loadChildren: () => import('./modules/add-machine/add-machine.module').then(m => m.AddMachineModule)
+  },
+  {
+    path: 'empleados',
+    loadChildren: () => import('./modules/empleados/empleados.module').then(m => m.EmpleadosModule)
   },
 ];
 
