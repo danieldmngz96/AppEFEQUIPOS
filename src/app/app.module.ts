@@ -14,12 +14,14 @@ import { FooterModule } from './shared/footer/footer.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/modal-add/modal-add.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegistroComponent,
-    ModalAddComponent
+    ModalAddComponent,
+
   ],
   imports: [
     BrowserModule,

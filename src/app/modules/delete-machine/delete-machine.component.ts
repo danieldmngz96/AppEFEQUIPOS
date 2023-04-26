@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MovimientosService } from 'src/app/services/movimientos.service';
-import { ModalDeleteComponent } from '../modal-delete/modal-delete.component';
 
 @Component({
   selector: 'app-delete-machine',
@@ -27,10 +26,11 @@ export class DeleteMachineComponent implements OnInit {
       err=> console.log(err)
     );
   }
-  deleteOpenModal(){
-    const dialogRef = this.dialog.open(ModalDeleteComponent, {
-      width: '350px',
 
-    });
+  DeleteMachine(id:string){
+    this.movimiento.deleteEquipo(id).subscribe(res=>{this.ngOnInit();},
+    err=>{console.log(err);}
+  );
+
   }
 }

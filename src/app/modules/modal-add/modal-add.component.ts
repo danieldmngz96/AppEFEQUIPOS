@@ -12,9 +12,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./modal-add.component.scss']
 })
 export class ModalAddComponent implements OnInit {
-
-
-
   machineForm: FormGroup;
   machineNew: Equipo = {
     id_equipo: '',
