@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { EmpleadosService } from 'src/app/services/empleados.service';
+import { ModalAddEmpleadoComponent } from '../modal-add-empleado/modal-add-empleado.component';
 
 @Component({
   selector: 'app-add-empleado',
@@ -10,7 +12,8 @@ export class AddEmpleadoComponent implements OnInit {
 
   lista:any;
 
-  constructor(private empleados: EmpleadosService,) { }
+  constructor(private empleados: EmpleadosService,
+    public dialog: MatDialog) { }
   ngOnInit() {
     this.listarTeam();
   }
@@ -23,5 +26,13 @@ export class AddEmpleadoComponent implements OnInit {
       },
       err=> console.log(err)
     );
+  }
+
+  //Redirigir a modal de añadir empleado
+  openModal(){
+    const dialogRef = this.dialog.open(ModalAddEmpleadoComponent, {
+      width: '350px',
+      height: '550px',
+    });
   }
 }

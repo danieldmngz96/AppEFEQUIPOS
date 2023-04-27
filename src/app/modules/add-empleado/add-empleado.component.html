@@ -23,7 +23,7 @@
           <th scope="col">ID Empleado</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
-          <th scope="col">Añadir Empleado/th>
+          <th scope="col">Añadir Empleado</th>
         </tr>
       </thead>
       <tbody>
@@ -34,6 +34,9 @@
           <td>{{numberWork.id_empleado}}</td>
           <td>{{numberWork.celular}} </td>
           <td>{{numberWork.e_mail}}</td>
+          <td>
+            <button class="btn btn-success" (click)="openModal()">Añadir</button>
+          </td>
         </tr>
 
       </tbody>

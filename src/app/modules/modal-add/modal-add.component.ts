@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AddMachineComponent } from '../add-machine/add-machine.component';
 import { MovimientosService, Equipo } from 'src/app/services/movimientos.service';
 import { Router } from '@angular/router';
-import { ThemePalette } from '@angular/material/core';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({

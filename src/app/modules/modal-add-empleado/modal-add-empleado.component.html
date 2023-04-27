@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Añadir Maquinaria</h2>
+<div mat-dialog-content style="padding-left: 50px;">
+  <div class="container">
+    <form [formGroup]="empleadoForm">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de Empleado</mat-label>
+        <input matInput [(ngModel)]="empleadosNew.nombre" name="nombre" id="nombre" formControlName="nombre">
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Id cargo</mat-label>
+        <input matInput type="number"  [(ngModel)]="empleadosNew.id_cargo" name="id_cargo" id="id_cargo" formControlName="id_cargo" >
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Id empleado</mat-label>
+        <input matInput [(ngModel)]="empleadosNew.id_empleado" name="id_empleado" id="id_empleado"
+        formControlName="id_empleado">
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Celular empleado</mat-label>
+        <input matInput [(ngModel)]="empleadosNew.celular" name="celular" id="celular"
+        formControlName="celular">
+      </mat-form-field>
+      <br>
+      <div class="col">
+        <button mat-button class="mat-raised-button mat-primary" style="background-color: green; color: white;" (click)="addEmpleado()" [disabled]="!empleadoForm.valid">Guardar</button>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"  [disabled]="empleadoForm.valid">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/modal-add/modal-add.component';
 
 import { ModalModifyComponent } from './modules/modal-modify/modal-modify.component';
+import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-add-empleado.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ModalModifyComponent } from './modules/modal-modify/modal-modify.compon
     HomeComponent,
     RegistroComponent,
     ModalAddComponent,
-    ModalModifyComponent
+    ModalModifyComponent,
+    ModalAddEmpleadoComponent
    ],
   imports: [
     BrowserModule,

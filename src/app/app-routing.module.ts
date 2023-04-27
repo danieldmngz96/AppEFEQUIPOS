@@ -46,6 +46,10 @@ const routes: Routes = [
     path: 'empleados',
     loadChildren: () => import('./modules/empleados/empleados.module').then(m => m.EmpleadosModule)
   },
+  {
+    path: 'añadir-empleado',
+    loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
+  },
 ];
 
 @NgModule({

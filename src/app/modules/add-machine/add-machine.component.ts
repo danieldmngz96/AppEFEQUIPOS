@@ -31,7 +31,6 @@ export class AddMachineComponent implements OnInit {
   openModal(){
     const dialogRef = this.dialog.open(ModalAddComponent, {
       width: '350px',
-
     });
   }
 }
