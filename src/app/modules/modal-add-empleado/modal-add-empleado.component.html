@@ -10,26 +10,19 @@
       <br>
       <br>
       <mat-form-field appearance="fill">
-        <mat-label>Id cargo</mat-label>
-        <input matInput type="number"  [(ngModel)]="empleadosNew.id_cargo" name="id_cargo" id="id_cargo" formControlName="id_cargo" >
-      </mat-form-field>
-      <br>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Id empleado</mat-label>
-        <input matInput [(ngModel)]="empleadosNew.id_empleado" name="id_empleado" id="id_empleado"
-        formControlName="id_empleado">
-      </mat-form-field>
-      <br>
-      <br>
-      <mat-form-field appearance="fill">
         <mat-label>Celular empleado</mat-label>
-        <input matInput [(ngModel)]="empleadosNew.celular" name="celular" id="celular"
+        <input matInput type="number" [(ngModel)]="empleadosNew.celular" name="celular" id="celular"
         formControlName="celular">
       </mat-form-field>
       <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Correo empleado</mat-label>
+        <input matInput type="email" [(ngModel)]="empleadosNew.e_mail" name="e_mail" id="e_mail"
+        formControlName="e_mail">
+      </mat-form-field>
       <div class="col">
-        <button mat-button class="mat-raised-button mat-primary" style="background-color: green; color: white;" (click)="addEmpleado()" [disabled]="!empleadoForm.valid">Guardar</button>
+        <button mat-button class="mat-raised-button mat-primary" style="background-color: green; color: white;" (click)="addEmpleado()" >Guardar</button>
         &nbsp;
         &nbsp;
         &nbsp;

@@ -16,8 +16,6 @@ export class ModalAddEmpleadoComponent implements OnInit {
 
   empleadosNew: Team = {
     nombre:"",
-    id_cargo:"",
-    id_empleado:"",
     celular:"",
     e_mail:""
   }
@@ -31,15 +29,17 @@ export class ModalAddEmpleadoComponent implements OnInit {
       id_cargo: ['', Validators.required],
       id_empleado: ['', Validators.required],
       celular: ['', Validators.required],
-      e_mail: ['', Validators.required]
+      e_mail: ['', Validators.email]
     });}
 
   ngOnInit() {
 
   }
 
+
+
   addEmpleado(){
-    this.empleados.getEmpleados().subscribe(
+    this.empleados.saveMachine(this.empleadosNew).subscribe(
       res=>{
         console.log(res);
         this.dialogRef.close();

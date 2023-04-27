@@ -17,15 +17,21 @@ export class EmpleadosService {
    */
   getEmpleados() {
     // return this.http.get(this.api + "/v1/empleado");
-    return this.http.get(this.api + '/almacen/empleados');
+    return this.http.get(this.api + '/almacen/empleados' );
   }
-
+  /**
+  * @author Daniel Dominguez
+  * Metodo post para añadir un empleado
+  * @param {body} body json
+  * @returns json
+  */
+  saveMachine(team:Team){
+    return this.http.post(this.api + '/almacen/add-empleado', team);
+  }
 }
 
 export interface Team{
   nombre?:any;
-  id_cargo?:any;
-  id_empleado?:any;
   celular?:any;
   e_mail?:any;
 }
