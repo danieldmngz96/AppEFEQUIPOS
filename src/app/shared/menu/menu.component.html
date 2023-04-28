@@ -10,7 +10,7 @@
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/movimientos-inventario">
+              <mat-panel-title routerLink="/movimientos-inventario" style="cursor: pointer; color: black;">
                 Inventario
               </mat-panel-title>
               <mat-panel-description>
@@ -18,9 +18,9 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li routerLink="/add-equipo" style="cursor: pointer">Agregar Equipo</li>
-            <li routerLink="/modificar-inventario" style="cursor: pointer">Modificar Equipo</li>
-            <li  routerLink="/eliminar-equipo" style="cursor: pointer">Eliminar Equipo</li>
+            <li routerLink="/add-machine" style="cursor: pointer; color: white;">Agregar Equipo</li>
+            <li routerLink="/modificar-machine" style="cursor: pointer; color: white;">Modificar Equipo</li>
+            <li  routerLink="/eliminar-machine" style="cursor: pointer; color: white;">Eliminar Equipo</li>
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"
@@ -31,7 +31,7 @@
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/empleados">
+              <mat-panel-title routerLink="/empleados" style="cursor: pointer; color: black;">
                 Empleados
               </mat-panel-title>
               <mat-panel-description>
@@ -39,9 +39,9 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li routerLink="/añadir-empleado" style="cursor: pointer">Agregar Empleado</li>
-            <li routerLink="/" style="cursor: pointer">Modificar Empleado</li>
-            <li  routerLink="/" style="cursor: pointer">Eliminar Empleado</li>
+            <li routerLink="/añadir-empleado" style="cursor: pointer; color: white;">Agregar Empleado</li>
+            <li routerLink="/modificar-empleado" style="cursor: pointer; color: white;">Modificar Empleado</li>
+            <li  routerLink="/eliminar-empleado" style="cursor: pointer; color: white;">Eliminar Empleado</li>
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"
@@ -52,7 +52,7 @@
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/reportes">
+              <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
                 Graficas inventario actual
               </mat-panel-title>
               <mat-panel-description>
@@ -60,8 +60,8 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li>Precio Venta</li>
-            <li>Consultar</li>
+            <li style="cursor: pointer; color: white;">Precio Venta</li>
+            <li style="cursor: pointer; color: white;">Consultar</li>
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MovimientosService } from 'src/app/services/movimientos.service';
-import { ModalAddComponent } from '../modal-add/modal-add.component';
+import { ModalAddComponent } from '../modal-add-machine/modal-add.component';
 
 @Component({
   selector: 'app-add-machine',

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MovimientosService } from 'src/app/services/movimientos.service';
+import { ModalModifyComponent } from '../modal-modify-machine/modal-modify.component';
 
 @Component({
   selector: 'app-modify-machine',
@@ -9,7 +11,8 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
 export class ModifyMachineComponent implements OnInit {
 
   lista:any;
-  constructor(private movimiento: MovimientosService,) { }
+  constructor(private movimiento: MovimientosService,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.listarEquipo();
@@ -24,5 +27,9 @@ export class ModifyMachineComponent implements OnInit {
       err=> console.log(err)
     );
   }
-
+  openModalModifyMachine(){
+    const dialogRef = this.dialog.open(ModalModifyComponent, {
+      width: '350px',
+    });
+  }
 }

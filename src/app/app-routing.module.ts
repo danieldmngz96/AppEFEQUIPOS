@@ -31,15 +31,15 @@ const routes: Routes = [
     loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
   },
   {
-    path: 'eliminar-equipo',
+    path: 'eliminar-machine',
     loadChildren: () => import('./modules/delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
   },
   {
-    path: 'modificar-inventario/:id',
+    path: 'modificar-machine',
     loadChildren: () => import('./modules/modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
   },
   {
-    path: 'add-equipo',
+    path: 'add-machine',
     loadChildren: () => import('./modules/add-machine/add-machine.module').then(m => m.AddMachineModule)
   },
   {
@@ -48,6 +48,10 @@ const routes: Routes = [
   },
   {
     path: 'añadir-empleado',
+    loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
+  },
+  {
+    path: 'modificar-empleado',
     loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
   },
 ];
