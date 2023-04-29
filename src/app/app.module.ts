@@ -13,7 +13,6 @@ import { RegistroComponent } from './modules/registro/registro.component';
 import { FooterModule } from './shared/footer/footer.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/modal-add-machine/modal-add.component';
-import { ModalModifyComponent } from './modules/modal-modify-machine/modal-modify.component';
 import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-add-empleado.component';
 
 
@@ -23,9 +22,8 @@ import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-ad
     AppComponent,
     HomeComponent,
     RegistroComponent,
-    ModalModifyComponent,
     ModalAddComponent,
-    ModalAddEmpleadoComponent
+    ModalAddEmpleadoComponent,
    ],
   imports: [
     BrowserModule,
