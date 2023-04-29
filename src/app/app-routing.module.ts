@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'eliminar-machine',
-    loadChildren: () => import('./modules/delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
+    loadChildren: () => import('./modules/table-delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
   },
   //Rutas para modificar maquinaria io inventario
   {
@@ -40,17 +40,14 @@ const routes: Routes = [
     children: [
       {
         path: 'machine-pages',
-        loadChildren: () => import('./modules/modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
+        loadChildren: () => import('./modules/table-modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
       },
-      {
-        path: 'machine',
-        loadChildren: () => import('./modules/modify-machine-page/modify-machine-page.routing.module').then(m => m.ModifyMachinePageRoutes)
-      },
+
     ]
   },
   {
     path: 'add-machine',
-    loadChildren: () => import('./modules/add-machine/add-machine.module').then(m => m.AddMachineModule)
+    loadChildren: () => import('./modules/table-add-machine/add-machine.module').then(m => m.AddMachineModule)
   },
   {
     path: 'empleados',

@@ -16,14 +16,13 @@ import { ModalAddComponent } from './modules/modal-add-machine/modal-add.compone
 import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-add-empleado.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegistroComponent,
     ModalAddComponent,
-    ModalAddEmpleadoComponent,
+    ModalAddEmpleadoComponent
    ],
   imports: [
     BrowserModule,

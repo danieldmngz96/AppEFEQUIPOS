@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AddMachineComponent } from '../add-machine/add-machine.component';
+import { AddMachineComponent } from '../table-add-machine/add-machine.component';
 import { MovimientosService, Equipo } from 'src/app/services/movimientos.service';
 import { Router } from '@angular/router';
 
