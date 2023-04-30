@@ -1,2 +1,44 @@
 <app-menu></app-menu>
+<span style="text-align: center;">
+  <h2 mat-dialog-title>Modificar Inventario</h2>
+  <p>Aqui podras modificar el inventario actual de EFEQUIPOS</p>
+</span>
+
+<div class="container">
+  <form [formGroup]="machineForm">
+    <div class="col
+      ">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de Equipo</mat-label>
+        <input matInput [(ngModel)]="machineNew.nombre" name="nombre" id="nombre" formControlName="nombre">
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Foto de Equipo (URL)</mat-label>
+        <input matInput type="text" [(ngModel)]="machineNew.nombreCliente" name="logo" id="logo" formControlName="logo">
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de Cliente</mat-label>
+        <input matInput [(ngModel)]="machineNew.logo" name="nombreCliente" id="nombreCliente"
+          formControlName="nombreCliente">
+      </mat-form-field>
+    </div>
+
+
+    <div class="col">
+      <button mat-button class="mat-raised-button mat-primary" style="background-color: yellow; color: black;"
+        (click)="addMachine()" [disabled]="!machineForm.valid">Guardar</button>
+      <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"
+        [disabled]="!machineForm.valid">Cancelar</button>
+    </div>
+
+  </form>
+</div>
+
+
 <app-footer></app-footer>
