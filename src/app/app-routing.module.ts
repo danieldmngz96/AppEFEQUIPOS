@@ -43,7 +43,7 @@ const routes: Routes = [
         loadChildren: () => import('./modules/table-modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
       },
       {
-        path: 'page',
+        path: 'page/:id',
         loadChildren: () => import('./modules/modify-page/modify-page.module').then(m => m.ModifyPageModule)
       },
     ]

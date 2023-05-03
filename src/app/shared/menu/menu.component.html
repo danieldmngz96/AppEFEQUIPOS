@@ -52,6 +52,27 @@
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
+              <mat-panel-title routerLink="/empleados" style="cursor: pointer; color: black;">
+                Despachos
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          <ul>
+            <li routerLink="/" style="cursor: pointer; color: white;">Agregar Despacho</li>
+            <li routerLink="/" style="cursor: pointer; color: white;">Modificar Despacho</li>
+            <li  routerLink="/" style="cursor: pointer; color: white;">Eliminar Despacho</li>
+          </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
               <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
                 Graficas inventario actual
               </mat-panel-title>

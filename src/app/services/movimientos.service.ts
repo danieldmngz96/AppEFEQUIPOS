@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -55,14 +56,14 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-    EditEquipo(id:string, equipo:Equipo){
+    EditEquipo(id:any, equipo:Equipo):Observable<any>{
       return this.http.put(this.api+'/' + id, equipo);
     }
 
 }
 
 export interface Equipo{
-  id_equipo?:any;
+
   nombre?:any;
   logo?:any;
   nombreCliente?:any;

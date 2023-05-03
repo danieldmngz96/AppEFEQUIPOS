@@ -14,7 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ModalAddComponent implements OnInit {
   machineForm: FormGroup;
   machineNew: Equipo = {
-    id_equipo: '',
+
     nombre: '',
     logo: '',
     nombreCliente: '',
