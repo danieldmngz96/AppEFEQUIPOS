@@ -2,48 +2,43 @@
 <div mat-dialog-content style="padding: 4%;">
   <form style="text-align: center;" [formGroup]="myForm">
     <div class="col-12">
-      <p class="register-p">Llena los datos del formulario para Registrarte </p>
+      <p class="register-p">Llena los datos del formulario para Registrarte en <br> <b>EFEQUIPOS</b> </p>
     </div>
     <div class="row">
       <div class="col-12">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Nombre completo</mat-label>
-          <input matInput formControlName="name_user" placeholder="Nombre completo">
+          <input matInput formControlName="name" placeholder="Nombre completo" name="name" id="name">
         </mat-form-field>
       </div>
-      <div class="col-12">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Apodo</mat-label>
-          <input matInput formControlName="nickname_user" placeholder="Apodo">
-        </mat-form-field>
-      </div>
+
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Correo electronico</mat-label>
-          <input matInput formControlName="email_user" placeholder="Ingresa Correo Electronico">
+          <input matInput formControlName="email" placeholder="Ingresa Correo Electronico" name="email" id="email">
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Confirmar Correo electronico</mat-label>
-          <input matInput formControlName="email_user_confirm" placeholder="Ingresa Correo Electronico">
+          <input matInput formControlName="email_user_confirm" placeholder="Ingresa Correo Electronico" name="email_user_confirm" id="email_user_confirm" name="email_user_confirm" id="email_user_confirm">
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Contraeña</mat-label>
-          <input matInput formControlName="password_user" [type]="hide ? 'password' : 'text'" placeholder="Ingresa Correo Electronico">
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Ingresa Correo Electronico" name="password" id="password">
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Confirmar Contraseña</mat-label>
-          <input matInput formControlName="password_user_confirm" [type]="hide ? 'password' : 'text'" placeholder="Ingresa Correo Electronico">
+          <input matInput formControlName="password_user_confirm" [type]="hide ? 'password' : 'text'" placeholder="Ingresa Correo Electronico" name="password_user_confirm" id="password_user_confirm">
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
       </div>
-      <div class="col-12">
+      <!-- <div class="col-12">
         <p class="register-p">Ubicacion </p>
       </div>
       <div class="col-6">
@@ -57,41 +52,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </div>
-      <div class="col-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Municipio</mat-label>
-          <mat-select formControlName="city_user" >
-            <mat-option *ngFor="let muni of municipios" [value]="muni.municipio">
-              <span style="color: black;">
-                {{muni.municipio}}
-              </span>
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-12">
-        <p class="register-p">Datos Estadisticos </p>
-      </div>
-      <div class="col-12">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Fecha de Nacimiento</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="birth_date_user">
-          <mat-hint>DD/MM/YYYY</mat-hint>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </div>
-      <div class="col-12">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Nivel de estudios</mat-label>
-          <mat-select formControlName="level_studies_user">
-            <mat-option *ngFor="let item of niveles" [value]="item?.id">
-              {{item?.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+      </div> -->
     </div>
   </form>
 
@@ -99,10 +60,10 @@
 <div mat-dialog-actions style="display: flex;justify-content: center;padding: 3%;">
   <div class="row col-12">
     <div class="col-6">
-      <button mat-button-raised class="btn btn-sucess" style="height: 48px; width: 100%;" (click)="onNoClick()">Cancelar</button>
+      <button mat-button-raised class="btn btn-warning" style="height: 48px; width: 100%;" (click)="onNoClick()">Cancelar</button>
     </div>
     <div class="col-6">
-      <button mat-button-raised class="btn btn-sucess" (click)="register()" style="height: 48px; width: 100%;" >Registrarme</button>
+      <button mat-button-raised class="btn btn-warning" (click)="register()" style="height: 48px; width: 100%;" >Registrarme</button>
     </div>
   </div>
 </div>

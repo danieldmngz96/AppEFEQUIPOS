@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-landing',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class LandingComponent implements OnInit {
   name: any;
   fecha = new Date();
-  constructor() { }
 
+  constructor(private login: LoginService,){}
   ngOnInit() {
     const data = localStorage.getItem('user');
     this.name = JSON.parse(data || '');

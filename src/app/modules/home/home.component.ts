@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
   onRegister() {
     this.router.navigate(['/Register']);
     const dialogRef = this.dialog.open(RegistroComponent, {
-      width: '60%',
+      width: '40%',
     });
   }
 

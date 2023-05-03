@@ -16,7 +16,8 @@ export class LoginService {
   * @returns json
   */
   login(body: any): Observable<any> {
-    return this.http.post("https://web-services-papappcost-umb.onrender.com/login/auth", body);
+    // return this.http.post("https://web-services-papappcost-umb.onrender.com/login/auth", body);
+    return this.http.post("http://localhost:3000/api/login", body);
   }
 
     /**
@@ -25,8 +26,14 @@ export class LoginService {
   * @param {body} body json
   * @returns json
   */
-  register(body: any): Observable<any> {
-    return this.http.post("https://web-services-papappcost-umb.onrender.com/login/signup/", body);
+  register(user:User): Observable<any> {
+    return this.http.post("http://localhost:3000/api/register", user);
   }
 
+}
+
+export interface User{
+  name:any;
+  password?:any;
+  email?:any;
 }

@@ -22,7 +22,7 @@ import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-ad
     HomeComponent,
     RegistroComponent,
     ModalAddComponent,
-    ModalAddEmpleadoComponent
+    ModalAddEmpleadoComponent,
    ],
   imports: [
     BrowserModule,
