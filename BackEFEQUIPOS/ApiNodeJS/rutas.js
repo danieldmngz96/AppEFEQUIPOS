@@ -55,7 +55,7 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-//modificar
+//modificarmaquinaria 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { nombre, logo, nombreCliente } = req.body;
@@ -87,6 +87,8 @@ router.post("/register", (req, res) => {
     }
   });
 });
+
+//Post de login
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
@@ -100,9 +102,39 @@ router.post('/login', (req, res) => {
       // No se encontró un usuario con ese correo electrónico y contraseña
       res.status(401).json({ error: 'Credenciales inválidas' });
     } else {
-      // Se encontró un usuario con ese correo electrónico y contraseña
-      const user = rows[0];
-      res.status(200).json({ message: 'Inicio de sesión exitoso', user });
+       // Se encontró un usuario con ese correo electrónico y contraseña
+       const user = {
+        id: rows[0].id,
+        name: rows[0].name,
+        email: rows[0].email
+      };
+      res.status(200).json({ message: 'Inicio de sesión exitoso', user: user });
+    }
+  });
+});
+//get usuario
+router.get("/info", (req, res) => {
+  const { name } = req.body;
+  let sql = `SELECT * FROM users WHERE name = '${name}'`;
+  bd_efequipos.query(sql, (err, rows, fields) => {
+    if (err) throw err;
+    else {
+      res.json(rows);
+    }
+  });
+});
+//get user comparational
+router.get("/validateEmail/:email", (req, res) => {
+  const email = req.params.email;
+  let sql = `SELECT * FROM users WHERE email = '${email}'`;
+  bd_efequipos.query(sql, (err, rows, fields) => {
+    if (err) throw err;
+    else {
+      if (rows.length > 0) {
+        res.status(200).json({ message: "El correo electrónico ya existe en la tabla de usuarios" , email:true });
+      } else {
+        res.status(200).json({ message: "El correo electrónico no existe en la tabla de usuarios" , email:false });
+      }
     }
   });
 });
