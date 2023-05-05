@@ -5,8 +5,8 @@
     <mat-toolbar style="color: white !important; background-color: var(--orange-good);">Menú</mat-toolbar>
     <mat-nav-list>
       <div style="padding-bottom: 75%;">
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Nuevo-inventario">Registrar Nuevo <br>Inventario</a>
-
+        <!-- <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Nuevo-inventario">Registrar Nuevo <br>Inventario</a>
+ -->
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
@@ -73,6 +73,27 @@
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
+              <mat-panel-title routerLink="/clientes/all" style="cursor: pointer; color: black;">
+                Clientes
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          <ul>
+            <li routerLink="/" style="cursor: pointer; color: white;">Agregar Clientes</li>
+            <li routerLink="/" style="cursor: pointer; color: white;">Modificar Clientes</li>
+            <li  routerLink="/" style="cursor: pointer; color: white;">Eliminar Clientes</li>
+          </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
               <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
                 Graficas inventario actual
               </mat-panel-title>
@@ -90,6 +111,7 @@
           </mat-expansion-panel>
         </mat-accordion>
         <br>
+
         <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"
         [ngStyle]="{'color': 'var(--orange-good)'}" routerLink="/">Reporte de costos</button>
 

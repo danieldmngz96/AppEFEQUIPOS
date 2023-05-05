@@ -74,6 +74,16 @@ const routes: Routes = [
       }
     ]
   },
+    //Rutas para clientes
+    {
+      path: 'clientes',
+      children: [
+        {
+          path: 'all',
+          loadChildren: () => import('./modules/table-clientes/table-clientes.module').then(m => m.TableClientesModule)
+        }
+      ]
+    },
 ];
 
 @NgModule({

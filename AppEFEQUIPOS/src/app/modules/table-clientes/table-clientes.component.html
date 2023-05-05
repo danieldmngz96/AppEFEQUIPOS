@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm mt-3">
+      <h1>Clientes</h1>
+      <br>
+      <i>Aqui podras encontrar todos los empleados de EFEQUIPOS</i>
+      <br>
+      <i>En tiempo real.</i>
+      <br>
+      <br>
+    </div>
+    <div class="col-sm">
+
+    </div>
+
+
+  <table class="mat-elevation-z8 table"  >
+      <thead>
+        <tr>
+          <th scope="col">Id Cliente</th>
+          <th scope="col">Nombre Cliente</th>
+          <th scope="col">Tipo de documento cliente</th>
+          <th scope="col">Numero de Documento</th>
+          <th scope="col">Representante legal</th>
+          <th scope="col">Cargo representante legal</th>
+          <th scope="col">Dirrecion</th>
+          <th scope="col">telefono</th>
+          <th scope="col">fax</th>
+          <th scope="col">email</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Pais</th>
+          <th scope="col">Fecha acta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let numberWork of lista; let i = index" >
+          <td>{{numberWork.cod_cli}}</td>
+          <td>{{numberWork.nom_emp}}</td>
+          <td> {{numberWork.tipo_doc_emp}}</td>
+          <td> {{numberWork.num_doc_emp}}</td>
+          <td> {{numberWork.rep_leg}}</td>
+          <td> {{numberWork.cargo_con}}</td>
+          <td> {{numberWork.direccion}}</td>
+          <td> {{numberWork.telefono}}</td>
+          <td> {{numberWork.fax}}</td>
+          <td> {{numberWork.e_mail}}</td>
+          <td> {{numberWork.ciudad}}</td>
+          <td> {{numberWork.pais}}</td>
+          <td> {{numberWork.fec_act}}</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+<app-footer></app-footer>
