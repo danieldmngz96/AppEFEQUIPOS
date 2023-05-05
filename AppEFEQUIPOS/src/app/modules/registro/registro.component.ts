@@ -19,9 +19,9 @@ export class RegistroComponent implements OnInit {
   departamentos: any = []
   selectedMunicipio = null
   userNew: User = {
-    name:"",
-    password:"",
-    email:""
+    name: "",
+    password: "",
+    email: ""
   }
 
   myForm: FormGroup = this.formBuilder.group({
@@ -62,17 +62,29 @@ export class RegistroComponent implements OnInit {
   }
   register() {
     let body = {
-      email: this.myForm.controls['email'].value,
-      password: this.myForm.controls['password'].value,
       name: this.myForm.controls['name'].value,
+      password: this.myForm.controls['password'].value,
+      email: this.myForm.controls['email'].value,
     }
-    this.registerService.register(this.userNew).subscribe(data => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Excelente...',
-        text: `Su usuario se a creado ${this.myForm.controls['name'].value} exitosamente!`,
-      });
-      this.dialogRef.close();
+    this.registerService.getCompareEmail(body.email).subscribe(data => {
+      console.log(data)
+      if (data.email == true) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'UPSS...',
+          text: `El correo ya esta en uso  ${this.myForm.controls['email'].value}`,
+        });
+      } else {
+        this.registerService.register(body).subscribe(data => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Excelente...',
+            text: `Su usuario se a creado ${this.myForm.controls['name'].value} exitosamente!`,
+          });
+          this.dialogRef.close();
+        });
+      }
     });
+
   }
 }

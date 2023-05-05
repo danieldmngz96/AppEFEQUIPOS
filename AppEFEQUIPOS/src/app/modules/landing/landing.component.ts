@@ -15,6 +15,13 @@ export class LandingComponent implements OnInit {
     const data = localStorage.getItem('user');
     this.name = JSON.parse(data || '');
     this.fecha = new Date();
+
+    this.login.getInfoLogin().subscribe((resp: any) => {
+      console.log(resp.name);
+
+    }, (error: any) => {
+     console.log(error);
+    });
   }
 
 }

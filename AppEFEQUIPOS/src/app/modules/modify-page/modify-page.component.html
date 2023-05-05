@@ -10,29 +10,29 @@
       ">
       <mat-form-field appearance="fill">
         <mat-label>Nombre de Equipo</mat-label>
-        <input matInput [(ngModel)]="machineNew.nombre" name="nombre" id="nombre" formControlName="nombre">
+        <input matInput formControlName="nombre" name="nombre" id="nombre" >
       </mat-form-field>
     </div>
 
     <div class="col">
       <mat-form-field appearance="fill">
         <mat-label>Foto de Equipo (URL)</mat-label>
-        <input matInput type="text" [(ngModel)]="machineNew.nombreCliente" name="logo" id="logo" formControlName="logo">
+        <input matInput type="text" formControlName="nombreCliente" name="logo" id="logo" >
       </mat-form-field>
     </div>
 
     <div class="col">
       <mat-form-field appearance="fill">
         <mat-label>Nombre de Cliente</mat-label>
-        <input matInput [(ngModel)]="machineNew.logo" name="nombreCliente" id="nombreCliente"
-          formControlName="nombreCliente">
+        <input matInput formControlName="logo" name="nombreCliente" id="nombreCliente"
+         >
       </mat-form-field>
     </div>
 
 
     <div class="col">
       <button mat-button class="mat-raised-button mat-primary" style="background-color: yellow; color: black;"
-        (click)="modifyEquipo()" [disabled]="!machineForm.valid">Guardar</button>
+        (click)="modifyEquipo()" >Guardar</button>
       <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"
         [disabled]="!machineForm.valid">Cancelar</button>
     </div>

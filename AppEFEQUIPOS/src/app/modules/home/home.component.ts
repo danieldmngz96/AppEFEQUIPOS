@@ -32,23 +32,23 @@ export class HomeComponent implements OnInit {
 
   login() {
     let body = {
-      email_user: this.loginForm.controls['username'].value,
-      password_user: this.loginForm.controls['password'].value,
+      email: this.loginForm.controls['username'].value,
+      password: this.loginForm.controls['password'].value,
     };
     console.log(body);
 
     this.service.login(body).subscribe((resp: any) => {
       console.log(typeof(resp), resp);
-      if(typeof(resp) === 'string'){
+      if(typeof(resp.user) === 'string'){
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'Correo o contraseña invalida!',
         });
         localStorage.clear();
-      } else if(typeof(resp) === 'object'){
+      } else if(typeof(resp.user) === 'object'){
         console.log('login...');
-        localStorage.setItem("user", JSON.stringify(resp));
+        localStorage.setItem("user", JSON.stringify(resp.user));
         this.router.navigate(['/bienvenido'])
       }
     }, (error: any) => {

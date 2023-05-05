@@ -26,7 +26,7 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-   getEquiposId(id:string){
+   getEquiposId(id:string):Observable<any>{
     return this.http.get(this.api + '/' + id);
   }
 
@@ -46,7 +46,7 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-   deleteEquipo(id:string){
+   deleteEquipo(id:string):Observable<any>{
     return this.http.delete(this.api + '/' + id );
   }
 
