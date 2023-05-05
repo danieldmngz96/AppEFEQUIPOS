@@ -63,7 +63,17 @@ const routes: Routes = [
   {
     path: 'modificar-empleado',
     loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
-  }
+  },
+  //Rutas para despachos
+  {
+    path: 'despachos',
+    children: [
+      {
+        path: 'all',
+        loadChildren: () => import('./modules/table-despachos/table-despachos.module').then(m => m.TableDespachosModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({

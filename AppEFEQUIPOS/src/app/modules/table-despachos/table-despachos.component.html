@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm mt-3">
+      <h1>Empleados</h1>
+      <br>
+      <i>Aqui podras encontrar todos los despachos EFEQUIPOS</i>
+      <br>
+      <i>En tiempo real.</i>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="col-sm">
+
+    </div>
+
+
+  <table class="mat-elevation-z8 table" >
+      <thead>
+        <tr>
+          <th scope="col">Id despacho</th>
+          <th scope="col">Codigo obra</th>
+          <th scope="col">Codigo contrato</th>
+          <th scope="col">Fecha despachos</th>
+          <th scope="col">Despachador</th>
+          <th scope="col">OBS</th>
+          <th scope="col">Id despacho</th>
+          <th scope="col">Info Vehiculo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let numberWork of lista; let i = index">
+          <td>{{numberWork.id_despacho}}</td>
+          <td>{{numberWork.cod_obra}}</td>
+          <td>{{numberWork.cod_cont}}</td>
+          <td>{{numberWork.fec_des}}</td>
+          <td>{{numberWork.Despachador}}</td>
+          <td>{{numberWork.obs}}</td>
+          <td>{{numberWork.id_despacho}}</td>
+          <td>
+            <button class="btn btn-success">Ver Info Vehiculo</button>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+<app-footer></app-footer>
