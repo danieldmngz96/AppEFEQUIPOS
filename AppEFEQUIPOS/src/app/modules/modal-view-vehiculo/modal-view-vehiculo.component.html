@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Informacion de Vehiculo</h1>
+<div mat-dialog-content>
+  <table class="mat-elevation-z8 table" >
+    <thead>
+      <tr>
+        <th scope="col">Conductor vehiculo</th>
+        <th scope="col">Placa Vehiculo</th>
+        <th scope="col">Tipo Vehiculo</th>
+        <th scope="col">Autorizador</th>
+        <th scope="col">Peso total</th>
+        <th scope="col">Area total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let numberWork of lista; let i = index">
+        <td>{{numberWork.conductor_veh}}</td>
+        <td>{{numberWork.placa_veh}}</td>
+        <td>{{numberWork.tipo_veh}}</td>
+        <td>{{numberWork.autorizador}}</td>
+        <td>{{numberWork.peso_total}}</td>
+        <td>{{numberWork.area_total}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>

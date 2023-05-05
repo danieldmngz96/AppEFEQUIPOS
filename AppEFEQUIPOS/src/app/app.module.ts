@@ -14,6 +14,7 @@ import { FooterModule } from './shared/footer/footer.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/modal-add-machine/modal-add.component';
 import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-add-empleado.component';
+import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-view-vehiculo.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-ad
     RegistroComponent,
     ModalAddComponent,
     ModalAddEmpleadoComponent,
+    ModalViewVehiculoComponent
    ],
   imports: [
     BrowserModule,
