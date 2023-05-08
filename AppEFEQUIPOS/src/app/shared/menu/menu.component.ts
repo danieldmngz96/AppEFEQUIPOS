@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable, shareReplay } from 'rxjs';
 
 @Component({
@@ -15,7 +16,8 @@ export class MenuComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver,
+    private router: Router ) {
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset);
   }
 
@@ -23,5 +25,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  gotoModifyEmpleado(){
+    this.router.navigate(['/empleados/modificar']);
+  }
 }

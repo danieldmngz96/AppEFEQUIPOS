@@ -31,7 +31,7 @@
         <mat-accordion>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/empleados" style="cursor: pointer; color: black;">
+              <mat-panel-title routerLink="/empleados/all" style="cursor: pointer; color: black;">
                 Empleados
               </mat-panel-title>
               <mat-panel-description>
@@ -39,9 +39,9 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li routerLink="/añadir-empleado" style="cursor: pointer; color: white;">Agregar Empleado</li>
-            <li routerLink="/modificar-empleado" style="cursor: pointer; color: white;">Modificar Empleado</li>
-            <li  routerLink="/eliminar-empleado" style="cursor: pointer; color: white;">Eliminar Empleado</li>
+            <li routerLink="empleados/añadir-empleado" style="cursor: pointer; color: white;">Agregar Empleado</li>
+            <li (click)="gotoModifyEmpleado()" style="cursor: pointer; color: white;">Modificar Empleado</li>
+          <!--   <li  routerLink="/eliminar-empleado" style="cursor: pointer; color: white;">Eliminar Empleado</li> -->
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"

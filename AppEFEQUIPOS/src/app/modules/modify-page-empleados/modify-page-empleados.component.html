@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<span style="text-align: center;">
+  <h2 mat-dialog-title>Modificar Inventario</h2>
+  <p>Aqui podras modificar el inventario actual de EFEQUIPOS</p>
+</span>
+
+<div class="container">
+  <form [formGroup]="empleadoForm">
+    <div class="col
+      ">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre de empleado</mat-label>
+        <input matInput formControlName="nombre" name="nombre" id="nombre" >
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Id Cargo</mat-label>
+        <input matInput type="text" formControlName="cargo" name="logo" id="logo" >
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Id empleado</mat-label>
+        <input matInput formControlName="idEmpleado" name="idEmpleado" id="idEmpleado"
+         >
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Celular</mat-label>
+        <input matInput formControlName="logo" name="idEmpleado" id="nombreCliente"
+         >
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="logo" name="idEmpleado" id="nombreCliente"
+         >
+      </mat-form-field>
+    </div>
+
+
+    <div class="col">
+      <button mat-button class="mat-raised-button mat-primary" style="background-color:var(--orange-good); color: black;"
+ >Guardar</button>
+      <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"
+        >Cancelar</button>
+    </div>
+
+  </form>
+</div>
+
+
+<app-footer></app-footer>

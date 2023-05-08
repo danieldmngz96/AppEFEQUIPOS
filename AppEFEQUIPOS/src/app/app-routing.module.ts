@@ -44,7 +44,7 @@ const routes: Routes = [
       },
       {
         path: 'page/:id',
-        loadChildren: () => import('./modules/modify-page/modify-page.module').then(m => m.ModifyPageModule)
+        loadChildren: () => import('./modules/modify-page-machine/modify-page.module').then(m => m.ModifyPageModule)
       },
     ]
   },
@@ -52,18 +52,7 @@ const routes: Routes = [
     path: 'add-machine',
     loadChildren: () => import('./modules/table-add-machine/add-machine.module').then(m => m.AddMachineModule)
   },
-  {
-    path: 'empleados',
-    loadChildren: () => import('./modules/empleados/empleados.module').then(m => m.EmpleadosModule)
-  },
-  {
-    path: 'añadir-empleado',
-    loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
-  },
-  {
-    path: 'modificar-empleado',
-    loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
-  },
+
   //Rutas para despachos
   {
     path: 'despachos',
@@ -84,6 +73,28 @@ const routes: Routes = [
         }
       ]
     },
+        //Rutas para empleados
+        {
+          path: 'empleados',
+          children: [
+            {
+              path: 'all',
+              loadChildren: () => import('./modules/empleados/empleados.module').then(m => m.EmpleadosModule)
+            },
+            {
+              path: 'añadir-empleado',
+              loadChildren: () => import('./modules/add-empleado/add-empleado.module').then(m => m.AddEmpleadoModule)
+            },
+             {
+              path: 'modificar',
+              loadChildren: () => import('./modules/table-modify-empleado/modify-empleado.module').then(m => m.ModifyEmpleadoModule)
+            },
+            {
+              path: 'page',
+              loadChildren: () => import('./modules/modify-page-empleados/modify-page-empleados.module').then(m => m.ModifyPageEmpleadosModule)
+            },
+          ]
+        },
 ];
 
 @NgModule({
