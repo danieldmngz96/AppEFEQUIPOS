@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm mt-3">
+      <h1>Empleados</h1>
+      <br>
+      <i>Aqui podras añadir empleados toda la nomina de EFEQUIPOS</i>
+      <br>
+      <br>
+    </div>
+    <div class="col-sm">
+
+    </div>
+
+
+  <table class="mat-elevation-z8 table" >
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre Empleado</th>
+          <th scope="col">ID Cargo</th>
+          <th scope="col">Celular</th>
+          <th scope="col">Email</th>
+          <th scope="col">Eliminar Empleado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let numberWork of lista; let i = index">
+          <td>{{numberWork.id_empleado}}</td>
+          <td>{{numberWork.nombre}}</td>
+          <td>{{numberWork.id_cargo}}</td>
+          <td>{{numberWork.celular}} </td>
+          <td>{{numberWork.e_mail}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="DeleteMachine(numberWork.id_empleado)">Eliminar</button>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+<app-footer></app-footer>

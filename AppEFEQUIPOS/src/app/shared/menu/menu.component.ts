@@ -28,4 +28,10 @@ export class MenuComponent implements OnInit {
   gotoModifyEmpleado(){
     this.router.navigate(['/empleados/modificar']);
   }
+  gotoAddEmpleado(){
+    this.router.navigate(['/empleados/añadir-empleado']);
+  }
+  gotoDeleteEmpleado(){
+    this.router.navigate(['/empleados/eliminar-empleado']);
+  }
 }

@@ -8,7 +8,7 @@
         <!-- <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Nuevo-inventario">Registrar Nuevo <br>Inventario</a>
  -->
         <mat-accordion>
-          <mat-expansion-panel hideToggle>
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title routerLink="/movimientos-inventario" style="cursor: pointer; color: black;">
                 Inventario
@@ -29,7 +29,7 @@
         </mat-accordion>
         <br>
         <mat-accordion>
-          <mat-expansion-panel hideToggle>
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title routerLink="/empleados/all" style="cursor: pointer; color: black;">
                 Empleados
@@ -39,9 +39,9 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li routerLink="empleados/añadir-empleado" style="cursor: pointer; color: white;">Agregar Empleado</li>
+            <li (click)="gotoAddEmpleado()"  style="cursor: pointer; color: white;">Agregar Empleado</li>
             <li (click)="gotoModifyEmpleado()" style="cursor: pointer; color: white;">Modificar Empleado</li>
-          <!--   <li  routerLink="/eliminar-empleado" style="cursor: pointer; color: white;">Eliminar Empleado</li> -->
+          <li (click)="gotoDeleteEmpleado()" style="cursor: pointer; color: white;">Eliminar Empleado</li>
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"
@@ -50,7 +50,7 @@
         </mat-accordion>
         <br>
         <mat-accordion>
-          <mat-expansion-panel hideToggle>
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title routerLink="/despachos/all" style="cursor: pointer; color: black;">
                 Despachos
@@ -71,7 +71,7 @@
         </mat-accordion>
         <br>
         <mat-accordion>
-          <mat-expansion-panel hideToggle>
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title routerLink="/clientes/all" style="cursor: pointer; color: black;">
                 Clientes
@@ -92,7 +92,7 @@
         </mat-accordion>
         <br>
         <mat-accordion>
-          <mat-expansion-panel hideToggle>
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
                 Graficas inventario actual

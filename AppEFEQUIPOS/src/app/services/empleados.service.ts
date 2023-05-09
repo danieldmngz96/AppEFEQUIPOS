@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,15 @@ export class EmpleadosService {
   saveMachine(team:Team){
     return this.http.post(this.api + '/almacen/add-empleado', team);
   }
+    /**
+  * @author Daniel Dominguez
+  * Metodo delete para eliminar un empleado por id
+  * @param {body} body json
+  * @returns json
+  */
+    deleteEmpleado(id:string):Observable<any>{
+      return this.http.delete(this.api + '/almacen/empleados/' + id );
+    }
 }
 
 export interface Team{

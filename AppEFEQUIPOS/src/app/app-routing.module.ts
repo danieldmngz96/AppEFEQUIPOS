@@ -93,6 +93,10 @@ const routes: Routes = [
               path: 'page',
               loadChildren: () => import('./modules/modify-page-empleados/modify-page-empleados.module').then(m => m.ModifyPageEmpleadosModule)
             },
+            {
+              path: 'eliminar-empleado',
+              loadChildren: () => import('./modules/table-delete-empleado/table-delete-empleado.module').then(m => m.TableDeleteEmpleadoModule)
+            }
           ]
         },
 ];
