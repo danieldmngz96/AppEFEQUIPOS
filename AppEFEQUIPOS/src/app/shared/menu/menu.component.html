@@ -95,15 +95,16 @@
           <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
-                Graficas inventario actual
+                Graficas
               </mat-panel-title>
               <mat-panel-description>
 
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li style="cursor: pointer; color: white;">Precio Venta</li>
-            <li style="cursor: pointer; color: white;">Consultar</li>
+            <li style="cursor: pointer; color: white;">Graficas Inventario Actual</li>
+            <li style="cursor: pointer; color: white;">Graficas Despachos</li>
+            <li style="cursor: pointer; color: white;">Graficas Nomina</li>
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"
@@ -112,8 +113,8 @@
         </mat-accordion>
         <br>
 
-        <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"
-        [ngStyle]="{'color': 'var(--orange-good)'}" routerLink="/">Reporte de costos</button>
+      <!--   <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"
+        [ngStyle]="{'color': 'var(--orange-good)'}" routerLink="/">Reporte de costos</button> -->
 
       </div>
       <button mat-raised-button style=" display: flex; margin: 0 auto;"

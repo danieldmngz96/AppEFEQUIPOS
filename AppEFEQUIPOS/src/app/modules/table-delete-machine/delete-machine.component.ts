@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MovimientosService } from 'src/app/services/movimientos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-delete-machine',
@@ -9,7 +10,7 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
 })
 export class DeleteMachineComponent implements OnInit {
 
-  lista:any;
+  lista: any;
   constructor(private movimiento: MovimientosService,
     public dialog: MatDialog) { }
 
@@ -17,20 +18,32 @@ export class DeleteMachineComponent implements OnInit {
     this.listarEquipo();
   }
   //Aca traemos del servicio movimiento los equipos
-  listarEquipo(){
+  listarEquipo() {
     this.movimiento.getEquipos().subscribe(
-      res=>{
+      res => {
         this.lista = res
         console.log(res);
       },
-      err=> console.log(err)
+      err => console.log(err)
     );
   }
 
-  DeleteMachine(id:string){
-    this.movimiento.deleteEquipo(id).subscribe(res=>{this.ngOnInit();},
-    err=>{console.log(err);}
-  );
-
+  DeleteMachine(id: string) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Cuidado!',
+        text: 'Se eliminara el empleado de nomina y de las Bases de datos de EFEQUIPOS.',
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.movimiento.deleteEquipo(id).subscribe(res => { this.ngOnInit(); },
+          err => { console.log(err); })
+        } else {
+          // Acción al hacer clic en "Cancelar"
+        }
+      });
   }
+
 }

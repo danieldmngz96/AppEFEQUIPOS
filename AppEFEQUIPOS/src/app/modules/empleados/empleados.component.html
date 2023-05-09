@@ -27,7 +27,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let numberWork of lista; let i = index">
-          <td>{{numberWork.id_empleado}}</td>
+          <td>{{i + 1}}</td>
           <td>{{numberWork.nombre}}</td>
           <td>{{numberWork.id_cargo}}</td>
           <td>{{numberWork.id_empleado}}</td>
@@ -38,7 +38,11 @@
       </tbody>
 
     </table>
-
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Selecciona pagina">
+</mat-paginator>
   </div>
 </div>
 <app-footer></app-footer>
