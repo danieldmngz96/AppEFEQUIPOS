@@ -55,7 +55,7 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-//modificarmaquinaria 
+//modifica maquinaria 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { nombre, logo, nombreCliente } = req.body;
