@@ -15,12 +15,12 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'Nuevo-inventario',
-    loadChildren: () => import('./modules/actividades/actividades.module').then(m => m.ActividadesModule)
-  },
-  {
     path: 'bienvenido',
     loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
+  },
+  {
+    path: 'Nuevo-inventario',
+    loadChildren: () => import('./modules/actividades/actividades.module').then(m => m.ActividadesModule)
   },
   {
     path: 'reportes',
@@ -60,7 +60,11 @@ const routes: Routes = [
       {
         path: 'all',
         loadChildren: () => import('./modules/table-despachos/table-despachos.module').then(m => m.TableDespachosModule)
-      }
+      },
+      {
+        path: 'add',
+        loadChildren: () => import('./modules/add-despachos/add-despachos.module').then(m => m.AddDespachosModule)
+      },
     ]
   },
     //Rutas para clientes
