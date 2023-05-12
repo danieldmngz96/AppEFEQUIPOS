@@ -65,6 +65,10 @@ const routes: Routes = [
         path: 'add',
         loadChildren: () => import('./modules/add-despachos/add-despachos.module').then(m => m.AddDespachosModule)
       },
+      {
+        path: 'add-form',
+        loadChildren: () => import('./modules/despachos-add-form/despachos-add-form.module').then(m => m.DespachosAddFormModule)
+      },
     ]
   },
     //Rutas para clientes

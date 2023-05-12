@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DespachosService } from 'src/app/services/despachos.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class AddDespachosComponent implements OnInit {
   lista:any;
 
   constructor(private despachos: DespachosService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private router: Router) { }
   ngOnInit() {
     this.listarTeam();
   }
@@ -29,5 +31,7 @@ export class AddDespachosComponent implements OnInit {
   }
 
 
-
+goToDespachosFrom(){
+  this.router.navigate(['/despachos/add-form']);
+}
 }
