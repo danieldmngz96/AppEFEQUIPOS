@@ -4,29 +4,93 @@
   <br>
   <p>Ahora en EFEQUIPOS podras agregar despachos en tiempo real.</p>
 </span>
-<mat-stepper [linear]="isLinear" #stepper>
+<mat-stepper [linear]="isLinear" #stepper >
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+    <form [formGroup]="stepOneForm">
       <ng-template matStepLabel>Informacion del despachos</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      <mat-form-field appearance="fill" class="w-100 mat-orange ">
+        <mat-label>Codigo Obra</mat-label>
+        <input matInput placeholder="Ingresa codigo de obra" formControlName="cod_obra" required class="mat-orange" [(ngModel)]="despachosNew.cod_obra">
       </mat-form-field>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Codigo Contrato</mat-label>
+          <input matInput placeholder="Ingresa codigo de contrato" formControlName="cod_cont" required [(ngModel)]="despachosNew.cod_cont">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Selecciona una fecha de despacho</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fec_des" [(ngModel)]="despachosNew.fec_des">
+          <mat-hint>fromato MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Despachador</mat-label>
+          <input  type="number" matInput placeholder="Ingresa depachador" formControlName="despachador" required [(ngModel)]="despachosNew.despachador">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width w-100">
+          <mat-label>Observaciones</mat-label>
+          <textarea matInput placeholder="Ejemplo En esta observacion..." formControlName="obs" [(ngModel)]="despachosNew.obs"></textarea>
+        </mat-form-field>
+      </div>
+<!--       <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Id despacho</mat-label>
+          <input  type="number" matInput placeholder="Ingresa codigo de obra" formControlName="id_despacho" required [(ngModel)]="despachosNew.id_despacho">
+        </mat-form-field>
+      </div> -->
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button  [disabled]="!stepOneForm.valid" matStepperNext class="btn btn-warning">Next</button>
       </div>
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Informacion del Vehiculo">
-    <form [formGroup]="secondFormGroup">
-      <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
+    <form [formGroup]="stepInfoVehiculo">
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Conductor Vehiculo</mat-label>
+          <input matInput placeholder="Ingresa Nombre del conductor" formControlName="conductor_veh" required  [(ngModel)]="despachosNew.conductor_veh">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Placa del vehiculo</mat-label>
+          <input matInput placeholder="Ingresa codigo de contrato" formControlName="placa_veh" required [(ngModel)]="despachosNew.placa_veh">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Tipo de Vehiculo</mat-label>
+          <input matInput placeholder="Ingresa tipo de vehiculo" formControlName="tipo_veh" required  [(ngModel)]="despachosNew.tipo_veh">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Autorizador</mat-label>
+          <input matInput placeholder="Ingresa Autorizador" formControlName="autorizador" required  [(ngModel)]="despachosNew.autorizador">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Peso total</mat-label>
+          <input  type="number" matInput placeholder="Ingresa Peso Total" formControlName="peso_total" required  [(ngModel)]="despachosNew.peso_total">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Area total</mat-label>
+          <input  type="number" matInput placeholder="Ingresa Area Total" formControlName="area_total" required  [(ngModel)]="despachosNew.area_total">
+        </mat-form-field>
+      </div>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious class="btn btn-warning"> Back</button>
+        <button mat-button matStepperNext  [disabled]="!stepInfoVehiculo.valid" matStepperNext class="btn btn-warning" (click)="addDepachos()">Next</button>
       </div>
     </form>
   </mat-step>

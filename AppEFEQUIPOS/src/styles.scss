@@ -61,3 +61,41 @@ footer {
     /*change color of underline when focused*/
     background-color: green !important;
 }
+/* styles.css */
+.mat-form-field-outline {
+  color: #ff9800; /* color del borde */
+}
+.mat-form-field-outline-thick {
+  border-width: 2px; /* grosor del borde */
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  border-bottom: 1px solid #ff9800; /* color de la línea inferior del input */
+}
+.mat-form-field-appearance-outline .mat-form-field-prefix .mat-form-field-outline-start {
+  border-right: 1px solid #ff9800; /* color del borde derecho del prefix */
+}
+.mat-form-field-appearance-outline .mat-form-field-suffix .mat-form-field-outline-end {
+  border-left: 1px solid #ff9800; /* color del borde izquierdo del suffix */
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+ }
+
+ ::ng-deep .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: green !important;
+}
+
+::ng-deep  .mat-form-field-label{
+  color:green !important;
+}
+::ng-deep  .mat-form-field-underline{
+  background-color:green !important;
+}
