@@ -39,12 +39,12 @@
           <textarea matInput placeholder="Ejemplo En esta observacion..." formControlName="obs" [(ngModel)]="despachosNew.obs"></textarea>
         </mat-form-field>
       </div>
-<!--       <div class="col">
+      <div class="col">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Id despacho</mat-label>
           <input  type="number" matInput placeholder="Ingresa codigo de obra" formControlName="id_despacho" required [(ngModel)]="despachosNew.id_despacho">
         </mat-form-field>
-      </div> -->
+      </div>
       <div>
         <button  [disabled]="!stepOneForm.valid" matStepperNext class="btn btn-warning">Next</button>
       </div>

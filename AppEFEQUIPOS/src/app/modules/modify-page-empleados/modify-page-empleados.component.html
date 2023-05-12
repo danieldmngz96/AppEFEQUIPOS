@@ -1,28 +1,28 @@
 <app-menu></app-menu>
 <span style="text-align: center;">
-  <h2 mat-dialog-title>Modificar Inventario</h2>
-  <p>Aqui podras modificar el inventario actual de EFEQUIPOS</p>
+  <h2 mat-dialog-title>Modificar empleado</h2>
+  <p>Aqui podras modificar la nomina actual de EFEQUIPOS</p>
 </span>
 
 <div class="container">
   <form [formGroup]="empleadoForm">
     <div class="col
       ">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="w-100">
         <mat-label>Nombre de empleado</mat-label>
         <input matInput formControlName="nombre" name="nombre" id="nombre" >
       </mat-form-field>
     </div>
 
     <div class="col">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill"  class="w-100">
         <mat-label>Id Cargo</mat-label>
         <input matInput type="text" formControlName="cargo" name="cargo" id="cargo" >
       </mat-form-field>
     </div>
 
     <div class="col">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill"  class="w-100">
         <mat-label>Id empleado</mat-label>
         <input matInput formControlName="idEmpleado" name="idEmpleado" id="idEmpleado"
          >
@@ -30,31 +30,32 @@
     </div>
 
     <div class="col">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill"  class="w-100">
         <mat-label>Celular</mat-label>
-        <input matInput formControlName="logo" name="idEmpleado" id="nombreCliente"
+        <input matInput formControlName="idEmpleado" name="idEmpleado" id="nombreCliente"
          >
       </mat-form-field>
     </div>
 
     <div class="col">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill"  class="w-100">
         <mat-label>Email</mat-label>
-        <input matInput formControlName="logo" name="idEmpleado" id="nombreCliente"
+        <input matInput formControlName="idEmpleado" name="idEmpleado" id="nombreCliente"
          >
       </mat-form-field>
     </div>
 
 
-    <div class="col">
-      <button mat-button class="mat-raised-button mat-primary" style="background-color:var(--orange-good); color: black;"
- >Guardar</button>
-      <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"
-        >Cancelar</button>
+    <div class="col d-flex justify-content-center align-items-center">
+      <button mat-button class="mat-raised-button mat-primary" style="background-color:var(--orange-good); color: black;">Guardar</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-button mat-dialog-close class="mat-raised-button mat-button-base">Cancelar</button>
     </div>
+
 
   </form>
 </div>
 
-
+<br>
+<br>
 <app-footer></app-footer>
