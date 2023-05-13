@@ -10,7 +10,7 @@
         <mat-accordion>
           <mat-expansion-panel >
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/movimientos-inventario" style="cursor: pointer; color: black;">
+              <mat-panel-title (click)="gotoInventario()" style="cursor: pointer; color: black;">
                 Inventario
               </mat-panel-title>
               <mat-panel-description>
@@ -18,9 +18,9 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
-            <li routerLink="/add-machine" style="cursor: pointer; color: white;">Agregar Equipo</li>
-            <li routerLink="/modificar/table-machine" style="cursor: pointer; color: white;">Modificar Equipo</li>
-            <li  routerLink="/eliminar-machine" style="cursor: pointer; color: white;">Eliminar Equipo</li>
+            <li  style="cursor: pointer; color: white;" (click)="gotoAddinventario()" >Agregar Inventario</li>
+            <li (click)="gotoModifyinventario()"  style="cursor: pointer; color: white;">Modificar Inventario</li>
+            <li (click)="gotoDeleteinventario()"  style="cursor: pointer; color: white;">Eliminar Item de Inventario</li>
           </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true"

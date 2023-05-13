@@ -17,7 +17,7 @@ constructor(private http: HttpClient) { }
   * @returns json
   */
   getEquipos(){
-    return this.http.get(this.api);
+    return this.http.get(this.api + '/inventario');
   }
 
    /**

@@ -26,31 +26,33 @@ const routes: Routes = [
     path: 'reportes',
     loadChildren: () => import('./modules/reportes/reportes.module').then(m => m.ReportesModule)
   },
+
+  //Rutas para inventario
   {
-    path: 'movimientos-inventario',
-    loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
-  },
-  {
-    path: 'eliminar-machine',
-    loadChildren: () => import('./modules/table-delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
-  },
-  //Rutas para modificar maquinaria io inventario
-  {
-    path: 'modificar',
+    path: 'inventario',
     children: [
       {
-        path: 'table-machine',
+        path: 'modificar',
         loadChildren: () => import('./modules/table-modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
       },
       {
         path: 'page/:id',
         loadChildren: () => import('./modules/modify-page-machine/modify-page.module').then(m => m.ModifyPageModule)
       },
+      {
+        path: 'movimientos',
+        loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
+      },
+      {
+        path: 'eliminar',
+        loadChildren: () => import('./modules/table-delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
+      },
+      {
+        path: 'agregar',
+        loadChildren: () => import('./modules/table-add-machine/add-machine.module').then(m => m.AddMachineModule)
+      },
+
     ]
-  },
-  {
-    path: 'add-machine',
-    loadChildren: () => import('./modules/table-add-machine/add-machine.module').then(m => m.AddMachineModule)
   },
 
   //Rutas para despachos

@@ -3,32 +3,45 @@
 <div class="container">
   <div class="row">
     <div class="col-sm mt-3">
-      <h1 style="color:green">Agregar Inventario</h1>
-    </div>
-    <div class="col-sm">
+      <div class="d-flex align-items-center">
+        <h1 style="color:green">Agregar Inventario</h1>
+
+      </div>
+      <br>
+      <div class="d-flex align-items-center">
+        <h3  style="margin-right: 202px;">Este es tu inventario actual con el siguiente boton podras agregar mas Inventario :</h3>
+        &nbsp;
+        <button class="btn btn-success ml-3 " (click)="openModal()">Añadir</button>
+      </div>
 
     </div>
 
-
+    <mat-divider></mat-divider>
+    <br>
+    <br>
+    <i>Listado de Inventario</i>
+    <br>
+    <br>
   <table class="mat-elevation-z8 table" >
       <thead>
         <tr>
           <th scope="col">Id</th>
-          <th scope="col">Nombre Material</th>
-          <th scope="col">Nombre Cliente</th>
-          <th scope="col">Foto de Material</th>
-          <th scope="col">Añadir Equipo</th>
+          <th scope="col">Descrpcion</th>
+          <th scope="col">Peso Kg</th>
+          <th scope="col">Area m^2</th>
+          <th scope="col">Peso Total</th>
+          <th scope="col">Area Total</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let numberWork of lista">
-          <td>{{numberWork.id_equipo}}</td>
-          <td>{{numberWork.nombre}}</td>
-          <td> {{numberWork.nombreCliente}}</td>
-          <td><a href="">{{numberWork.logo}}</a></td>
-          <td>
-            <button class="btn btn-success" (click)="openModal()" >Añadir</button>
-          </td>
+        <tr *ngFor="let numberWork of lista  let i = index">
+          <td>{{i + 1 }}</td>
+          <td>{{numberWork.descripcion}}</td>
+          <td>{{numberWork.cantidad}}</td>
+          <td>{{numberWork.peso_kg}}</td>
+          <td>{{numberWork.area_m2}}</td>
+          <td>{{numberWork.peso_total}}</td>
+          <td>{{numberWork.area_total}}</td>
         </tr>
 
       </tbody>

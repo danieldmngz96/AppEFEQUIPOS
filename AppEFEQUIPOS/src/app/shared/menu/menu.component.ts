@@ -25,6 +25,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
+  //RUTAS DE EMPELADOS
   gotoModifyEmpleado(){
     this.router.navigate(['/empleados/modificar']);
   }
@@ -33,5 +34,18 @@ export class MenuComponent implements OnInit {
   }
   gotoDeleteEmpleado(){
     this.router.navigate(['/empleados/eliminar-empleado']);
+  }
+  //RUTAS DE INVENTARIO
+  gotoModifyinventario(){
+    this.router.navigate(['/inventario/modificar']);
+  }
+  gotoAddinventario(){
+    this.router.navigate(['/inventario/agregar']);
+  }
+  gotoDeleteinventario(){
+    this.router.navigate(['/inventario/eliminar']);
+  }
+  gotoInventario(){
+    this.router.navigate(['/inventario/movimientos']);
   }
 }
