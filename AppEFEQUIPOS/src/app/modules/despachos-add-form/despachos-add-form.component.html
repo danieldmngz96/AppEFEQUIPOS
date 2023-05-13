@@ -8,10 +8,24 @@
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="stepOneForm">
       <ng-template matStepLabel>Informacion del despachos</ng-template>
-      <mat-form-field appearance="fill" class="w-100 mat-orange ">
-        <mat-label>Codigo Obra</mat-label>
-        <input matInput placeholder="Ingresa codigo de obra" formControlName="cod_obra" required class="mat-orange" [(ngModel)]="despachosNew.cod_obra">
-      </mat-form-field>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100 mat-orange ">
+          <mat-label>Descripcion</mat-label>
+          <input matInput placeholder="Ingresa descripcion" formControlName="descripcion" required class="mat-orange" [(ngModel)]="despachosNew.descripcion">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100 mat-orange ">
+          <mat-label>Cantidad</mat-label>
+          <input type="number" matInput placeholder="Ingresa Cantidas" formControlName="cantidad" required class="mat-orange" [(ngModel)]="despachosNew.cantidad">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100 mat-orange ">
+          <mat-label>Codigo Obra</mat-label>
+          <input matInput placeholder="Ingresa codigo de obra" formControlName="cod_obra" required class="mat-orange" [(ngModel)]="despachosNew.cod_obra">
+        </mat-form-field>
+      </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Codigo Contrato</mat-label>

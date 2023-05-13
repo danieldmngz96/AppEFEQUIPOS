@@ -34,11 +34,14 @@ export class DespachosAddFormComponent implements OnInit {
     "area_total":"",
     "id_despacho":"",
     "placa_veh":"",
+    "descripcion":"",
+    "cantidad":"",
   }
   constructor(private _formBuilder: FormBuilder,
     private fb: FormBuilder,
     private despachos:DespachosService ) {  this.stepOneForm = this.fb.group({
-
+      descripcion: new FormControl('', Validators.required),
+      cantidad: new FormControl('', Validators.required),
       cod_obra: new FormControl('', Validators.required),
       cod_cont: new FormControl('', Validators.required),
       fec_des: new FormControl(new Date(2020,5,1)),

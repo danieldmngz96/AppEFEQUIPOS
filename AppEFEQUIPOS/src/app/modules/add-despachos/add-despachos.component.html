@@ -20,24 +20,26 @@
       <thead>
         <tr>
           <th scope="col">Id despacho</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Cantida</th>
           <th scope="col">Codigo obra</th>
           <th scope="col">Codigo contrato</th>
           <th scope="col">Fecha despachos</th>
           <th scope="col">Despachador</th>
           <th scope="col">OBS</th>
-          <th scope="col">Id despacho</th>
           <th scope="col">Agregar despachos</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let numberWork of lista; let i = index">
           <td>{{i + 1}}</td>
+          <td>{{numberWork.descripcion}}</td>
+          <td>{{numberWork.cantidad}}</td>
           <td>{{numberWork.cod_obra}}</td>
           <td>{{numberWork.cod_cont}}</td>
           <td>{{numberWork.fec_des}}</td>
           <td>{{numberWork.despachador}}</td>
           <td>{{numberWork.obs}}</td>
-          <td>{{numberWork.id_despacho}}</td>
           <td>
             <button class="btn btn-success" (click)="goToDespachosFrom()" >Agregar</button>
           </td>

@@ -40,4 +40,6 @@ export interface Despachos{
   "area_total":any;
   "id_despacho":any;
   "placa_veh":any;
+  "cantidad":any;
+  "descripcion":any;
 }
