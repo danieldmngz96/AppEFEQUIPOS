@@ -40,6 +40,19 @@ router.get("/despachos", (req, res) => {
     }
   });
 });
+//agregar despachos
+
+router.post("/add-despachos", (req, res) => {
+  const {  cod_obra, cod_cont, fec_des, despachador, obs , conductor_veh, tipo_veh, autorizador, peso_total, area_total , placa_veh ,descripcion, cantidad } = req.body;
+
+  let sql = `INSERT INTO despachos(cod_obra, cod_cont, fec_des, despachador, obs, conductor_veh, tipo_veh, autorizador, peso_total, area_total, placa_veh, descripcion, cantidad) values('${cod_obra}','${cod_cont}','${fec_des}', '${despachador}', '${obs}','${conductor_veh}', '${tipo_veh}', '${autorizador}','${peso_total}','${area_total}','${placa_veh}','${descripcion}','${cantidad}')`;
+  almacen.query(sql, (err, rows, fields) => {
+    if (err) throw err;
+    else {
+      res.json({ status: "despacho agregado" });
+    }
+  });
+});
 //---------- agregamos rutas para clientes--------
 //get clientes
 router.get("/clientes", (req, res) => {

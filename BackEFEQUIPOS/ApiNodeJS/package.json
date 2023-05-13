@@ -1,6 +1,6 @@
 {
   "name": "ApiEfquipos",
-  "version": "0.0.5",
+  "version": "1.0.5",
   "description": "Proyecto en node para api de Efquipos",
   "main": "index.js",
   "scripts": {
