@@ -9,27 +9,49 @@
     <div class="col
       ">
       <mat-form-field appearance="fill">
-        <mat-label>Nombre de Equipo</mat-label>
-        <input matInput formControlName="nombre" name="nombre" id="nombre" >
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" name="descripcion" id="descripcion" >
       </mat-form-field>
     </div>
 
     <div class="col">
       <mat-form-field appearance="fill">
-        <mat-label>Foto de Equipo (URL)</mat-label>
-        <input matInput type="text" formControlName="nombreCliente" name="nombreCliente" id="nombreCliente" >
+        <mat-label>Cantidad</mat-label>
+        <input matInput type="number" formControlName="cantidad" name="cantidad" id="cantidad" >
       </mat-form-field>
     </div>
 
     <div class="col">
       <mat-form-field appearance="fill">
-        <mat-label>Nombre de Cliente</mat-label>
-        <input matInput formControlName="nombreCliente" name="nombreCliente" id="nombreCliente"
+        <mat-label>Peso en Kg</mat-label>
+        <input matInput formControlName="peso_kg" name="peso_kg" id="peso_kg"
          >
       </mat-form-field>
     </div>
 
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Area en m^2</mat-label>
+        <input matInput formControlName="area_m2" name="area_m2" id="area_m2"
+         >
+      </mat-form-field>
+    </div>
 
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Peso Total</mat-label>
+        <input matInput formControlName="peso_total" name="peso_total" id="peso_total"
+         >
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Area Total</mat-label>
+        <input matInput formControlName="area_total" name="area_total" id="area_total"
+         >
+      </mat-form-field>
+    </div>
     <div class="col">
       <button mat-button class="mat-raised-button mat-primary" style="background-color: yellow; color: black;"
         (click)="modifyEquipo()" >Guardar</button>

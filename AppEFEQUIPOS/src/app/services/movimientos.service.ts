@@ -46,8 +46,8 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-   deleteEquipo(id:string):Observable<any>{
-    return this.http.delete(this.api + '/' + id );
+   deleteEquipo(id_inventario:string):Observable<any>{
+    return this.http.delete(this.api + '/' + id_inventario );
   }
 
     /**
@@ -63,7 +63,7 @@ constructor(private http: HttpClient) { }
 }
 
 export interface Inventario{
-
+  id_inventario?:any;
   descripcion?:any;
   cantidad?:any;
   peso_kg?:any;

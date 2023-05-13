@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ModifyPageComponent implements OnInit {
   machineForm: FormGroup;
-
+  disabled: boolean = true;
   id:any;
   constructor(
     private movimiento: MovimientosService,
@@ -19,9 +19,12 @@ export class ModifyPageComponent implements OnInit {
     private fb: FormBuilder,
     private activateRouter: ActivatedRoute,
   ) { this.machineForm = this.fb.group({
-    nombre: new FormControl('', [Validators.required]),
-    logo: new FormControl('', [Validators.required]),
-    nombreCliente: new FormControl('', [Validators.required]),
+    descripcion: ['', Validators.required],
+    cantidad: ['', Validators.required],
+    peso_kg: ['', Validators.required],
+    area_m2: ['', Validators.required],
+    peso_total: ({value: '', disabled: this.disabled}),
+    area_total: ({value: '', disabled: this.disabled})
   });}
 
   ngOnInit() {
@@ -31,9 +34,9 @@ export class ModifyPageComponent implements OnInit {
       (res:any) => {
         //this.machineNew = res;
         console.log(res);
-        this.machineForm.controls['nombre'].setValue(res[0].nombre); // Actualizamos el valor del formulario con los datos del equipo
-        this.machineForm.controls['logo'].setValue(res[0].logo); // Actualizamos el valor del formulario con los datos del equipo
-        this.machineForm.controls['nombreCliente'].setValue(res[0].nombreCliente); // Actualizamos el valor del formulario con los datos del equipo
+        this.machineForm.controls['descripcion'].setValue(res[0].descripcion); // Actualizamos el valor del formulario con los datos del equipo
+        this.machineForm.controls['cantidad'].setValue(res[0].cantidad); // Actualizamos el valor del formulario con los datos del equipo
+        this.machineForm.controls['peso_kg'].setValue(res[0].peso_kg); // Actualizamos el valor del formulario con los datos del equipo
         console.log(res);
       },
       err => {
@@ -50,7 +53,7 @@ export class ModifyPageComponent implements OnInit {
       logo: this.machineForm.controls['logo'].value,
       nombreCliente: this.machineForm.controls['nombreCliente'].value,
     }
- /*  this.movimiento.EditEquipo(this.id, body).subscribe(
+/*    this.movimiento.EditEquipo(this.id, body).subscribe(
     res=>{
       Swal.fire({
       icon: 'success',
@@ -63,6 +66,7 @@ export class ModifyPageComponent implements OnInit {
     err=>{
       console.log(err);
     }
-    ); */
-  }
+    );
+  } */
+}
 }
