@@ -32,5 +32,8 @@ export class AddMachineComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalAddComponent, {
       width: '550px',
     });
+    dialogRef.afterClosed().subscribe(() => {
+      this.listarEquipo();
+    });
   }
 }
