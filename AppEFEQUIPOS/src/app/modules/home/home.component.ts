@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   fecha = new Date();
   loginForm!: FormGroup;
   hide = true;
+  onlyEfequiposEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   constructor(
     private service: LoginService,
     private router: Router,
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', [Validators.required, Validators.email, Validators.pattern(this.onlyEfequiposEmail)]),
       password: new FormControl('',[Validators.required],
       ),
     });
