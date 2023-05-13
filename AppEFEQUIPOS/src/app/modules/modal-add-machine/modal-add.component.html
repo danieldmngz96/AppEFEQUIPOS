@@ -35,7 +35,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Area Total</mat-label>
         <input matInput [(ngModel)]="machineNew.area_total" name="area_total" id="area_total"
-        formControlName="area_total" [disabled]="true">{{machineNew.area_total * machineNew.cantidad}}
+        formControlName="area_total" [disabled]="true">{{machineNew.area_m2 * machineNew.cantidad}}
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
@@ -43,14 +43,15 @@
         <input matInput [(ngModel)]="machineNew.peso_total" name="peso_total" id="peso_total"
         formControlName="peso_total" [disabled]="true">{{machineNew.peso_kg * machineNew.cantidad}}
       </mat-form-field>
-      <div class="col">
-        <button mat-button class="mat-raised-button mat-primary btn btn-warning"  (click)="addMachine()" [disabled]="!machineForm.valid">Guardar</button>
+      <div class="col" style="text-align: center;">
+        <button mat-button class="mat-raised-button mat-primary btn btn-warning" (click)="addMachine()" [disabled]="!machineForm.valid">Guardar</button>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
-        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"  [disabled]="!machineForm.valid">Cancelar</button>
+        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base" [disabled]="!machineForm.valid">Cancelar</button>
       </div>
+
 
     </form>
   </div>

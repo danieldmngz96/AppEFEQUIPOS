@@ -5,6 +5,7 @@ import { MovimientosService,  Inventario } from 'src/app/services/movimientos.se
 import { Router } from '@angular/router';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal-add',
@@ -45,8 +46,12 @@ export class ModalAddComponent implements OnInit {
     this.movimiento.saveMachine(this.machineNew).subscribe(
       res=>{
         console.log(res);
+        Swal.fire({
+          icon: 'success',
+          title: 'Excelente...',
+          text: `Se ha creado Inventario ${this.machineForm.controls['descripcion'].value} exitosamente!`,
+        });
         this.dialogRef.close();
-        window.location.reload();
       },
       err=>{
         console.log(err);
