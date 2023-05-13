@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Equipo, MovimientosService } from 'src/app/services/movimientos.service';
+import { Inventario, MovimientosService } from 'src/app/services/movimientos.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -50,7 +50,7 @@ export class ModifyPageComponent implements OnInit {
       logo: this.machineForm.controls['logo'].value,
       nombreCliente: this.machineForm.controls['nombreCliente'].value,
     }
-  this.movimiento.EditEquipo(this.id, body).subscribe(
+ /*  this.movimiento.EditEquipo(this.id, body).subscribe(
     res=>{
       Swal.fire({
       icon: 'success',
@@ -63,6 +63,6 @@ export class ModifyPageComponent implements OnInit {
     err=>{
       console.log(err);
     }
-    );
+    ); */
   }
 }

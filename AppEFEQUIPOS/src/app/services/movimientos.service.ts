@@ -32,12 +32,12 @@ constructor(private http: HttpClient) { }
 
   /**
   * @author Daniel Dominguez
-  * Metodo post para añadir un equipo
+  * Metodo post para añadir inventario
   * @param {body} body json
   * @returns json
   */
-  saveMachine(equipo:Equipo){
-    return this.http.post(this.api , equipo);
+  saveMachine(inventario:Inventario){
+    return this.http.post(this.api  + '/add-inventario' , inventario);
   }
 
    /**
@@ -56,16 +56,18 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-    EditEquipo(id:any, equipo:Equipo):Observable<any>{
+    EditEquipo(id:any, equipo:Inventario):Observable<any>{
       return this.http.put(this.api+'/' + id, equipo);
     }
 
 }
 
-export interface Equipo{
+export interface Inventario{
 
-  nombre?:any;
-  logo?:any;
-  nombreCliente?:any;
-
+  descripcion?:any;
+  cantidad?:any;
+  peso_kg?:any;
+  area_m2:any;
+  peso_total:any;
+  area_total:any;
 }

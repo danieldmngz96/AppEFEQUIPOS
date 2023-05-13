@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AddMachineComponent } from '../table-add-machine/add-machine.component';
-import { MovimientosService, Equipo } from 'src/app/services/movimientos.service';
+import { MovimientosService,  Inventario } from 'src/app/services/movimientos.service';
 import { Router } from '@angular/router';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,11 +13,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ModalAddComponent implements OnInit {
   machineForm: FormGroup;
-  machineNew: Equipo = {
+  disabled: boolean = true;
+  machineNew: Inventario = {
 
-    nombre: '',
-    logo: '',
-    nombreCliente: '',
+    descripcion:"",
+    cantidad:"",
+    peso_kg:"",
+    area_m2:"",
+    peso_total:"",
+    area_total:"",
   }
   constructor(public dialogRef: MatDialogRef<AddMachineComponent>,
     @Inject(MAT_DIALOG_DATA) public data: "",
@@ -25,9 +29,12 @@ export class ModalAddComponent implements OnInit {
     private router:Router,
     private fb: FormBuilder,) {  this.machineForm = this.fb.group({
 
-      nombre: ['', Validators.required],
-      logo: ['', Validators.required],
-      nombreCliente: ['', Validators.required]
+      descripcion: ['', Validators.required],
+      cantidad: ['', Validators.required],
+      peso_kg: ['', Validators.required],
+      area_m2: ['', Validators.required],
+      peso_total: ({value: '', disabled: this.disabled}),
+      area_total: ({value: '', disabled: this.disabled})
     });}
 
   ngOnInit() {

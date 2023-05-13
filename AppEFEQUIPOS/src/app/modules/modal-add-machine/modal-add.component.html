@@ -1,29 +1,50 @@
-<h2 mat-dialog-title>Añadir Maquinaria</h2>
+<h2 mat-dialog-title>Añadir Inventario</h2>
 <div mat-dialog-content style="padding-left: 50px;">
   <div class="container">
     <form [formGroup]="machineForm">
 
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre de Equipo</mat-label>
-        <input matInput [(ngModel)]="machineNew.nombre" name="nombre" id="nombre" formControlName="nombre">
-      </mat-form-field>
-      <br>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Foto de Equipo (URL)</mat-label>
-        <input matInput type="text"  [(ngModel)]="machineNew.nombreCliente" name="logo" id="logo" formControlName="logo" >
-      </mat-form-field>
-      <br>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre de Cliente</mat-label>
-        <input matInput [(ngModel)]="machineNew.logo" name="nombreCliente" id="nombreCliente"
-        formControlName="nombreCliente">
-      </mat-form-field>
-      <br>
-      <br><br>
       <div class="col">
-        <button mat-button class="mat-raised-button mat-primary" style="background-color: green; color: white;" (click)="addMachine()" [disabled]="!machineForm.valid">Guardar</button>
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Descripcion</mat-label>
+        <input matInput [(ngModel)]="machineNew.descripcion" name="descripcion" id="descripcion" formControlName="descripcion" >
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Cantidad</mat-label>
+          <input matInput type="number"  [(ngModel)]="machineNew.cantidad" name="cantidad" id="cantidad" formControlName="cantidad" >
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Peso en Kg</mat-label>
+          <input matInput type="number" [(ngModel)]="machineNew.peso_kg" name="peso_kg" id="peso_kg"
+          formControlName="peso_kg">
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Area en M^2</mat-label>
+        <input matInput type="number" [(ngModel)]="machineNew.area_m2" name="area_m2" id="area_m2"
+        formControlName="area_m2">
+        </mat-form-field>
+      </div>
+      <br>
+      <h3 style="text-align: center;">Totales de Area y metros^2</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Area Total</mat-label>
+        <input matInput [(ngModel)]="machineNew.area_total" name="area_total" id="area_total"
+        formControlName="area_total" [disabled]="true">{{machineNew.area_total * machineNew.cantidad}}
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Peso Total</mat-label>
+        <input matInput [(ngModel)]="machineNew.peso_total" name="peso_total" id="peso_total"
+        formControlName="peso_total" [disabled]="true">{{machineNew.peso_kg * machineNew.cantidad}}
+      </mat-form-field>
+      <div class="col">
+        <button mat-button class="mat-raised-button mat-primary btn btn-warning"  (click)="addMachine()" [disabled]="!machineForm.valid">Guardar</button>
         &nbsp;
         &nbsp;
         &nbsp;
