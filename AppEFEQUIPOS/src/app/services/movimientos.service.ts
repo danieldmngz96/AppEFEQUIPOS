@@ -12,12 +12,12 @@ export class MovimientosService {
 constructor(private http: HttpClient) { }
  /**
   * @author Daniel Dominguez
-  * Metodo get obtener equipo
+  * Metodo get obtener inveentario
   * @param {body} body json
   * @returns json
   */
-  getEquipos(){
-    return this.http.get(this.api + '/inventario');
+  getEquipos(page?:any, pageSize?:any) {
+    return this.http.get(this.api + '/inventario?page=' + page + '&limit=' + pageSize);
   }
 
    /**

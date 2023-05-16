@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { MovimientosService } from 'src/app/services/movimientos.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { MovimientosService } from 'src/app/services/movimientos.service';
   styleUrls: ['./movimientos.component.scss']
 })
 export class MovimientosComponent implements OnInit {
+  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total'];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   length: any;
   pageSize: any;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageIndex: number = 0;
-  lista: any;
+  lista = new MatTableDataSource();
   page = 1;
   isPage = 1;
 
@@ -27,10 +29,10 @@ export class MovimientosComponent implements OnInit {
   }
   //Aca traemos del servicio movimiento los equipos
   listarEquipo() {
-    this.movimiento.getEquipos().subscribe(
+    this.movimiento.getEquipos(this.page, this.pageSize).subscribe(
       (res:any) => {
-        this.lista = Object.values(res.rows)
-        this.length = Object.values(res.total)
+        this.lista.data = Object.values(res.rows)
+        this.length = res.total
         console.log(res);
       },
       err => {
@@ -47,9 +49,7 @@ export class MovimientosComponent implements OnInit {
     )
   }
 
-  getPaginatedData() {
-    return this.lista.slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize);
-  }
+
   /**
      * @author Daniel Dominguez
      * @createdate 2021-04-12

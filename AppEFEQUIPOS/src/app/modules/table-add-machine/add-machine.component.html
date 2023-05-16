@@ -35,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let numberWork of lista  let i = index">
+        <tr *ngFor="let numberWork of lista.rows;  let i = index">
           <td>{{i + 1 }}</td>
           <td>{{numberWork.descripcion}}</td>
           <td>{{numberWork.cantidad}}</td>
