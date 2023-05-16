@@ -56,8 +56,8 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-    EditEquipo(id:any, equipo:Inventario):Observable<any>{
-      return this.http.put(this.api+'/' + id, equipo);
+    EditEquipo(id:any, inventario:Inventario):Observable<any>{
+      return this.http.put(this.api+'/' + id, inventario);
     }
 
 }
