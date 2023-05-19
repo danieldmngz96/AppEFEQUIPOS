@@ -80,7 +80,11 @@ const routes: Routes = [
         {
           path: 'all',
           loadChildren: () => import('./modules/table-clientes/table-clientes.module').then(m => m.TableClientesModule)
-        }
+        },
+        {
+          path: 'add',
+          loadChildren: () => import('./modules/add-form-cliente/add-form-cliente.module').then(m => m.AddFormClienteModule)
+        },
       ]
     },
         //Rutas para empleados

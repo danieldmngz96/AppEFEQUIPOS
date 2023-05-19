@@ -4,11 +4,12 @@ import { Despachos, DespachosService } from 'src/app/services/despachos.service'
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-despachos-add-form',
-  templateUrl: './despachos-add-form.component.html',
-  styleUrls: ['./despachos-add-form.component.scss']
+  selector: 'app-add-form-cliente',
+  templateUrl: './add-form-cliente.component.html',
+  styleUrls: ['./add-form-cliente.component.scss']
 })
-export class DespachosAddFormComponent implements OnInit {
+export class AddFormClienteComponent implements OnInit {
+
 
   stepOneForm: FormGroup;
   stepInfoVehiculo: FormGroup;
@@ -77,4 +78,5 @@ export class DespachosAddFormComponent implements OnInit {
       }
     );
   }
+
 }
