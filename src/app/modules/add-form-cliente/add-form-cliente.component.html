@@ -8,58 +8,57 @@
     <form [formGroup]="stepOneForm" class="container">
       <ng-template matStepLabel>Informacion del despachos</ng-template>
       <div class="col">
-        <mat-form-field appearance="fill" class="w-100 mat-orange ">
-          <mat-label>Descripcion</mat-label>
-          <input matInput placeholder="Ingresa descripcion" formControlName="descripcion" required class="mat-orange" [(ngModel)]="despachosNew.descripcion">
-        </mat-form-field>
-      </div>
-      <div class="col">
-        <mat-form-field appearance="fill" class="w-100 mat-orange ">
-          <mat-label>Cantidad</mat-label>
-          <input type="number" matInput placeholder="Ingresa Cantidas" formControlName="cantidad" required class="mat-orange" [(ngModel)]="despachosNew.cantidad">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Nombre del cliente</mat-label>
+          <input matInput placeholder="Ingresa nombre del cliente" formControlName="nom_cliente" required [(ngModel)]="clienteNew.nom_cliente">
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100 mat-orange ">
-          <mat-label>Codigo Obra</mat-label>
-          <input matInput placeholder="Ingresa codigo de obra" formControlName="cod_obra" required class="mat-orange" [(ngModel)]="despachosNew.cod_obra">
+          <mat-label>Dirreccion</mat-label>
+          <input type="text" matInput placeholder="Ingresa Direccion" formControlName="direccion" required class="mat-orange" [(ngModel)]="clienteNew.direccion">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100 mat-orange ">
+          <mat-label>Nombre Obra</mat-label>
+          <input matInput placeholder="Ingresa nombre Obra" formControlName="nombre_obra" required class="mat-orange" [(ngModel)]="clienteNew.nombre_obra">
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Codigo Contrato</mat-label>
-          <input matInput placeholder="Ingresa codigo de contrato" formControlName="cod_cont" required [(ngModel)]="despachosNew.cod_cont">
+          <mat-label>Ing a cargo</mat-label>
+          <input matInput placeholder="Ingresa Ing a cargo" formControlName="cargo_obra" required [(ngModel)]="clienteNew.cargo_obra">
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Selecciona una fecha de despacho</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="fec_des" [(ngModel)]="despachosNew.fec_des">
-          <mat-hint>fromato MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-label>Ingresa NIT</mat-label>
+          <input matInput
+          placeholder="Ingresa NIT" formControlName="NIT" [(ngModel)]="clienteNew.NIT">
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Despachador</mat-label>
-          <input  type="number" matInput placeholder="Ingresa depachador" formControlName="despachador" required [(ngModel)]="despachosNew.despachador">
+          <mat-label>Celular del cliente</mat-label>
+          <input  type="number" matInput placeholder="Ingresa Celular del cliente" formControlName="celular" required [(ngModel)]="clienteNew.celular">
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field class="example-full-width w-100">
-          <mat-label>Observaciones</mat-label>
-          <textarea matInput placeholder="Ejemplo En esta observacion..." formControlName="obs" [(ngModel)]="despachosNew.obs"></textarea>
+          <mat-label>Ingresa ciudad</mat-label>
+          <input matInput placeholder="Ingresa ciudad" formControlName="ciudad" required [(ngModel)]="clienteNew.ciudad">
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Id despacho</mat-label>
-          <input  type="number" matInput placeholder="Ingresa codigo de obra" formControlName="id_despacho" required [(ngModel)]="despachosNew.id_despacho">
+          <mat-label>Ingresa departamento</mat-label>
+          <input  type="text" matInput placeholder="Ingresa departamento" formControlName="departamento" required [(ngModel)]="clienteNew.departamento">
         </mat-form-field>
       </div>
       <div>
-        <button  [disabled]="!stepOneForm.valid" matStepperNext class="btn btn-warning">Next</button>
+        <button  [disabled]="!stepOneForm.valid" matStepperNext class="btn btn-warning" (click)="addClient()">Guardar cliente</button>
       </div>
     </form>
+    <br><br><br>
 <app-footer></app-footer>

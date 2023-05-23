@@ -18,4 +18,24 @@ export class ClientesService {
       // return this.http.get(this.api + "/v1/empleado");
       return this.http.get(this.api + '/almacen/clientes' );
     }
+      /**
+  * @author Daniel Dominguez
+  * Metodo post para añadir un cliente
+  * @param {body} body json
+  * @returns json
+  */
+      saveClient(client:Client){
+        return this.http.post(this.api + '/almacen/add-cliente', client);
+      }
+}
+
+export interface Client{
+  "nom_cliente":any;
+  "direccion":any;
+  "nombre_obra":any;
+  "cargo_obra":any;
+  "NIT":any;
+  "celular":any;
+  "ciudad":any;
+  "departamento":any;
 }

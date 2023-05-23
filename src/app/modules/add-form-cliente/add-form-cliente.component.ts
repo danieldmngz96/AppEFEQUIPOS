@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Despachos, DespachosService } from 'src/app/services/despachos.service';
+import { Router } from '@angular/router';
+import { Client, ClientesService } from 'src/app/services/clientes.service';
+import { DespachosService } from 'src/app/services/despachos.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,68 +12,54 @@ import Swal from 'sweetalert2';
 })
 export class AddFormClienteComponent implements OnInit {
 
-
   stepOneForm: FormGroup;
-  stepInfoVehiculo: FormGroup;
-
 
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+
   isLinear = false;
-  despachosNew: Despachos = {
-    "cod_obra":"",
-    "cod_cont":"",
-    "fec_des":"",
-    "despachador":"",
-    "obs":"",
-    "conductor_veh":"",
-    "tipo_veh":"",
-    "autorizador":"",
-    "peso_total":"",
-    "area_total":"",
-    "id_despacho":"",
-    "placa_veh":"",
-    "descripcion":"",
-    "cantidad":"",
+  clienteNew: Client = {
+    "nom_cliente": "",
+    "direccion": "",
+    "nombre_obra": "",
+    "cargo_obra": "",
+    "NIT": "",
+    "celular": "",
+    "ciudad": "",
+    "departamento": "",
+
   }
   constructor(private _formBuilder: FormBuilder,
+    private router: Router,
     private fb: FormBuilder,
-    private despachos:DespachosService ) {  this.stepOneForm = this.fb.group({
-      descripcion: new FormControl('', Validators.required),
-      cantidad: new FormControl('', Validators.required),
-      cod_obra: new FormControl('', Validators.required),
-      cod_cont: new FormControl('', Validators.required),
-      fec_des: new FormControl(new Date(2020,5,1)),
-      despachador : new FormControl('', Validators.required),
-      obs : new FormControl('', Validators.required),
-      id_despacho : new FormControl('', Validators.required),
+    private client:ClientesService ) {  this.stepOneForm = this.fb.group({
+      nom_cliente: new FormControl('', Validators.required),
+      direccion: new FormControl('', Validators.required),
+      nombre_obra: new FormControl('', Validators.required),
+      cargo_obra: new FormControl('', Validators.required),
+      NIT: new FormControl('', Validators.required),
+      celular : new FormControl('', Validators.required),
+      ciudad : new FormControl('', Validators.required),
+      departamento : new FormControl('', Validators.required),
     });
 
-    this.stepInfoVehiculo = this.fb.group({
-      conductor_veh: new FormControl('', Validators.required),
-      placa_veh: new FormControl('', Validators.required),
-      tipo_veh: new FormControl('', Validators.required),
-      peso_total: new FormControl('', Validators.required),
-      autorizador: new FormControl('', Validators.required),
-      area_total: new FormControl('', Validators.required)
-    });
+
   }
 
   ngOnInit() {
   }
-  addDepachos(){
-    this.despachos.saveDespachos(this.despachosNew).subscribe(
+  addClient(){
+    this.client.saveClient(this.clienteNew).subscribe(
       res=>{
         console.log(res);
         Swal.fire({
           icon: 'success',
           title: 'Excelente...',
-          text: `Se ha creado tu despacho ${this.stepOneForm.controls['descripcion'].value} exitosamente!`,
-        });
+          text: `Se ha creado tu cliente ${this.stepOneForm.controls['nom_cliente'].value} exitosamente!`,
+        }).then(() => {
+          this.router.navigate(['clientes/all']); // Redirigir a la página de clientes
+        });;
       },
       err=>{
         console.log(err);
