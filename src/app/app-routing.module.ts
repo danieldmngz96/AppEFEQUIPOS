@@ -85,6 +85,10 @@ const routes: Routes = [
           path: 'add',
           loadChildren: () => import('./modules/add-form-cliente/add-form-cliente.module').then(m => m.AddFormClienteModule)
         },
+        {
+          path: 'modificar',
+          loadChildren: () => import('./modules/modify-page-cliente/modify-page-cliente.module').then(m => m.ModifyPageClienteModule)
+        },
       ]
     },
         //Rutas para empleados

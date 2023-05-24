@@ -24,7 +24,8 @@ import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-
     RegistroComponent,
     ModalAddComponent,
     ModalAddEmpleadoComponent,
-    ModalViewVehiculoComponent
+    ModalViewVehiculoComponent,
+
    ],
   imports: [
     BrowserModule,

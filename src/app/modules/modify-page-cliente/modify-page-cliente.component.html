@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row">
+    <div style="text-align: center;">
+      <h1>Clientes</h1>
+      <br>
+      <i>Aqui podras modificar todos los clientes de EFEQUIPOS</i>
+      <br>
+      <i>En tiempo real.</i>
+      <br>
+      <br>
+    </div>
+
+
+
+  <table class="mat-elevation-z7 table container" style="margin-left: -148px;
+  position: relative;
+  left: -158px;" >
+      <thead>
+        <tr>
+          <th scope="col">Id Cliente</th>
+          <th scope="col">Nombre Cliente</th>
+          <th scope="col">Dirrecion</th>
+          <th scope="col">Nombre Obra</th>
+          <th scope="col">Ing a cargo</th>
+          <th scope="col">NIT</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Departamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let numberWork of lista; let i = index" >
+          <td>{{i + 1}}</td>
+          <td><mat-form-field class="w-100">
+            <input matInput placeholder="Ingresa nombre de cliente" value="{{numberWork.nom_cliente}}">
+          </mat-form-field>
+        </td>
+          <td><mat-form-field >
+            <input matInput placeholder="Ingresa direccion" value=" {{numberWork.direccion}}">
+          </mat-form-field>
+           </td>
+          <td> <mat-form-field >
+            <input matInput value="{{numberWork.nombre_obra}}">
+          </mat-form-field></td>
+          <td> <mat-form-field >
+            <input matInput  value="{{numberWork.cargo_obra}}">
+          </mat-form-field></td>
+          <td>  <mat-form-field >
+            <input matInput  value="{{numberWork.NIT}}">
+          </mat-form-field></td>
+          <td>  <mat-form-field >
+            <input matInput  value="{{numberWork.celular}}">
+          </mat-form-field></td>
+          <td>  <mat-form-field >
+            <input matInput  value="{{numberWork.ciudad}}">
+          </mat-form-field></td>
+          <td>  <mat-form-field >
+            <input matInput  value="{{numberWork.direccion}}">
+          </mat-form-field></td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Selecciona pagina">
+</mat-paginator>
+  </div>
+</div>
+<app-footer></app-footer>
