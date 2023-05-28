@@ -28,6 +28,7 @@
           <th scope="col">Telefono</th>
           <th scope="col">Ciudad</th>
           <th scope="col">Departamento</th>
+          <th scope="col">Modificar</th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +42,9 @@
           <td> {{numberWork.celular}}</td>
           <td> {{numberWork.ciudad}}</td>
           <td> {{numberWork.departamento}}</td>
-
+          <td>
+            <button class="btn btn-warning" [routerLink]="['/clientes/modificar', numberWork.cod_cli]">Modificar</button>
+          </td>
         </tr>
 
       </tbody>

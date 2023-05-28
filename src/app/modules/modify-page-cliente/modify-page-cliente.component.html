@@ -14,62 +14,80 @@
 
 
 
-  <table class="mat-elevation-z7 table container" style="margin-left: -148px;
-  position: relative;
-  left: -158px;" >
-      <thead>
-        <tr>
-          <th scope="col">Id Cliente</th>
-          <th scope="col">Nombre Cliente</th>
-          <th scope="col">Dirrecion</th>
-          <th scope="col">Nombre Obra</th>
-          <th scope="col">Ing a cargo</th>
-          <th scope="col">NIT</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">Ciudad</th>
-          <th scope="col">Departamento</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let numberWork of lista; let i = index" >
-          <td>{{i + 1}}</td>
-          <td><mat-form-field class="w-100">
-            <input matInput placeholder="Ingresa nombre de cliente" value="{{numberWork.nom_cliente}}">
+    <div class="container">
+      <form [formGroup]="clienteForm">
+        <div class="col
+          ">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Nombre de cliente</mat-label>
+            <input matInput formControlName="nom_cliente" name="nom_cliente" id="nom_cliente" >
           </mat-form-field>
-        </td>
-          <td><mat-form-field >
-            <input matInput placeholder="Ingresa direccion" value=" {{numberWork.direccion}}">
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>NIT</mat-label>
+            <input matInput type="number" formControlName="NIT" name="NIT" id="NIT" >
           </mat-form-field>
-           </td>
-          <td> <mat-form-field >
-            <input matInput value="{{numberWork.nombre_obra}}">
-          </mat-form-field></td>
-          <td> <mat-form-field >
-            <input matInput  value="{{numberWork.cargo_obra}}">
-          </mat-form-field></td>
-          <td>  <mat-form-field >
-            <input matInput  value="{{numberWork.NIT}}">
-          </mat-form-field></td>
-          <td>  <mat-form-field >
-            <input matInput  value="{{numberWork.celular}}">
-          </mat-form-field></td>
-          <td>  <mat-form-field >
-            <input matInput  value="{{numberWork.ciudad}}">
-          </mat-form-field></td>
-          <td>  <mat-form-field >
-            <input matInput  value="{{numberWork.direccion}}">
-          </mat-form-field></td>
+        </div>
 
-        </tr>
+        <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>Ing a cargo</mat-label>
+            <input matInput formControlName="cargo_obra" name="cargo_obra" id="cargo_obra"
+             >
+          </mat-form-field>
+        </div>
 
-      </tbody>
+        <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>Direccion</mat-label>
+            <input matInput formControlName="direccion" name="direccion" id="direccion"
+             >
+          </mat-form-field>
+        </div>
 
-    </table>
-    <mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Selecciona pagina">
-</mat-paginator>
+        <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>Celular cliente</mat-label>
+            <input matInput formControlName="celular" name="celular" id="celular"
+             >
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>Ciudad</mat-label>
+            <input matInput formControlName="ciudad" name="ciudad" id="ciudad"
+             >
+          </mat-form-field>
+        </div> <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="departamento" name="departamento" id="departamento"
+             >
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field appearance="fill"  class="w-100">
+            <mat-label>Nombre de obra</mat-label>
+            <input matInput formControlName="nombre_obra" name="nombre_obra" id="nombre_obra"
+             >
+          </mat-form-field>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+          <button mat-button class="mat-raised-button mat-primary" style="background-color:var(--orange-good); color: white;" (click)="modifyClientes()">Guardar</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-button mat-dialog-close class="mat-raised-button mat-button-base">Cancelar</button>
+        </div>
+
+
+      </form>
+    </div>
   </div>
 </div>
+<br>
+<br>
+<br><br>
 <app-footer></app-footer>

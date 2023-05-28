@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,26 @@ export class ClientesService {
   saveClient(client: Client) {
     return this.http.post(this.api + '/almacen/add-cliente', client);
   }
+
+  /**
+  * @author Daniel Dominguez
+  * Metodo put para modificar un equipo por id
+  * @param {body} body json
+  * @returns json
+  */
+  EditCliente(id:any, client: Client):Observable<any>{
+    return this.http.put(this.api+'/almacen/modificar/:id' + id, client);
+  }
+ /**
+  * @author Daniel Dominguez
+  * Metodo get obtener un cliente por id
+  * @param {body} body json
+  * @returns json
+  */
+ getClienteId(id:any):Observable<any>{
+  return this.http.get(this.api + '/cliente/' + id);
+}
+
 }
 
 export interface Client {

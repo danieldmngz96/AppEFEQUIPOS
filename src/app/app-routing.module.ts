@@ -19,10 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
   },
   {
-    path: 'Nuevo-inventario',
-    loadChildren: () => import('./modules/actividades/actividades.module').then(m => m.ActividadesModule)
-  },
-  {
     path: 'reportes',
     loadChildren: () => import('./modules/reportes/reportes.module').then(m => m.ReportesModule)
   },
@@ -86,7 +82,7 @@ const routes: Routes = [
           loadChildren: () => import('./modules/add-form-cliente/add-form-cliente.module').then(m => m.AddFormClienteModule)
         },
         {
-          path: 'modificar',
+          path: 'modificar/:id',
           loadChildren: () => import('./modules/modify-page-cliente/modify-page-cliente.module').then(m => m.ModifyPageClienteModule)
         },
       ]

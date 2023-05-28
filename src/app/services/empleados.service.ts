@@ -38,10 +38,22 @@ export class EmpleadosService {
     deleteEmpleado(id:string):Observable<any>{
       return this.http.delete(this.api + '/almacen/empleados/' + id );
     }
+
+    /**
+  * @author Daniel Dominguez
+  * Metodo put para modificar un empleado por id
+  * @param {body} body json
+  * @returns json
+  */
+    EditEmpleado(id:any, team:Team):Observable<any>{
+      return this.http.put(this.api+'/:id_empleado' + id, team);
+    }
 }
 
 export interface Team{
   nombre?:any;
+  cargo?:any;
+  idEmpleado?:any;
   celular?:any;
-  e_mail?:any;
+  email?:any;
 }

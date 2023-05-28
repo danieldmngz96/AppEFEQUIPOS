@@ -17,7 +17,10 @@ export class ModalAddEmpleadoComponent implements OnInit {
   empleadosNew: Team = {
     nombre:"",
     celular:"",
-    e_mail:""
+    cargo: "",
+    idEmpleado: "",
+
+    email: ""
   }
   constructor(public dialogRef: MatDialogRef<AddEmpleadoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: "",
