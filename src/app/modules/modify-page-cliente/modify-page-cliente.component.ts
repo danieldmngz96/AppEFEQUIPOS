@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class ModifyPageClienteComponent implements OnInit {
   clienteForm: FormGroup;
   lista: any;
-  id: any;
+  id: any | null;
   cliente: Client = {
     "nom_cliente": "",
     "direccion": "",
@@ -40,14 +40,14 @@ export class ModifyPageClienteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listarClientes();
+
     this.id = this.activateRouter.snapshot.params['id'];
     console.log(this.id, this.clienteForm);
 
     this.clientes.getClienteId(this.id).subscribe(
       (res: any) => {
-        //this.machineNew = res;
-        console.log(res);
+        this.cliente = res;
+        console.log("aqui esta la respuesta del serrver a pintar", res);
         this.clienteForm.controls['nom_cliente'].setValue(res[0].nom_cliente); // Actualizamos el valor del formulario con los datos del cliente
         this.clienteForm.controls['NIT'].setValue(res[0].NIT); // Actualizamos el valor del formulario con los datos del cliente
         this.clienteForm.controls['cargo_obra'].setValue(res[0].cargo_obra); // Actualizamos el valor del formulario con los datos del cliente
@@ -62,12 +62,13 @@ export class ModifyPageClienteComponent implements OnInit {
         console.log(err);
       }
     );
+
   }
 
 
   //Aca traemos del servicio movimiento los equipos
   listarClientes() {
-    this.clientes.getClientes().subscribe(
+    this.clientes.getClienteId(this.id).subscribe(
       res => {
         this.lista = res
         console.log(res);
@@ -111,11 +112,12 @@ export class ModifyPageClienteComponent implements OnInit {
             Swal.fire({
               icon: 'success',
               title: 'Éxito!',
-
-              text: `Se ha modificado con los siguentes valores nombre de cliente${this.clienteForm.controls['nom_cliente'].value}  ` +
-                `El valor NIT es: ${this.clienteForm.controls['NIT'].value}` +
-                `El valor cargo obre  es: ${this.clienteForm.controls['cargo_obra'].value}` +
-                `La direccion es: ${this.clienteForm.controls['direccion'].value} exitosamente!`,
+              text: `Se ha modificado con los siguientes valores:\n\n` +
+                `Nombre de cliente: ${nombreClienteControl.value}\n` +
+                `NIT: ${NITControl.value}\n` +
+                `Cargo de obra: ${cargo_obraControl.value}\n` +
+                `Dirección: ${direccionControl.value}\n\n` +
+                `¡Modificado exitosamente!`,
               confirmButtonText: 'Aceptar',
             });
             console.log(res);
@@ -126,4 +128,6 @@ export class ModifyPageClienteComponent implements OnInit {
         );
       }
     }
-}
+
+  }
+

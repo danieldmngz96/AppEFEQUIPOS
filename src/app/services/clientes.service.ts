@@ -36,7 +36,7 @@ export class ClientesService {
   * @returns json
   */
   EditCliente(id:any, client: Client):Observable<any>{
-    return this.http.put(this.api+'/almacen/modificar/:id' + id, client);
+    return this.http.put(this.api + '/almacen/modificar/:id' + id, client);
   }
  /**
   * @author Daniel Dominguez
@@ -44,9 +44,11 @@ export class ClientesService {
   * @param {body} body json
   * @returns json
   */
- getClienteId(id:any):Observable<any>{
-  return this.http.get(this.api + '/cliente/' + id);
+ getClienteId(id: any): Observable<any> {
+  return this.http.get(this.api + '/almacen/cliente/' + id);
 }
+
+
 
 }
 

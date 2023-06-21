@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MovimientosService } from 'src/app/services/movimientos.service';
 
@@ -21,11 +21,20 @@ export class MovimientosComponent implements OnInit {
   isPage = 1;
 
 
-  constructor(private movimiento: MovimientosService,) { }
+  constructor(private movimiento: MovimientosService,
+    private paginatorIntl: MatPaginatorIntl) { }
 
 
   ngOnInit() {
     this.listarEquipo();
+  }
+  ngAfterViewInit() {
+    this.paginator?.page.subscribe((event) => {
+      this.pageIndex = event.pageIndex;
+    });
+
+    this.paginatorIntl.itemsPerPageLabel = 'Elementos por página';
+    this.paginator._intl = this.paginatorIntl;
   }
   //Aca traemos del servicio movimiento los equipos
   listarEquipo() {
@@ -41,13 +50,13 @@ export class MovimientosComponent implements OnInit {
       }
     );
   }
-  ngAfterViewInit() {
+/*   ngAfterViewInit() {
     this.paginator?.page.subscribe(
       (event) => {
         this.pageIndex = event.pageIndex;
       }
     )
-  }
+  } */
 
 
   /**

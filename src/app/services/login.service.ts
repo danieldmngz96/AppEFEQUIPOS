@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-
+  api = "http://localhost:3000/bd_efequipos"
   constructor(private http: HttpClient) { }
   /**
   * @author Daniel Dominguez
@@ -17,7 +17,7 @@ export class LoginService {
   */
   login(body: any): Observable<any> {
     // return this.http.post("https://web-services-papappcost-umb.onrender.com/login/auth", body);
-    return this.http.post("http://localhost:3000/api/login", body);
+    return this.http.post(this.api + "/login", body);
   }
 
   /**
@@ -27,7 +27,7 @@ export class LoginService {
 * @returns json
 */
   register(user: User): Observable<any> {
-    return this.http.post("http://localhost:3000/api/register", user);
+    return this.http.post(this.api + "/register", user);
   }
   /**
    * @author Daniel Dominguez
@@ -36,7 +36,7 @@ export class LoginService {
    * @returns json
    */
   getInfoLogin(): Observable<any> {
-    return this.http.get("http://localhost:3000/api/info");
+    return this.http.get(this.api + "/info");
   }
   /**
    * @author Daniel Dominguez
@@ -45,7 +45,7 @@ export class LoginService {
    * @returns json
    */
   getCompareEmail(email:any): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/validateEmail/${email}`);
+    return this.http.get( this.api + `/validateEmail/${email}`);
   }
 }
 

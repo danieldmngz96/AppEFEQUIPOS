@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MovimientosService {
 
-  api="http://localhost:3000/api"
+  api="http://localhost:3000/bd_efequipos"
 
 constructor(private http: HttpClient) { }
  /**

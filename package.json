@@ -1,9 +1,9 @@
 {
   "name": "app-efequipos",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-conf proxy.conf.json",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
