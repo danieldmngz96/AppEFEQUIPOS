@@ -29,23 +29,23 @@ const routes: Routes = [
     children: [
       {
         path: 'modificar',
-        loadChildren: () => import('./modules/table-modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
+        loadChildren: () => import('./modules/Inventario/table-modify-machine/modify-machine.module').then(m => m.ModifyMachineModule)
       },
       {
         path: 'modificar/:id',
-        loadChildren: () => import('./modules/modify-page-machine/modify-page.module').then(m => m.ModifyPageModule)
+        loadChildren: () => import('./modules/Inventario/modify-page-machine/modify-page.module').then(m => m.ModifyPageModule)
       },
       {
         path: 'movimientos',
-        loadChildren: () => import('./modules/movimientos/movimientos.module').then(m => m.MovimientosModule)
+        loadChildren: () => import('./modules/Inventario/movimientos/movimientos.module').then(m => m.MovimientosModule)
       },
       {
         path: 'eliminar',
-        loadChildren: () => import('./modules/table-delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
+        loadChildren: () => import('./modules/Inventario/table-delete-machine/delete-machine.module').then(m => m.DeleteMachineModule)
       },
       {
         path: 'agregar',
-        loadChildren: () => import('./modules/table-add-machine/add-machine.module').then(m => m.AddMachineModule)
+        loadChildren: () => import('./modules/Inventario/table-add-machine/add-machine.module').then(m => m.AddMachineModule)
       },
 
     ]
