@@ -13,7 +13,7 @@ import { RegistroComponent } from './modules/registro/registro.component';
 import { FooterModule } from './shared/footer/footer.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/Inventario/modal-add-machine/modal-add.component';
-import { ModalAddEmpleadoComponent } from './modules/modal-add-empleado/modal-add-empleado.component';
+import { ModalAddEmpleadoComponent } from './modules/Empleados/modal-add-empleado/modal-add-empleado.component';
 import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-view-vehiculo.component';
 
 
