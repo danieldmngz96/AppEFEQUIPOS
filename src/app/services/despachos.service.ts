@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DespachosService {
-  api = "http://localhost:3000"
+  api = "http://localhost:3000/almacen"
 constructor(private http: HttpClient) { }
   /**
    * @author Daniel Dominguez
@@ -13,9 +13,9 @@ constructor(private http: HttpClient) { }
    * @param {body} body json
    * @returns json
    */
-  getDespachos() {
+  getDespachos(page?:any, pageSize?:any) {
     // return this.http.get(this.api + "/v1/empleado");
-    return this.http.get(this.api + '/almacen/despachos' );
+    return this.http.get(this.api + '/despachos?page=' + page + '&limit=' + pageSize);
   }
     /**
   * @author Daniel Dominguez
@@ -24,7 +24,7 @@ constructor(private http: HttpClient) { }
   * @returns json
   */
     saveDespachos(despachos:Despachos){
-      return this.http.post(this.api + '/almacen/add-despachos', despachos);
+      return this.http.post(this.api + '/add-despachos', despachos);
     }
 }
 export interface Despachos{

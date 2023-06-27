@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./delete-machine.component.scss']
 })
 export class DeleteMachineComponent implements OnInit {
-  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total'];
+  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total', 'Eliminar'];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   length: any;
@@ -21,6 +21,7 @@ export class DeleteMachineComponent implements OnInit {
   lista = new MatTableDataSource();
   page = 1;
   isPage = 1;
+  descripcion:any
   //lista: any;
   constructor(private movimiento: MovimientosService,
     public dialog: MatDialog) { }
@@ -48,7 +49,7 @@ export class DeleteMachineComponent implements OnInit {
       Swal.fire({
         icon: 'warning',
         title: 'Cuidado!',
-        text: 'Se eliminara el empleado de nomina y de las Bases de datos de EFEQUIPOS.',
+        text: `Se ha eliminara tu elemento ${this.descripcion} del inventario de efequipos exitosamente!`,
         showCancelButton: true,
         confirmButtonText: 'Aceptar',
         cancelButtonText: 'Cancelar',

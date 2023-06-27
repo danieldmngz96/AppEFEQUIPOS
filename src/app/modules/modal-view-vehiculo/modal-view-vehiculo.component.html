@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Informacion de Vehiculo</h1>
 <div mat-dialog-content>
-  <table class="mat-elevation-z8 table" >
+<!--   <table class="mat-elevation-z8 table" >
     <thead>
       <tr>
         <th scope="col">Id despacho</th>
@@ -25,5 +25,60 @@
 
     </tbody>
 
+  </table> -->
+  <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Id despacho">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_despacho}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Conductor vehiculo">
+      <th mat-header-cell *matHeaderCellDef> Conductor </th>
+      <td mat-cell *matCellDef="let element"> {{element.conductor_veh}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Placa Vehiculo">
+      <th mat-header-cell *matHeaderCellDef> Placa </th>
+      <td mat-cell *matCellDef="let element"> {{element.placa_veh}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Tipo Vehiculo">
+      <th mat-header-cell *matHeaderCellDef>Tipo Vehiculo </th>
+      <td mat-cell *matCellDef="let element"> {{element.tipo_veh}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Autorizador">
+      <th mat-header-cell *matHeaderCellDef>Autorizador </th>
+      <td mat-cell *matCellDef="let element"> {{element.autorizador}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Peso total">
+      <th mat-header-cell *matHeaderCellDef> Peso total</th>
+      <td mat-cell *matCellDef="let element"> {{element.peso_total}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Area total">
+      <th mat-header-cell *matHeaderCellDef> Area total</th>
+      <td mat-cell *matCellDef="let element"> {{element.area_total}} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <mat-paginator #paginator class="custom-paginator" [length]="length" [pageSize]="pageSize"
+    (page)="pageEvent($event)" [pageSizeOptions]="pageSizeOptions">
+  </mat-paginator>
 </div>

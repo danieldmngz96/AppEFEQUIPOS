@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EmpleadosService {
 
-  api = "http://localhost:3000"
+  api = "http://localhost:3000/almacen"
 
   constructor(private http: HttpClient) { }
   /**
@@ -18,7 +18,7 @@ export class EmpleadosService {
    */
   getEmpleados() {
     // return this.http.get(this.api + "/v1/empleado");
-    return this.http.get(this.api + '/almacen/empleados' );
+    return this.http.get(this.api + '/empleados' );
   }
   /**
   * @author Daniel Dominguez
@@ -27,7 +27,7 @@ export class EmpleadosService {
   * @returns json
   */
   saveMachine(team:Team){
-    return this.http.post(this.api + '/almacen/add-empleado', team);
+    return this.http.post(this.api + '/add-empleado', team);
   }
     /**
   * @author Daniel Dominguez
@@ -36,7 +36,7 @@ export class EmpleadosService {
   * @returns json
   */
     deleteEmpleado(id:string):Observable<any>{
-      return this.http.delete(this.api + '/almacen/empleados/' + id );
+      return this.http.delete(this.api + '/empleados' + id );
     }
 
     /**
