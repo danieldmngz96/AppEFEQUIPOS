@@ -32,7 +32,7 @@ export class AddEmpleadoComponent implements OnInit {
   openModal(){
     const dialogRef = this.dialog.open(ModalAddEmpleadoComponent, {
       width: '350px',
-      height: '550px',
+      height: '450px',
     });
   }
 }

@@ -35,4 +35,8 @@ export class ModifyPageEmpleadosComponent implements OnInit {
     this.id = this.activateRouter.snapshot.params['id'];
     console.log(this.id, this.teamForm);
   }
+
+  backEmpleado(){
+    this.router.navigate(['/empleados/modificar']);
+  }
 }

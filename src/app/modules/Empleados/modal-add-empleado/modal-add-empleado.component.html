@@ -22,12 +22,13 @@
         formControlName="email">
       </mat-form-field>
       <div class="col">
-        <button mat-button class="mat-raised-button mat-primary" style="background-color: green; color: white;" (click)="addEmpleado()" >Guardar</button>
+       
+        <button mat-button class="mat-raised-button mat-primary btn btn-warning" (click)="addEmpleado()" [disabled]="!empleadoForm.valid">Guardar</button>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
-        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"  [disabled]="empleadoForm.valid">Cancelar</button>
+        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base" (click)="backEmpleado()"  [disabled]="empleadoForm.valid">Cancelar</button>
       </div>
 
     </form>

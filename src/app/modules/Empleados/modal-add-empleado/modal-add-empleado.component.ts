@@ -54,6 +54,8 @@ export class ModalAddEmpleadoComponent implements OnInit {
     );
   }
 
-
+  backEmpleado(){
+    this.router.navigate(['/empleados/all']);
+  }
 
 }
