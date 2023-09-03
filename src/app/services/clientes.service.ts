@@ -45,7 +45,7 @@ export class ClientesService {
   * @returns json
   */
  getClienteId(id: any): Observable<any> {
-  return this.http.get(this.api + '/almacen/cliente/' + id);
+  return this.http.get(this.api + '/almacen/clientes/' + id);
 }
 
 

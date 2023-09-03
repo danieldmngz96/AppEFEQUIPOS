@@ -1,10 +1,11 @@
 @import url(../../../styles.scss);
 .sidenav-container {
   height: 100%;
+  background-color: white !important;
 }
 
 .sidenav {
-  width: 200px;
+  width: 30%;
 }
 
 @media (max-width: 599px) {
@@ -17,20 +18,70 @@
   color: black !important;
 }
 
-::ng-deep .customize button  {
-  background: white !important;
+::ng-deep .mat-expansion-panel.opened{
+  background-color: white;
   color: black;
 }
-.mat-accordion>.mat-expansion-panel-spacing:first-child, .mat-accordion>*:first-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{
-  background: var(--green-good) !important;
+
+::ng-deep .mat-expansion-panel.closed {
+  background-color: white;
+  color: black;
 }
 
-::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle {
-  border-color: green !important;
+::ng-deep .mat-expansion-panel-header {
+  background-color: white;
+  color: black !important;
 }
 
-::ng-deep .mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled+.mdc-radio__background .mdc-radio__inner-circle {
-  border-color: green !important;
+::ng-deep .mat-expansion-panel-header:hover {
+  background-color: white;
 }
 
+::ng-deep .mat-accordion:hover {
+  background-color: white;
+}
 
+::ng-deep .mat-accordion {
+  background-color: white;
+}
+
+::ng-deep .mat-expansion-panel-header {
+  border-bottom: 1px solid #000;
+}
+::ng-deep .mat-expansion-panel-header-title {
+  color: black !important;
+}
+
+::ng-deep .mat-expansion-panel {
+  //height: 48px;
+}
+
+::ng-deep .mat-expansion-panel { 
+  box-shadow: none;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 24px 24px 16px !important;
+}
+
+/* Estilos para la barra de desplazamiento vertical */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho del scroll */
+}
+
+/* Estilos para el riel (fondo) del scroll */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de fondo del riel */
+  border-radius: 10px; /* Bordes redondeados del riel */
+}
+
+/* Estilos para el pulgar (barra deslizante) del scroll */
+::-webkit-scrollbar-thumb {
+  background-color: #e07f00; /* Color del pulgar del scroll */
+  border-radius: 10px; /* Bordes redondeados del pulgar */
+}
+
+/* Cambiar el color del pulgar del scroll al pasar el mouse por encima */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9900; /* Color al pasar el mouse por encima */
+}
