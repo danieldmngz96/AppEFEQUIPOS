@@ -2,7 +2,8 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"
     style="color: white; background-color: white;">
-    <mat-toolbar style="color: white !important; background-color: var(--orange-good);">Menú</mat-toolbar>
+    <mat-toolbar style="color: white !important; background-color: var(--orange-good);
+        height: 85px;">Menú</mat-toolbar>
 
     <mat-nav-list>
       <div style="overflow-y: auto; height: 80%;position: absolute;width: 100%;">
