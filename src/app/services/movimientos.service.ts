@@ -9,7 +9,7 @@ const apiUrl = environment.apiUrl;
 })
 export class MovimientosService {
 
-  api = apiUrl+'/bd_efequipos';
+  api = apiUrl+"/bd_efequipos";
 
 constructor(private http: HttpClient) { }
  /**

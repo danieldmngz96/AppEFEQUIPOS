@@ -7,7 +7,7 @@ const apiUrl = environment.apiUrl;
   providedIn: 'root'
 })
 export class DespachosService {
-  api = apiUrl+"/almacen"
+  api = apiUrl+"/almacen";
 constructor(private http: HttpClient) { }
   /**
    * @author Daniel Dominguez
