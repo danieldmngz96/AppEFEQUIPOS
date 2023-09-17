@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/Inventario/modal-add-machine/modal-add.component';
 import { ModalAddEmpleadoComponent } from './modules/Empleados/modal-add-empleado/modal-add-empleado.component';
 import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-view-vehiculo.component';
+import { PqrsComponent } from './modules/pqrs/pqrs.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-
     ModalAddComponent,
     ModalAddEmpleadoComponent,
     ModalViewVehiculoComponent,
+    PqrsComponent
 
    ],
   imports: [
