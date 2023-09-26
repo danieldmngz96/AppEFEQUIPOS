@@ -19,8 +19,7 @@ export class PqrsComponent implements OnInit {
     email: "",
     pqrs:""
   }
-  constructor( private pqrs: PqrsService,
-    @Inject(MAT_DIALOG_DATA) public data: "",) { }
+  constructor(private pqrs: PqrsService, ) { }
 
   ngOnInit() {
     this.pqrsForm = new FormGroup({
@@ -67,7 +66,7 @@ export class PqrsComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: 'Excelente...',
-          text: `Se ha creado PQRS ${this.pqrsForm.controls['descripcion'].value} exitosamente!`,
+          text: `Se ha creado PQRS ${this.pqrsForm.controls['pqrs'].value} exitosamente!`,
         });
        // this.dialogRef.close();
       },
