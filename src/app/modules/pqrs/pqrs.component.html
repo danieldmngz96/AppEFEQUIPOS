@@ -29,7 +29,7 @@
         <div class="col-md-6 offset-md-3 col-lg-12">
           <mat-form-field class="w-50">
             <mat-label>Telefono o Celular</mat-label>
-            <input matInput type="number" placeholder="Telefono o Celular" name="phone" formControlName="phone">
+            <input matInput type="tel" placeholder="Telefono o Celular" name="phone" formControlName="phone">
           </mat-form-field>
         </div>
     </div>
@@ -45,9 +45,7 @@
     <div class="col-md-6 offset-md-3 col-lg-12">
       <mat-form-field class="w-50">
         <mat-label>Pais</mat-label>
-        <input matInput type="text" placeholder="Pais" name="contry
-        " formControlName="contry
-        ">
+        <input matInput type="text" placeholder="Pais" placeholder="Pais"  name="country" formControlName="country">
       </mat-form-field>
     </div>
   </div>
@@ -67,7 +65,7 @@
         </mat-form-field>
       </div>
       <button mat-flat-button    
-      type="submit"   
+      type="submit" (click)="addPqrs()" 
       style="background-color: var(--orange-good); width: 20%; color: white; margin: 0 auto;" >Enviar</button>
   
     </div>

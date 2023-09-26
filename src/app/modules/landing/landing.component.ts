@@ -7,17 +7,17 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  name: any;
+  nombre: any;
   fecha = new Date();
 
   constructor(private login: LoginService,){}
   ngOnInit() {
     const data = localStorage.getItem('user');
-    this.name = JSON.parse(data || '');
+    this.nombre = JSON.parse(data || '');
     this.fecha = new Date();
 
     this.login.getInfoLogin().subscribe((resp: any) => {
-      console.log(resp.name);
+      console.log(resp.nombre);
 
     }, (error: any) => {
      console.log(error);
