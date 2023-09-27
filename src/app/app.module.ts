@@ -16,6 +16,9 @@ import { ModalAddComponent } from './modules/Inventario/modal-add-machine/modal-
 import { ModalAddEmpleadoComponent } from './modules/Empleados/modal-add-empleado/modal-add-empleado.component';
 import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-view-vehiculo.component';
 import { PqrsComponent } from './modules/pqrs/pqrs.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { LandingPrincipalComponent } from './modules/landing-principal/landing-principal.component';
+import { MenuPrincipalComponent } from './shared/menu-principal/menu-principal.component';
 
 
 @NgModule({
@@ -26,8 +29,9 @@ import { PqrsComponent } from './modules/pqrs/pqrs.component';
     ModalAddComponent,
     ModalAddEmpleadoComponent,
     ModalViewVehiculoComponent,
-    PqrsComponent
-
+    PqrsComponent,
+    LandingPrincipalComponent,
+    MenuPrincipalComponent
    ],
   imports: [
     BrowserModule,
@@ -42,8 +46,7 @@ import { PqrsComponent } from './modules/pqrs/pqrs.component';
     ReactiveFormsModule,
     FooterModule,
     MatDialogModule,
-    NgxMatFileInputModule
-
+    NgxMatFileInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -114,7 +114,7 @@ import { NgChartsModule } from 'ng2-charts';
       OverlayModule,
       PortalModule,
       ScrollingModule,
-      MatDialogModule
+      MatDialogModule,
   ]
 })
 export class MaterialModule { }

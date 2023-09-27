@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/home/home.component';
 import { PqrsComponent } from './modules/pqrs/pqrs.component';
+import { LandingPrincipalComponent } from './modules/landing-principal/landing-principal.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: LandingPrincipalComponent,
     children: [
       {
         path: '',
@@ -16,9 +17,12 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'login',
+    component: HomeComponent,
+  },
+  {
     path: 'pqrs',
     component: PqrsComponent,
-    
   },
   {
     path: 'bienvenido',

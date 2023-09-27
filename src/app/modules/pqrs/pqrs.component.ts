@@ -68,7 +68,6 @@ export class PqrsComponent implements OnInit {
           title: 'Excelente...',
           text: `Se ha creado PQRS ${this.pqrsForm.controls['pqrs'].value} exitosamente!`,
         });
-       // this.dialogRef.close();
       },
       err => {
         console.log(err);
