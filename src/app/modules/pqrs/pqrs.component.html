@@ -66,7 +66,7 @@
       </div>
       <button mat-flat-button    
       type="submit" (click)="addPqrs()" 
-      style="background-color: var(--orange-good); width: 20%; color: white; margin: 0 auto;" >Enviar</button>
+      style="background-color: var(--orange-good); width: 20%; color: white; margin: 0 auto;" [disabled]="!pqrsForm.valid">Enviar</button>
   
     </div>
     

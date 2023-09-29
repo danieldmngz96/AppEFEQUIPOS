@@ -13,7 +13,7 @@ export class PqrsComponent implements OnInit {
   newPqrs: Pqrs = {
     name:"",
     direccion:"",
-    //phone: "",
+    phone: "",
     city: "",
     country:"",
     email: "",

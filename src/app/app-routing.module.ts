@@ -20,10 +20,10 @@ const routes: Routes = [
     path: 'login',
     component: HomeComponent,
   },
-  {
+/*   {
     path: 'pqrs',
     component: PqrsComponent,
-  },
+  }, */
   {
     path: 'bienvenido',
     loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
@@ -120,6 +120,20 @@ const routes: Routes = [
             {
               path: 'eliminar-empleado',
               loadChildren: () => import('./modules/Empleados/table-delete-empleado/table-delete-empleado.module').then(m => m.TableDeleteEmpleadoModule)
+            }
+          ]
+        },
+         //Rutas para pqrs
+         {
+          path: 'pqrs',
+          children: [
+            {
+              path: 'enviar',
+              loadChildren: () => import('./modules/pqrs/pqrs.module').then(m => m.PqrsModule)
+            },
+            {
+              path: 'table',
+              loadChildren: () => import('./modules/table-pqrs/table-pqrs.module').then(m => m.TablePqrsModule)
             }
           ]
         },

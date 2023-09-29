@@ -14,8 +14,6 @@ export class PqrsService {
   api = apiUrl+'/almacen';
 constructor(private http: HttpClient) { }
 
-
-
   /**
   * @author Daniel Dominguez
   * Metodo post para añadir pqrs
@@ -25,6 +23,16 @@ constructor(private http: HttpClient) { }
   savePqrs(pqrs:Pqrs){
     return this.http.post(this.api  + '/Postpqrs' , pqrs);
   }
+
+    /**
+  * @author Daniel Dominguez
+  * Metodo get para obtener pqrs
+  * @param {body} body json
+  * @returns json
+  */
+    getPqrs(page?:any, pageSize?:any){
+      return this.http.get(this.api  + '/getPqrs' + page + '&limit=' + pageSize);
+    }
 }
 
 export interface Pqrs{
@@ -32,6 +40,7 @@ export interface Pqrs{
   direccion?:any;
   cantidad?:any;
   city?:any;
+  phone?:any;
   country:any;
   email:any;
   pqrs:any;

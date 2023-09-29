@@ -92,7 +92,7 @@
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
+              <mat-panel-title routerLink="/" style="cursor: pointer; color: black;">
                 Contratos
               </mat-panel-title>
               <mat-panel-description>
@@ -112,7 +112,7 @@
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/reportes" style="cursor: pointer; color: black;">
+              <mat-panel-title routerLink="/" style="cursor: pointer; color: black;">
                 Power BI
               </mat-panel-title>
               <mat-panel-description>
@@ -128,9 +128,24 @@
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           </mat-expansion-panel>
         </mat-accordion>
-
-        
         <br>
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title routerLink="/pqrs/table" style="cursor: pointer; color: black;">
+                PQRS
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ul>
+              <li style="cursor: pointer; color: black;" routerLink="/pqrs/table">Ver PQRS Actuales</li>
+            </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
 
 
         <!--   <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"
