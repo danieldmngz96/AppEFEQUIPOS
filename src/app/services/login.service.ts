@@ -10,7 +10,7 @@ const apiUrl = environment.apiUrl;
 })
 export class LoginService {
 
-  api = apiUrl+"/bd_efequipos";
+  api = apiUrl+"/almacen";
   constructor(private http: HttpClient) { }
   /**
   * @author Daniel Dominguez

@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
 
   login() {
     let body = {
-      email: this.loginForm.controls['username'].value,
-      password: this.loginForm.controls['password'].value,
+      correo: this.loginForm.controls['username'].value,
+      clave: this.loginForm.controls['password'].value,
     };
     console.log(body);
 
