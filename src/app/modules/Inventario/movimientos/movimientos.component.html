@@ -23,41 +23,41 @@
       <!-- Position Column -->
       <ng-container matColumnDef="Id">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.id_inventario}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.cod_prod}} </td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="Descrpcion">
-        <th mat-header-cell *matHeaderCellDef> Descrpcion </th>
-        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
       </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="Cantidad">
-        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
-        <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="Peso_Kg">
-        <th mat-header-cell *matHeaderCellDef> Peso_Kg </th>
-        <td mat-cell *matCellDef="let element"> {{element.peso_kg}} </td>
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
       </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="Area m_2">
-          <th mat-header-cell *matHeaderCellDef> Area m_2 </th>
-          <td mat-cell *matCellDef="let element"> {{element.area_m2}} </td>
+          <th mat-header-cell *matHeaderCellDef> Valor Unidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.valor_uni}} </td>
         </ng-container>
            <!-- Symbol Column -->
            <ng-container matColumnDef="Peso Total">
-            <th mat-header-cell *matHeaderCellDef> Peso Total </th>
+            <th mat-header-cell *matHeaderCellDef> Peso Unidad </th>
             <td mat-cell *matCellDef="let element"> {{element.peso_total}} </td>
           </ng-container>
              <!-- Symbol Column -->
         <ng-container matColumnDef="Area Total">
           <th mat-header-cell *matHeaderCellDef>Area Total </th>
-          <td mat-cell *matCellDef="let element"> {{element.area_total}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.area}} </td>
         </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

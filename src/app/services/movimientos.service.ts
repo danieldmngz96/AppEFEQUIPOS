@@ -9,17 +9,17 @@ const apiUrl = environment.apiUrl;
 })
 export class MovimientosService {
 
-  api = apiUrl+"/bd_efequipos";
+  api = apiUrl+"/almacen";
 
 constructor(private http: HttpClient) { }
  /**
   * @author Daniel Dominguez
-  * Metodo get obtener inveentario
+  * Metodo get obtener inventario
   * @param {body} body json
   * @returns json
   */
-  getEquipos(page?:any, pageSize?:any) {
-    return this.http.get(this.api + '/inventario?page=' + page + '&limit=' + pageSize);
+  getEquipos(page?:any, pageSize:number = 10) {
+    return this.http.get( `${this.api }/getProductos?page=${page}&limit=${pageSize} `);
   }
 
    /**

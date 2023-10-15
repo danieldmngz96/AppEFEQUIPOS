@@ -40,9 +40,8 @@ export class MovimientosComponent implements OnInit {
   listarEquipo() {
     this.movimiento.getEquipos(this.page, this.pageSize).subscribe(
       (res:any) => {
-        this.lista.data = Object.values(res.rows)
+        this.lista.data = Object.values(res)
         this.length = res.total
-        console.log(res);
       },
       err => {
         console.log(err)
