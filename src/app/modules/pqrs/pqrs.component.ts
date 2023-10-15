@@ -16,7 +16,7 @@ export class PqrsComponent implements OnInit {
     phone: "",
     city: "",
     country:"",
-    email: "",
+    e_mail: "",
     pqrs:""
   }
   constructor(private pqrs: PqrsService, ) { }

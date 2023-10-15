@@ -31,7 +31,7 @@ constructor(private http: HttpClient) { }
   * @returns json
   */
     getPqrs(page?:any, pageSize?:any){
-      return this.http.get(this.api  + '/getPqrs' + page + '&limit=' + pageSize);
+      return this.http.get(`${this.api}/getPqrs?page=${page}&limit=${pageSize}`);
     }
 }
 
@@ -42,6 +42,6 @@ export interface Pqrs{
   city?:any;
   phone?:any;
   country:any;
-  email:any;
+  e_mail:any;
   pqrs:any;
 }
