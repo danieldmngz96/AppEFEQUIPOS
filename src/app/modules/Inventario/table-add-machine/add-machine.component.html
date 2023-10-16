@@ -22,7 +22,7 @@
     <i>Listado de Inventario</i>
     <br>
     <br>
-  <table class="mat-elevation-z8 table" >
+<!--   <table class="mat-elevation-z8 table" >
       <thead>
         <tr>
           <th scope="col">Id</th>
@@ -47,7 +47,61 @@
 
       </tbody>
 
+    </table> -->
+
+    <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+
+     <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.cod_prod}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Descrpcion">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Cantidad">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Peso_Kg">
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Area m_2">
+          <th mat-header-cell *matHeaderCellDef> Valor Unidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.valor_uni}} </td>
+        </ng-container>
+           <!-- Symbol Column -->
+           <ng-container matColumnDef="Peso Total">
+            <th mat-header-cell *matHeaderCellDef> Peso Unidad </th>
+            <td mat-cell *matCellDef="let element"> {{element.peso_total}} </td>
+          </ng-container>
+             <!-- Symbol Column -->
+        <ng-container matColumnDef="Area Total">
+          <th mat-header-cell *matHeaderCellDef>Area Total </th>
+          <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Añadir Inventario">
+          <th mat-header-cell *matHeaderCellDef>Modificar </th>
+          <td mat-cell *matCellDef="let element"><button mat-button class="mat-raised-button mat-primary" style="background-color: orange; color: white;"  [routerLink]="['/inventario/modificar', element.cod_prod]">Modificar</button> </td>
+        </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <mat-paginator #paginator class="custom-paginator" [length]="length" [pageSize]="pageSize" (page)="pageEvent($event)"
+    [pageSizeOptions]="pageSizeOptions">
+</mat-paginator> 
 
   </div>
 </div>

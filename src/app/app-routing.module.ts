@@ -43,7 +43,7 @@ const routes: Routes = [
       },
       {
         path: 'modificar/:id',
-        loadChildren: () => import('./modules/Inventario/modify-page-machine/modify-page.module').then(m => m.ModifyPageModule)
+        loadChildren: () => import('./modules/Inventario/modal-modify-page-machine/modify-page.module').then(m => m.ModifyPageModule)
       },
       {
         path: 'movimientos',
