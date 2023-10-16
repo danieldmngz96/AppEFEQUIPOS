@@ -67,15 +67,15 @@ const routes: Routes = [
     children: [
       {
         path: 'all',
-        loadChildren: () => import('./modules/table-despachos/table-despachos.module').then(m => m.TableDespachosModule)
+        loadChildren: () => import('./modules/Despachos/table-despachos/table-despachos.module').then(m => m.TableDespachosModule)
       },
       {
         path: 'add',
-        loadChildren: () => import('./modules/add-despachos/add-despachos.module').then(m => m.AddDespachosModule)
+        loadChildren: () => import('./modules/Despachos/add-despachos/add-despachos.module').then(m => m.AddDespachosModule)
       },
       {
         path: 'add-form',
-        loadChildren: () => import('./modules/despachos-add-form/despachos-add-form.module').then(m => m.DespachosAddFormModule)
+        loadChildren: () => import('./modules/Despachos/despachos-add-form/despachos-add-form.module').then(m => m.DespachosAddFormModule)
       },
     ]
   },
