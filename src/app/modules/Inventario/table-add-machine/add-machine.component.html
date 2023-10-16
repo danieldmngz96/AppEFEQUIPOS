@@ -51,7 +51,11 @@
 
     <table mat-table [dataSource]="lista" class="mat-elevation-z8">
 
-     <ng-container matColumnDef="Id">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Id">
         <th mat-header-cell *matHeaderCellDef> No. </th>
         <td mat-cell *matCellDef="let element"> {{element.cod_prod}} </td>
       </ng-container>
@@ -82,7 +86,7 @@
            <!-- Symbol Column -->
            <ng-container matColumnDef="Peso Total">
             <th mat-header-cell *matHeaderCellDef> Peso Unidad </th>
-            <td mat-cell *matCellDef="let element"> {{element.peso_total}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.peso_uni}} </td>
           </ng-container>
              <!-- Symbol Column -->
         <ng-container matColumnDef="Area Total">
@@ -90,9 +94,9 @@
           <td mat-cell *matCellDef="let element"> {{element.area}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="Añadir Inventario">
-          <th mat-header-cell *matHeaderCellDef>Modificar </th>
-          <td mat-cell *matCellDef="let element"><button mat-button class="mat-raised-button mat-primary" style="background-color: orange; color: white;"  [routerLink]="['/inventario/modificar', element.cod_prod]">Modificar</button> </td>
+        <ng-container matColumnDef="add">
+          <th mat-header-cell *matHeaderCellDef>Añadir del inventario </th>
+          <td mat-cell *matCellDef="let element"><button mat-button class="mat-raised-button mat-primary" style="background-color: orange; color: white;"  [routerLink]="['/inventario/modificar', element.cod_prod]">Añadir</button> </td>
         </ng-container>
 
 
@@ -101,7 +105,7 @@
     </table>
     <mat-paginator #paginator class="custom-paginator" [length]="length" [pageSize]="pageSize" (page)="pageEvent($event)"
     [pageSizeOptions]="pageSizeOptions">
-</mat-paginator> 
+</mat-paginator>
 
   </div>
 </div>

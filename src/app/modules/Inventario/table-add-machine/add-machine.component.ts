@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./add-machine.component.scss']
 })
 export class AddMachineComponent implements OnInit {
-  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total','Añadir'];
+  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total','add'];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   length: any;
@@ -55,15 +55,19 @@ export class AddMachineComponent implements OnInit {
     this.listarEquipo();
   }
   //Aca traemos del servicio movimiento los equipos
-  listarEquipo(){
-    this.movimiento.getEquipos().subscribe(
-      res=>{
-        this.lista = res
-        console.log(res);
+  listarEquipo() {
+    this.movimiento.getEquipos(this.page, this.pageSize).subscribe(
+      (res:any) => {
+        this.lista = Object.values(res)
+        this.length = res.total
       },
-      err=> console.log(err)
+      err => {
+        console.log(err)
+        this.resetPaginator();
+      }
     );
   }
+
   //Redirigir a modal de añadir maquinaria
   openModal(){
     const dialogRef = this.dialog.open(ModalAddComponent, {
