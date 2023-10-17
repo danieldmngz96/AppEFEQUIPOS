@@ -1,5 +1,5 @@
 /* Cambiar el color de fondo de las opciones del select cuando se seleccionan */
-@import url(../../../styles.scss);
+@import url(../../../../styles.scss);
 .mat-option.mat-selected:not(.mat-option-disabled) {
   background-color: var(--green-light);
 }
