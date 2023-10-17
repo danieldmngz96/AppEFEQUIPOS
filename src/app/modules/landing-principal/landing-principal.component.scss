@@ -348,7 +348,7 @@
   
   .portfolio #portfolio-flters li:hover,
   .portfolio #portfolio-flters li.filter-active {
-    color: #orange;
+    color: var(--orange-good);
   }
   
   .portfolio #portfolio-flters li:last-child {
@@ -410,7 +410,7 @@
   }
   
   .portfolio .portfolio-wrap .portfolio-links a {
-    color: #orange;
+    color:  var(--orange-good);
     margin: 0 2px;
     font-size: 24px;
     display: inline-block;
@@ -423,7 +423,7 @@
   
   .portfolio .portfolio-wrap .portfolio-links a:hover {
     color: #fff;
-    background: #orange;
+    background:  var(--orange-good);
   }
   
   .portfolio .portfolio-wrap:hover::before {
@@ -465,11 +465,11 @@
     height: 12px;
     background-color: #fff;
     opacity: 1;
-    border: 1px solid #orange;
+    border: 1px solid  var(--orange-good);
   }
   
   .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #orange;
+    background-color: var(--orange-good);
   }
   
   .portfolio-details .portfolio-info {
@@ -635,11 +635,11 @@
     height: 12px;
     background-color: #fff;
     opacity: 1;
-    border: 1px solid #orange;
+    border: 1px solid  var(--orange-good);;
   }
   
   .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #orange;
+    background-color:  var(--orange-good);;
   }
   
   /*--------------------------------------------------------------
@@ -732,7 +732,7 @@
   }
   
   .team .member .social a:hover {
-    color: #orange;
+    color:  var(--orange-good);;
   }
   
   .team .member .social i {
@@ -803,7 +803,7 @@
   
   .pricing h4 {
     font-size: 36px;
-    color: #orange;
+    color:  var(--orange-good);;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     margin-bottom: 20px;
@@ -835,7 +835,7 @@
   }
   
   .pricing ul i {
-    color: #orange;
+    color:  var(--orange-good);;
     font-size: 18px;
     padding-right: 4px;
   }
@@ -851,7 +851,7 @@
   }
   
   .pricing .btn-buy {
-    background: #orange;
+    background:  var(--orange-good);;
     display: inline-block;
     padding: 8px 30px;
     border-radius: 4px;
@@ -863,8 +863,8 @@
   }
   
   .pricing .featured {
-    background: #orange;
-    border-color: #orange;
+    background:  var(--orange-good);;
+    border-color:  var(--orange-good);;
   }
   
   .pricing .featured h3,
@@ -877,7 +877,7 @@
   
   .pricing .featured .btn-buy {
     background: #fff;
-    color: #orange;
+    color:  var(--orange-good);;
   }
   
   .pricing .advanced {
@@ -889,7 +889,7 @@
     z-index: 1;
     font-size: 14px;
     padding: 1px 0 3px 0;
-    background: #orange;
+    background:  var(--orange-good);;
     color: #fff;
   }
   
@@ -914,7 +914,7 @@
   .faq .faq-list .question {
     display: block;
     position: relative;
-    font-family: #orange;
+    font-family:  var(--orange-good);;
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
@@ -945,7 +945,7 @@
   }
   
   .faq .faq-list .collapsed:hover {
-    color: #orange;
+    color:  var(--orange-good);;
   }
   
   .faq .faq-list .collapsed .icon-show {
@@ -971,7 +971,7 @@
   
   .contact .info i {
     font-size: 20px;
-    color: #orange;
+    color:  var(--orange-good);;
     float: left;
     width: 44px;
     height: 44px;
@@ -1018,14 +1018,14 @@
   }
   
   .contact .info .social-links a:hover {
-    background: #orange;
+    background:  var(--orange-good);;
     color: #fff;
   }
   
   .contact .info .email:hover i,
   .contact .info .address:hover i,
   .contact .info .phone:hover i {
-    background: #orange;
+    background:  var(--orange-good);;
     color: #fff;
   }
   
@@ -1098,7 +1098,7 @@
   }
   
   .contact .php-email-form button[type=submit] {
-    background: #orange;
+    background:  var(--orange-good);;
     border: 0;
     padding: 10px 24px;
     color: #fff;
