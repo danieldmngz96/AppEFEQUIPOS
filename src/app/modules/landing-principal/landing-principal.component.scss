@@ -1154,3 +1154,52 @@
     color: #4c5c63;
     content: "/";
   }
+  /* Estilo para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  /* Ajusta el tamaño de la imagen del encabezado */
+  #hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Alinea el contenido del encabezado al centro en lugar de la izquierda */
+  #hero .col-lg-6 {
+    text-align: center;
+  }
+
+  /* Redefine la altura de la imagen de la sección "About" */
+  #about img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Alinea el contenido de la sección "About" al centro en lugar de la izquierda */
+  #about .content {
+    text-align: center;
+  }
+
+  /* Estilo para las pestañas de la sección "Features" en pantallas pequeñas */
+  #features .nav-tabs {
+    flex-direction: row;
+  }
+
+  /* Ajusta el tamaño de las imágenes de las pestañas en la sección "Features" */
+  #features .tab-content figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Alinea el contenido de las pestañas al centro en lugar de la izquierda */
+  #features .nav-tabs .nav-item {
+    text-align: center;
+  }
+}
+
+/* Estilo para pantallas muy pequeñas (menos de 576px) */
+@media (max-width: 576px) {
+  /* Ajusta el tamaño de la imagen en la sección "Clients" */
+  #clients .client-logo img {
+    width: 100%;
+    height: auto;
+  }
+}
