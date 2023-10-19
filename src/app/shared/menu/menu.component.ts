@@ -48,4 +48,7 @@ export class MenuComponent implements OnInit {
   gotoInventario(){
     this.router.navigate(['/inventario/movimientos']);
   }
+  gotoContratos(){
+    this.router.navigate(['/contratos/actuales']);
+  }
 }

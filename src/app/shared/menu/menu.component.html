@@ -92,7 +92,7 @@
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/" style="cursor: pointer; color: black;">
+              <mat-panel-title (click)="gotoContratos()" style="cursor: pointer; color: black;">
                 Contratos
               </mat-panel-title>
               <mat-panel-description>
@@ -100,7 +100,7 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <ul>
-              <li style="cursor: pointer; color: black;">Tabla de Contratos Actuales</li>
+              <li style="cursor: pointer; color: black;" routerLink="/contratos/add">Añadir Contratos Actuales</li>
               <li style="cursor: pointer; color: black;">Modificar Contratos Actuales</li>
               <li style="cursor: pointer; color: black;">Eliminar Contratos Actuales</li>
             </ul>
