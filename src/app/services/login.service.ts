@@ -14,7 +14,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   /**
   * @author Daniel Dominguez
-  * Servicio paa login de papApp
+  * Servicio paa login de EFEQUIPOS
   * @param {body} body json
   * @returns json
   */

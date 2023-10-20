@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.email, Validators.pattern(this.onlyEfequiposEmail)]),
-      password: new FormControl('',[Validators.required],
+      username: new FormControl(''),
+      password: new FormControl('',
       ),
     });
     this.fecha = new Date();

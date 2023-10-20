@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ContratosService } from 'src/app/services/contratos.service';
 
 @Component({
   selector: 'app-table-contratos',
@@ -17,9 +18,25 @@ export class TableContratosComponent implements OnInit {
   pageIndex: number = 0;
   lista = new MatTableDataSource();
   page = 1;
-  constructor() { }
+  constructor(private contratos: ContratosService,) { }
 
   ngOnInit() {
+    this.listarContratos();
+  }
+   //Aca traemos del servicio movimiento los contratos
+   listarContratos(){
+    this.contratos.getContratos(this.page, this.pageSize).subscribe(
+      (res:any) =>{
+        this.lista.data = Object.values(res.rows)
+        this.length = res.total
+        console.log("respuesta de getcontratos" +res);
+      },
+      err=>{
+        console.log(err)
+        this.resetPaginator();
+      }
+      
+    );
   }
   pageEvent(event: any): void {
     this.pageSize = event.pageSize;
