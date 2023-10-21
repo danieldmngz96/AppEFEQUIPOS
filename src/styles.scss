@@ -145,9 +145,10 @@ footer {
   color: var(--orange-good) !important;
 }
 
-::ng-deep .mat-form-field-underline {
+::ng-deep .mat-form-field-underline .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input:focus {
   /*change color of underline*/
   background-color: var(--orange-good) !important;
+  color: var(--orange-good) !important;
 }
 
 ::ng-deep .mat-form-field-ripple {

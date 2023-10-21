@@ -151,6 +151,16 @@ const routes: Routes = [
             }
           ]
         },
+          //Rutas para power bi
+          {
+            path: 'powerbi',
+            children: [
+              {
+                path: 'actuales',
+                loadChildren: () => import('../app/modules/power-bi/power-bi.module').then(m => m.PowerBiModule)
+              }
+            ]
+          },
 ];
 
 @NgModule({

@@ -112,7 +112,7 @@
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title routerLink="/" style="cursor: pointer; color: black;">
+              <mat-panel-title style="cursor: pointer; color: black;">
                 Power BI
               </mat-panel-title>
               <mat-panel-description>
@@ -120,9 +120,7 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <ul>
-              <li style="cursor: pointer; color: black;">Graficas Inventario Actual</li>
-              <li style="cursor: pointer; color: black;">Graficas Despachos</li>
-              <li style="cursor: pointer; color: black;">Graficas Nomina</li>
+              <li style="cursor: pointer; color: black;"  routerLink="/powerbi/actuales">Graficas Actuales</li>
             </ul>
           </mat-expansion-panel>
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
