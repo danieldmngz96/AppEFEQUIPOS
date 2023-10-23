@@ -145,10 +145,10 @@ const routes: Routes = [
               path: 'actuales',
               loadChildren: () => import('./modules/Contratos/table-contratos/table-contratos.module').then(m => m.TableContratosModule)
             },
-            {
+         /*    {
               path: 'add',
-              loadChildren: () => import('./modules/Contratos/add-contratos-actuales/contratos-actuales.module').then(m => m.ContratosActualesModule)
-            }
+              loadChildren: () => import('././modules/Contratos/table-add-contratos-actuales/contratos-actuales.routing.module').then(m => m.ContratosActualesRoutes)
+            } */
           ]
         },
           //Rutas para power bi

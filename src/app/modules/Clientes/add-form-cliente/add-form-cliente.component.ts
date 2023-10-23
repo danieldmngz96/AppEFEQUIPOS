@@ -49,22 +49,25 @@ export class AddFormClienteComponent implements OnInit {
 
   ngOnInit() {
   }
-  addClient(){
+  addClient() {
     this.client.saveClient(this.clienteNew).subscribe(
-      res=>{
+      (res:any) => {
         console.log(res);
+        const clientId = res.id; // Obtén el ID del cliente desde la respuesta
+  
         Swal.fire({
           icon: 'success',
           title: 'Excelente...',
           text: `Se ha creado tu cliente ${this.stepOneForm.controls['nom_cliente'].value} exitosamente!`,
         }).then(() => {
-          this.router.navigate(['clientes/all']); // Redirigir a la página de clientes
-        });;
+          this.router.navigate(['clientes/all']); // Redirige a la página de clientes
+        });
       },
-      err=>{
+      (err) => {
         console.log(err);
       }
     );
   }
+  
 
 }
