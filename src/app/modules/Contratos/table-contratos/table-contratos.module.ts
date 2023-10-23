@@ -6,6 +6,7 @@ import { MenuModule } from 'src/app/shared/menu/menu.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { TableContratosRoutes } from './table-contratos.routing.module';
 import { TableDespachosRoutes } from '../../Despachos/table-despachos/table-despachos.routing.module';
+import { AddContratosModule } from '../add-contratos/add-contratos.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { TableDespachosRoutes } from '../../Despachos/table-despachos/table-desp
     MaterialModule,
     MenuModule,
     FooterModule,
-    TableContratosRoutes
+    TableContratosRoutes,
+    AddContratosModule
   ],
   declarations: [TableContratosComponent]
 })
