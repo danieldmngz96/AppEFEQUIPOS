@@ -22,4 +22,20 @@ constructor(private http: HttpClient) { }
     // return this.http.get(this.api + "/v1/empleado");
     return this.http.get(this.api + '/getContratos?page='+ page + '&limit=' + pageSize );
   }
+    /**
+* @author Daniel Dominguez
+* Metodo post para añadir un cliente
+* @param {body} body json
+* @returns json
+*/
+saveContrato(contrato: Contrato) {
+  return this.http.post(this.api + '/add-contratos', contrato);
+}
+}
+export interface Contrato {
+  "nombre": any;
+  "cod_cli": any;
+  "fec_ini": any;
+  "fec_fin": any;
+  "estado": any;
 }
