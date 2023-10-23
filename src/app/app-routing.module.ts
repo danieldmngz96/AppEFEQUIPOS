@@ -85,15 +85,15 @@ const routes: Routes = [
       children: [
         {
           path: 'all',
-          loadChildren: () => import('./modules/table-clientes/table-clientes.module').then(m => m.TableClientesModule)
+          loadChildren: () => import('./modules/Clientes/table-clientes/table-clientes.module').then(m => m.TableClientesModule)
         },
         {
           path: 'add',
-          loadChildren: () => import('./modules/add-form-cliente/add-form-cliente.module').then(m => m.AddFormClienteModule)
+          loadChildren: () => import('./modules/Clientes/add-form-cliente/add-form-cliente.module').then(m => m.AddFormClienteModule)
         },
         {
           path: 'modificar/:id',
-          loadChildren: () => import('./modules/modify-page-cliente/modify-page-cliente.module').then(m => m.ModifyPageClienteModule)
+          loadChildren: () => import('./modules/Clientes/modify-page-cliente/modify-page-cliente.module').then(m => m.ModifyPageClienteModule)
         },
       ]
     },
@@ -158,7 +158,8 @@ const routes: Routes = [
               {
                 path: 'actuales',
                 loadChildren: () => import('../app/modules/power-bi/power-bi.module').then(m => m.PowerBiModule)
-              }
+              },
+              
             ]
           },
 ];

@@ -1,3 +1,71 @@
-<p>
-  contratos-actuales works!
-</p>
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm mt-3">
+      <h1>Contratos</h1>
+      <br>
+      <i>Aqui podras encontrar todos los contratos de EFEQUIPOS</i>
+      <br>
+      <i>En tiempo real.</i>
+      <br>
+      <br>
+    </div>
+    <div class="col-sm">
+
+    </div>
+
+
+ 
+    <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="cod_cont">
+        <th mat-header-cell *matHeaderCellDef> ID. </th>
+        <td mat-cell *matCellDef="let element"> {{element.cod_cont}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Descrpcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="cod_cli">
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.cod_cli}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="fec_ini">
+        <th mat-header-cell *matHeaderCellDef>Codigo Obra </th>
+        <td mat-cell *matCellDef="let element"> {{element.fec_ini}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="fec_fin">
+        <th mat-header-cell *matHeaderCellDef>Codigo Contrato </th>
+        <td mat-cell *matCellDef="let element"> {{element.fec_fin}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> fec_des</th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+      </ng-container>
+
+    
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator class="custom-paginator" [length]="length" [pageSize]="pageSize"
+      (page)="pageEvent($event)" [pageSizeOptions]="pageSizeOptions">
+    </mat-paginator>
+  </div>
+</div>
+<app-footer></app-footer>

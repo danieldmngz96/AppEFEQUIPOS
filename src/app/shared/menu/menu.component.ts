@@ -51,4 +51,7 @@ export class MenuComponent implements OnInit {
   gotoContratos(){
     this.router.navigate(['/contratos/actuales']);
   }
+  gotoContratosAdd(){
+    this.router.navigate(['/contratos/add']);
+  }
 }
