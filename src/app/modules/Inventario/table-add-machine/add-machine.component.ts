@@ -16,7 +16,7 @@ export class AddMachineComponent implements OnInit {
   paginator!: MatPaginator;
   length: any;
   pageSize: any;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
+  pageSizeOptions: number[] = [5, 10, 25, 100,150,200,250,300,350,400,500,+1000];
   pageIndex: number = 0;
   //lista = new MatTableDataSource();
   page = 1;
@@ -71,7 +71,7 @@ export class AddMachineComponent implements OnInit {
   //Redirigir a modal de añadir maquinaria
   openModal(){
     const dialogRef = this.dialog.open(ModalAddComponent, {
-      width: '550px',
+      width: '850px',
     });
     dialogRef.afterClosed().subscribe(() => {
       this.listarEquipo();

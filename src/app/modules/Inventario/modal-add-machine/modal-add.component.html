@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Añadir Inventario</h2>
+<h2 mat-dialog-title>Añadir Productos al Inventario</h2>
 <div mat-dialog-content style="padding-left: 50px;">
   <div class="container">
     <form [formGroup]="machineForm">
@@ -6,19 +6,19 @@
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Descripcion</mat-label>
-        <input matInput [(ngModel)]="newInventario.descripcion" name="descripcion" id="descripcion" formControlName="descripcion" >
+        <input matInput [(ngModel)]="newProducto.descripcion" name="descripcion" id="descripcion" formControlName="descripcion" >
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Cantidad</mat-label>
-          <input matInput type="number"  [(ngModel)]="newInventario.cantidad" name="cantidad" id="cantidad" formControlName="cantidad" >
+          <input matInput type="number"  [(ngModel)]="newProducto.cantidad" name="cantidad" id="cantidad" formControlName="cantidad" >
         </mat-form-field>
       </div>
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Peso en Kg</mat-label>
-          <input matInput type="number" [(ngModel)]="newInventario.peso_kg" name="peso_kg" id="peso_kg"
+          <input matInput type="number" [(ngModel)]="newProducto.peso_uni" name="peso_kg" id="peso_kg"
           formControlName="peso_kg">
         </mat-form-field>
       </div>
@@ -26,30 +26,46 @@
       <div class="col">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Area en M^2</mat-label>
-        <input matInput type="number" [(ngModel)]="newInventario.area_m2" name="area_m2" id="area_m2"
+        <input matInput type="number" [(ngModel)]="newProducto.area" name="area_m2" id="area_m2"
         formControlName="area_m2">
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Tipo</mat-label>
+        <input matInput type="text" [(ngModel)]="newProducto.tipo" name="tipo" id="tipo"
+        formControlName="tipo">
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="col">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Valor Unidad</mat-label>
+        <input matInput type="number" [(ngModel)]="newProducto.valor_uni" name="valor_uni" id="valor_uni"
+        formControlName="valor_uni">
         </mat-form-field>
       </div>
       <br>
       <h3 style="text-align: center;">Totales de Area y metros^2</h3>
       <mat-form-field appearance="fill">
         <mat-label>Area Total</mat-label>
-        <input matInput [(ngModel)]="newInventario.area_total" name="area_total" id="area_total"
+        <input matInput [(ngModel)]="newProducto.area_total" name="area_total" id="area_total"
         formControlName="area_total" [disabled]="true">
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
         <mat-label>Peso Total</mat-label>
-        <input matInput [(ngModel)]="newInventario.peso_total" name="peso_total" id="peso_total"
+        <input matInput [(ngModel)]="newProducto.peso_total" name="peso_total" id="peso_total"
         formControlName="peso_total" [disabled]="true">
       </mat-form-field>
       <div class="col" style="text-align: center;">
-        <button mat-button class="mat-raised-button mat-primary btn btn-warning" (click)="addInventario()" [disabled]="!machineForm.valid">Guardar</button>
+        <button mat-button class="mat-raised-button btn btn-success" (click)="addInventario()" [disabled]="!machineForm.valid">Guardar</button>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
-        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base" [disabled]="!machineForm.valid">Cancelar</button>
+        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"(click)="cancelInventario()" >Cancelar</button>
       </div>
 
 

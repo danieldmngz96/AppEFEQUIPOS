@@ -34,12 +34,12 @@ export class MovimientosService {
 
   /**
   * @author Daniel Dominguez
-  * Metodo post para añadir inventario
+  * Metodo post para añadir producto
   * @param {body} body json
   * @returns json
   */
-  saveMachine(inventario: Inventario) {
-    return this.http.post(this.api + '/add-inventario', inventario);
+  saveProducto(productos: Productos) {
+    return this.http.post(`${this.api} + '/addProducto' `,productos);
   }
 
   /**
