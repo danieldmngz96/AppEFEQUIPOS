@@ -9,7 +9,8 @@ const apiUrl = environment.apiUrl;
 })
 export class ClientesService {
 
-  api = apiUrl;
+  api = apiUrl + "/almacen";
+
   constructor(private http: HttpClient) { }
   /**
    * @author Daniel Dominguez
@@ -17,9 +18,9 @@ export class ClientesService {
    * @param {body} body json
    * @returns json
    */
-  getClientes() {
+  getClientes(page?: any, pageSize: number = 10) {
     // return this.http.get(this.api + "/v1/empleado");
-    return this.http.get(this.api + '/almacen/clientes');
+    return this.http.get(`${this.api}/clientes?page=${page}&limit=${pageSize} `);
   }
   /**
 * @author Daniel Dominguez
@@ -28,7 +29,7 @@ export class ClientesService {
 * @returns json
 */
   saveClient(client: Client) {
-    return this.http.post(this.api + '/almacen/add-cliente', client);
+    return this.http.post(this.api + '/add-cliente', client);
   }
 
   /**
@@ -38,7 +39,7 @@ export class ClientesService {
   * @returns json
   */
   EditCliente(id:any, client: Client):Observable<any>{
-    return this.http.put(this.api + '/almacen/modificar/:id' + id, client);
+    return this.http.put(this.api + '/modificar/:id' + id, client);
   }
  /**
   * @author Daniel Dominguez
@@ -47,7 +48,7 @@ export class ClientesService {
   * @returns json
   */
  getClienteId(id: any): Observable<any> {
-  return this.http.get(this.api + '/almacen/clientes/' + id);
+  return this.http.get(this.api + '/clientes' + id);
 }
 
 
