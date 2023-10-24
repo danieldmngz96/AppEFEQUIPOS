@@ -166,40 +166,4 @@ footer {
   }
 }
 
-::ng-deep .mat-input-element, .mat-textarea-autosize {
-  color: var(--orange-good) !important;
-  &::placeholder {
-    color: var(--orange-good) !important;
-  }
-}
 
-::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input{
-  color: var(--orange-good) !important;
-}
-
-// Override the default input styles
-::ng-deep  .mat-form-field {
-  &.mat-focused .mat-form-field-label {
-    color: red; // Change the color when the input is selected
-  }
-
-  &.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    color: green; // Change the color of the floating label
-  }
-
-  &:hover .mat-form-field-underline {
-    background-color: blue; // Change the underline color when hovered
-  }
-
-  // Change the color of the input text
-  .mat-input-element {
-    color: orange;
-  }
-
-  // Change the color of the placeholder text
-  &.mat-form-field-appearance-outline .mat-form-field-label {
-    &.mat-form-field-empty.mat-form-field-label {
-      color: purple; // Change the placeholder color when there is no input
-    }
-  }
-}
