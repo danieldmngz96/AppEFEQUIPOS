@@ -29,7 +29,7 @@ export class MovimientosService {
  * @returns json
  */
   getEquiposId(id: string): Observable<any> {
-    return this.http.get(this.api + '/' + id);
+    return this.http.get(`${this.api}/getProductosById/${id} `);
   }
 
   /**
@@ -39,7 +39,7 @@ export class MovimientosService {
   * @returns json
   */
   saveProducto(productos: Productos) {
-    return this.http.post(`${this.api} + '/addProducto' `,productos);
+    return this.http.post(`${this.api}/addProducto `,productos);
   }
 
   /**
@@ -54,12 +54,12 @@ export class MovimientosService {
 
   /**
 * @author Daniel Dominguez
-* Metodo put para modificar un equipo por id
+* Metodo put para modificar un producto por id
 * @param {body} body json
 * @returns json
 */
-  EditEquipo(id: any, inventario: Inventario): Observable<any> {
-    return this.http.put(this.api + '/' + id, inventario);
+  EditProducto(id: any, productos: Productos): Observable<any> {
+    return this.http.put(`${this.api}/updateProductos/${id} `, productos);
   }
 
   /**

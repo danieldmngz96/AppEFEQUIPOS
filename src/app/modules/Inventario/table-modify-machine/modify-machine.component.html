@@ -92,7 +92,7 @@
 
         <ng-container matColumnDef="Modificar">
           <th mat-header-cell *matHeaderCellDef>Modificar el Producto </th>
-          <td mat-cell *matCellDef="let element"><button mat-button class="mat-raised-button mat-primary" style="background-color: orange; color: white;"  [routerLink]="['inventario/modificar', element.cod_prod]">Modificar</button> </td>
+          <td mat-cell *matCellDef="let element"><button mat-button class="mat-raised-button mat-primary" style="background-color: orange; color: white;"  [routerLink]="['/inventario/modificar', element.cod_prod]">Modificar</button> </td>
         </ng-container>
 
 

@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <span style="text-align: center;">
   <h2 mat-dialog-title>Modificar Inventario</h2>
-  <p>Aqui podras modificar el inventario actual de EFEQUIPOS</p>
+  <p>Aqui podras modificar los productos del inventario actual de EFEQUIPOS</p>
 </span>
 
 <div class="container">
@@ -21,6 +21,22 @@
       <input matInput type="number" formControlName="cantidad" name="cantidad" id="cantidad" >
     </mat-form-field>
   </div>
+
+  <div class="col
+  ">
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Tipo</mat-label>
+    <input matInput type="text" formControlName="tipo" name="tipo" id="tipo" >
+  </mat-form-field>
+</div>
+
+<div class="col
+">
+<mat-form-field appearance="fill" style="width: 100%;">
+  <mat-label>Valor Unidad</mat-label>
+  <input matInput type="number" formControlName="valor_uni" name="valor_uni" id="valor_uni" >
+</mat-form-field>
+</div>
 
 
     <div class="col">
@@ -55,10 +71,11 @@
       </mat-form-field>
     </div>
     <div class="col">
-      <button mat-button class="mat-raised-button mat-primary btn btn-warning"
+      <button mat-button style="color: white;
+      background-color: var(--orange-good);" class="mat-raised-button  btn btn-warning"
         (click)="modifyInventario()" >Guardar</button>
       <button mat-button mat-dialog-close class="mat-raised-button mat-button-base"
-        [disabled]="!machineForm.valid">Cancelar</button>
+      [routerLink]="['/inventario/modificar']">Cancelar</button>
     </div>
 
   </form>
