@@ -6,7 +6,7 @@
 </span>
 
 <form [formGroup]="addContratosForm" class="container">
- 
+
   <div class="col">
     <mat-form-field appearance="fill" class="w-100">
       <mat-label>Nombre del contrato</mat-label>
@@ -17,46 +17,57 @@
   <br>
   <div class="col">
     <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Cliente</mat-label>
+      <mat-select  formControlName="cod_cli"  [(ngModel)]="contratoNew.cod_cli">
+        <mat-option *ngFor="let item of clientes" [value]="item.cod_cli">
+          {{item.nom_cliente}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <!-- <div class="col">
+    <mat-form-field appearance="fill" class="w-100">
       <mat-label>Codigo Cliente</mat-label>
       <input matInput 
       pattern="[0-9]*"
       type="number" placeholder="Ingresa nombre del contrato" formControlName="cod_cli" required
         [(ngModel)]="contratoNew.cod_cli">
     </mat-form-field>
-  </div>
+  </div> -->
+
   <br>
   <mat-form-field appearance="fill" class="w-100">
     <mat-label>Fecha Inicio</mat-label>
-    <input matInput        type="date" placeholder="Ingresa fecha de inicio del contrato" formControlName="fec_ini" required
+    <input matInput type="date" placeholder="Ingresa fecha de inicio del contrato" formControlName="fec_ini" required
       [(ngModel)]="contratoNew.fec_ini">
   </mat-form-field>
   <br>
- <!--  <mat-form-field appearance="fill" class="w-100">
-    <mat-label>Fecha Fin</mat-label>
-    <input matInput        type="date" placeholder="Ingresa fecha fin del contrato" formControlName="fec_fin" required
-      [(ngModel)]="contratoNew.fec_fin">
-  </mat-form-field> -->
-
-  <mat-form-field  appearance="fill" class="w-100">
+  <!-- <mat-form-field  appearance="fill" class="w-100">
     <mat-label>Fecha Fin</mat-label>
     <input matInput [matDatepicker]="picker"  placeholder="Ingresa fecha fin del contrato" formControlName="fec_fin" required [(ngModel)]="contratoNew.fec_fin">
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Fecha Fin</mat-label>
+    <input matInput type="date" placeholder="Ingresa fecha fin del contrato" formControlName="fec_fin" required
+      [(ngModel)]="contratoNew.fec_fin">
   </mat-form-field>
-  
+
+
+
   <br>
   <mat-form-field appearance="fill" class="w-100">
     <mat-label>Estado</mat-label>
-    <input matInput        type="number" placeholder="Ingresa estado del contrato" formControlName="nombre" required
-    matTooltip="1 PARA FINALIZADO O 2 PARA ACTIVO"
-    pattern="[0-9]*"
-      [(ngModel)]="contratoNew.estado">
+    <input matInput type="number" placeholder="Ingresa estado del contrato" formControlName="nombre" required
+      matTooltip="1 PARA FINALIZADO O 2 PARA ACTIVO" pattern="[0-9]*" [(ngModel)]="contratoNew.estado">
   </mat-form-field>
 
   <br>
   <div>
-    <button  [disabled]="addContratosForm.valid"  class="btn btn-warning" (click)="addContrato()">Guardar Contrato</button>
+    <button [disabled]="addContratosForm.valid" class="btn btn-warning" (click)="addContrato()">Guardar
+      Contrato</button>
   </div>
 </form>
 <br><br><br>

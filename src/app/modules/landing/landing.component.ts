@@ -13,12 +13,13 @@ export class LandingComponent implements OnInit {
   constructor(private login: LoginService,){}
   ngOnInit() {
     const data = localStorage.getItem('user');
-    this.nombre = JSON.parse(data || '');
+    const nombre = JSON.parse(data || '');
+
     this.fecha = new Date();
 
-    this.login.getInfoLogin().subscribe((resp: any) => {
-      console.log(resp.nombre);
-
+    this.login.getInfoLogin(nombre.correo).subscribe((res: any) => {
+      console.log(res);//undifined
+      this.nombre = res[0];
     }, (error: any) => {
      console.log(error);
     });

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
         });
         localStorage.clear();
       } else if(typeof(resp.user) === 'object'){
-        console.log('login...');
+        console.log('login...', resp);
         localStorage.setItem("user", JSON.stringify(resp.user));
         this.router.navigate(['/bienvenido'])
       }

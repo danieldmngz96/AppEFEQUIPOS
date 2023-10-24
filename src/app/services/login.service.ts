@@ -10,7 +10,7 @@ const apiUrl = environment.apiUrl;
 })
 export class LoginService {
 
-  api = apiUrl+"/almacen";
+  api = apiUrl + "/almacen";
   constructor(private http: HttpClient) { }
   /**
   * @author Daniel Dominguez
@@ -38,8 +38,8 @@ export class LoginService {
    * @param {body} body json
    * @returns json
    */
-  getInfoLogin(): Observable<any> {
-    return this.http.get(this.api + "/info");
+  getInfoLogin(correo:any): Observable<any> {
+    return this.http.get(`${this.api}/info?correo=${correo}`);
   }
   /**
    * @author Daniel Dominguez
@@ -47,8 +47,8 @@ export class LoginService {
    * @param {body} body json
    * @returns json
    */
-  getCompareEmail(email:any): Observable<any> {
-    return this.http.get( this.api + `/validateEmail/${email}`);
+  getCompareEmail(email: any): Observable<any> {
+    return this.http.get(this.api + `/validateEmail/${email}`);
   }
 }
 

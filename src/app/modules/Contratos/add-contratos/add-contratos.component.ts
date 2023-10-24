@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-contratos.component.scss']
 })
 export class AddContratosComponent implements OnInit {
-
+  clientes:any []=[];
   addContratosForm: FormGroup;
 
   firstFormGroup = this._formBuilder.group({
@@ -25,12 +25,11 @@ export class AddContratosComponent implements OnInit {
     "fec_ini": "",
     "fec_fin": "",
     "estado": "",
-
   }
   constructor(private _formBuilder: FormBuilder,
     private router: Router,
     private fb: FormBuilder,
-    
+    private cliente:ClientesService,
     private contrato:ContratosService ) {  this.addContratosForm = this.fb.group({
       nombre: new FormControl('', Validators.required),
       cod_cli: new FormControl('', Validators.required),
@@ -43,8 +42,12 @@ export class AddContratosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cliente.getClientes().subscribe((res:any)=>{
+      this.clientes = res;
+    })
   }
   addContrato() {
+    console.log(this.contratoNew);
     this.contrato.saveContrato(this.contratoNew).subscribe(
       (res:any) => {
         console.log(res);
@@ -52,7 +55,7 @@ export class AddContratosComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: 'Excelente...',
-          text: `Se ha creado tu Contrato ${this.addContratosForm.controls['nombre'].value} exitosamente!`,
+          text: `Se ha creado tu Contrato ${res.message} exitosamente!`,
         }).then(() => {
           this.router.navigate(['contratos/actuales']); // Redirige a la página de clientes
         });

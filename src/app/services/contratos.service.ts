@@ -1,5 +1,7 @@
+import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 
@@ -24,12 +26,13 @@ constructor(private http: HttpClient) { }
   }
     /**
 * @author Daniel Dominguez
-* Metodo post para añadir un cliente
+* Metodo post para añadir un contratos
 * @param {body} body json
 * @returns json
 */
 saveContrato(contrato: Contrato) {
-  return this.http.post(this.api + '/add-contratos', contrato);
+  return this.http.post(`${this.api}/addContratos`, contrato);
+
 }
 }
 export interface Contrato {
