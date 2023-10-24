@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./modify-machine.component.scss']
 })
 export class ModifyMachineComponent implements OnInit {
-  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total','Eliminar'];
+  displayedColumns: string[] = ['Id', 'Descrpcion', 'Cantidad', 'Peso_Kg', 'Area m_2', 'Peso Total','Area Total','Modificar'];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   length: any;

@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { TableDespachosComponent } from '../Despachos/table-despachos/table-despachos.component';
+import { TableDespachosComponent } from './../table-despachos/table-despachos.component';
 import { DespachosService } from 'src/app/services/despachos.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';

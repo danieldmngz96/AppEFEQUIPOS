@@ -14,7 +14,7 @@ import { FooterModule } from './shared/footer/footer.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalAddComponent } from './modules/Inventario/modal-add-machine/modal-add.component';
 import { ModalAddEmpleadoComponent } from './modules/Empleados/modal-add-empleado/modal-add-empleado.component';
-import { ModalViewVehiculoComponent } from './modules/modal-view-vehiculo/modal-view-vehiculo.component';
+import { ModalViewVehiculoComponent } from './modules/Despachos/modal-view-vehiculo/modal-view-vehiculo.component';
 import { PqrsComponent } from './modules/pqrs/pqrs.component';
 import { LandingPrincipalComponent } from './modules/landing-principal/landing-principal.component';
 import { MenuPrincipalComponent } from './shared/menu-principal/menu-principal.component';

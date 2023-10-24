@@ -71,7 +71,15 @@ export class MovimientosService {
   EditProduct(id: any, producto: Productos): Observable<any> {
     return this.http.put(this.api + '/' + id, producto);
   }
-
+ /**
+  * @author Daniel Dominguez
+  * Metodo get obtener un producto por id
+  * @param {body} body json
+  * @returns json
+  */
+ getProductosById(id: any): Observable<any> {
+  return this.http.get(this.api + '/getProductosById/' + id);
+}
 }
 
 export interface Inventario {
