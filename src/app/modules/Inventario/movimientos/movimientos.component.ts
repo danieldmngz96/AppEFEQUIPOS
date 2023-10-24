@@ -14,12 +14,15 @@ export class MovimientosComponent implements OnInit {
   paginator!: MatPaginator;
   length: any;
   pageSize: any;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
+  pageSizeOptions: number[] = [5, 10, 25, 100,150,200,250,300,350,400,500,+1000];
   pageIndex: number = 0;
   lista = new MatTableDataSource();
   page = 1;
   isPage = 1;
-
+  descripcion:any;
+  disabled: boolean = true;
+  id: any;
+  //lista: any;
 
   constructor(private movimiento: MovimientosService,
     private paginatorIntl: MatPaginatorIntl) { }
