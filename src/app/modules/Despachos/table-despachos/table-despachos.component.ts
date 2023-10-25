@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DespachosService } from 'src/app/services/despachos.service';
-import { ModalViewVehiculoComponent } from '../modal-view-vehiculo/modal-view-vehiculo.component';
+import { ModalViewVehiculoComponent } from './../modal-view-vehiculo/modal-view-vehiculo.component';
 import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -18,7 +18,7 @@ export class TableDespachosComponent implements OnInit {
   pageSize: any;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageIndex: number = 0;
-  lista = new MatTableDataSource();
+  lista:any = new MatTableDataSource();
   page = 1;
   constructor(private despachos: DespachosService,
     public dialog: MatDialog,
