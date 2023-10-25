@@ -3,32 +3,41 @@
   <div class="container">
     <form [formGroup]="empleadoForm">
 
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="w-100">
         <mat-label>Nombre de Empleado</mat-label>
         <input matInput [(ngModel)]="empleadosNew.nombre" name="nombre" id="nombre" formControlName="nombre">
       </mat-form-field>
       <br>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Cargo</mat-label>
+        <input matInput [(ngModel)]="empleadosNew.id_cargo" type="number" name="nombre" id="nombre" formControlName="nombre">
+      </mat-form-field>
       <br>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="w-100">
         <mat-label>Celular empleado</mat-label>
         <input matInput type="number" [(ngModel)]="empleadosNew.celular" name="celular" id="celular"
         formControlName="celular">
       </mat-form-field>
       <br>
-      <br>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="w-100">
         <mat-label>Correo empleado</mat-label>
-        <input matInput type="email" [(ngModel)]="empleadosNew.email" name="email" id="email"
+        <input matInput type="email" [(ngModel)]="empleadosNew.e_mail" name="email" id="email"
         formControlName="email">
       </mat-form-field>
-      <div class="col">
-       
-        <button mat-button class="mat-raised-button mat-primary btn btn-warning" (click)="addEmpleado()" [disabled]="!empleadoForm.valid">Guardar</button>
+      <br>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Usuario de empleado</mat-label>
+        <input matInput type="text" [(ngModel)]="empleadosNew.usuario" name="usuario" id="usuario"
+        formControlName="usuario">
+      </mat-form-field>
+      <br>
+      <div class="col" style="display: flex; align-items: center; justify-content: center;">
+        <button mat-button  style="color: white; background-color: orange;" class="mat-raised-button btn btn-warning" (click)="addEmpleado()" >Guardar</button>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
-        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base" (click)="backEmpleado()"  [disabled]="empleadoForm.valid">Cancelar</button>
+        <button mat-button mat-dialog-close class="mat-raised-button mat-button-base" (click)="backEmpleado()"  >Cancelar</button>
       </div>
 
     </form>

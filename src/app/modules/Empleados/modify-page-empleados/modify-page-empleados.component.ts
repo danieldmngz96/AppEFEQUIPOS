@@ -13,10 +13,8 @@ export class ModifyPageEmpleadosComponent implements OnInit {
   id:any;
   teamForm: Team = {
     nombre: "",
-    cargo: "",
-    idEmpleado: "",
     celular: "",
-    email: ""
+    e_mail: ""
   };
   constructor(
     private router: Router,

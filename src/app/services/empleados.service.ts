@@ -55,8 +55,8 @@ export class EmpleadosService {
 
 export interface Team{
   nombre?:any;
-  cargo?:any;
-  idEmpleado?:any;
+  id_cargo?:any;
   celular?:any;
-  email?:any;
+  e_mail?:any;
+  usuario?:any;
 }

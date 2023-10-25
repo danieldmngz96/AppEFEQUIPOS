@@ -8,13 +8,14 @@
       <i>Aqui podras añadir empleados toda la nomina de EFEQUIPOS</i>
       <br>
       <br>
+      <button class="btn btn-success" (click)="openModal()">Añadir</button>
     </div>
     <div class="col-sm">
 
     </div>
 
 
-  <table class="mat-elevation-z8 table" >
+<!--   <table class="mat-elevation-z8 table" >
       <thead>
         <tr>
           <th scope="col">Id</th>
@@ -23,7 +24,7 @@
           <th scope="col">ID Empleado</th>
           <th scope="col">Celular</th>
           <th scope="col">Email</th>
-          <th scope="col">Añadir Empleado</th>
+
         </tr>
       </thead>
       <tbody>
@@ -34,15 +35,61 @@
           <td>{{numberWork.id_empleado}}</td>
           <td>{{numberWork.celular}} </td>
           <td>{{numberWork.e_mail}}</td>
-          <td>
-            <button class="btn btn-success" (click)="openModal()">Añadir</button>
-          </td>
+
         </tr>
 
       </tbody>
 
-    </table>
+    </table> -->
 
+    <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_empleado}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Cargo">
+        <th mat-header-cell *matHeaderCellDef> Cargo </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_cargo}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Celular">
+        <th mat-header-cell *matHeaderCellDef> Celular</th>
+        <td mat-cell *matCellDef="let element"> {{element.celular}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="e_mail">
+        <th mat-header-cell *matHeaderCellDef> e mail </th>
+        <td mat-cell *matCellDef="let element"> {{element.e_mail}} </td>
+      </ng-container>
+   
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef> Usuario </th>
+          <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+        </ng-container>
+    
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator class="custom-paginator" [length]="length" [pageSize]="pageSize"
+      (page)="pageEvent($event)" [pageSizeOptions]="pageSizeOptions">
+    </mat-paginator>
   </div>
 </div>
 <app-footer></app-footer>

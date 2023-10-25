@@ -17,10 +17,9 @@ export class ModalAddEmpleadoComponent implements OnInit {
   empleadosNew: Team = {
     nombre:"",
     celular:"",
-    cargo: "",
-    idEmpleado: "",
-
-    email: ""
+    id_cargo: "",
+    usuario:"",
+    e_mail: ""
   }
   constructor(public dialogRef: MatDialogRef<AddEmpleadoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: "",
@@ -32,7 +31,8 @@ export class ModalAddEmpleadoComponent implements OnInit {
       id_cargo: ['', Validators.required],
       id_empleado: ['', Validators.required],
       celular: ['', Validators.required],
-      e_mail: ['', Validators.email]
+      email: ['', Validators.email],
+      usuario: ['', Validators.required],
     });}
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class ModalAddEmpleadoComponent implements OnInit {
 
   addEmpleado(){
     this.empleados.saveMachine(this.empleadosNew).subscribe(
-      res=>{
+      (res:any)=>{
         console.log(res);
         this.dialogRef.close();
         window.location.reload();
@@ -55,7 +55,7 @@ export class ModalAddEmpleadoComponent implements OnInit {
   }
 
   backEmpleado(){
-    this.router.navigate(['/empleados/all']);
+    this.router.navigate(['/empleados/añadir-empleado']);
   }
 
 }
