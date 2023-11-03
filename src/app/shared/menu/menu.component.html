@@ -144,6 +144,23 @@
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           </mat-expansion-panel>
         </mat-accordion>
+        <br> <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title routerLink="/obras/table" style="cursor: pointer; color: black;">
+                OBRAS ACTUALES
+              </mat-panel-title>
+              <mat-panel-description>
+
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ul>
+              <li style="cursor: pointer; color: black;" routerLink="/obras/table">Ver OBRAS Actuales</li>
+            </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
 
 
         <!--   <button mat-raised-button style=" display: flex; margin: 0 auto; width: 100%;"

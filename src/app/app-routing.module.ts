@@ -162,6 +162,17 @@ const routes: Routes = [
               
             ]
           },
+              //Rutas para power bi
+              {
+                path: 'obras',
+                children: [
+                  {
+                    path: 'table',
+                    loadChildren: () => import('../app/modules/Obras/table-obras/table-obras.module').then(m => m.TableObrasModule)
+                  },
+                  
+                ]
+              },
 ];
 
 @NgModule({

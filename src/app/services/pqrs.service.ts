@@ -20,7 +20,7 @@ constructor(private http: HttpClient) { }
   * @param {body} body json
   * @returns json
   */
-  savePqrs(pqrs:Pqrs){
+  savePqrs(pqrs:any){
     return this.http.post(this.api  + '/Postpqrs' , pqrs);
   }
 

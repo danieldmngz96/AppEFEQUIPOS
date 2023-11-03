@@ -60,7 +60,7 @@ export class PqrsComponent implements OnInit {
     };
     console.log(body);
     
-    this.pqrs.savePqrs(this.newPqrs).subscribe(
+    this.pqrs.savePqrs(body).subscribe(
       res => {
         console.log(res);
         Swal.fire({
