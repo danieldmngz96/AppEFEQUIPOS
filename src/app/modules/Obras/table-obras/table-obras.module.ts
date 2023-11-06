@@ -4,6 +4,7 @@ import { TableObrasComponent } from './table-obras.component';
 import { TableObrasRoutes } from './table-obras.routing.module';
 import { MenuModule } from 'src/app/shared/menu/menu.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     TableObrasRoutes,
     MenuModule,
     FooterModule,
+    MaterialModule
   ],
   declarations: [TableObrasComponent]
 })

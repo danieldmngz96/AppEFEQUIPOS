@@ -1,5 +1,105 @@
 <app-menu></app-menu>
-<p>
- FUNCIONA GONO
-</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm mt-3">
+            <h1>Gestion de Obras actuales</h1>
+            <br>
+            <i>Obas actuales de EFEQUIPOS.</i>
+        </div>
+        <div class="col-sm">
+
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <br>
+
+        <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.cod_obra}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="Nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="fec_ini">
+                <th mat-header-cell *matHeaderCellDef> Fecha inicio </th>
+                <td mat-cell *matCellDef="let element"> {{element.fec_ini}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="fec_fin">
+                <th mat-header-cell *matHeaderCellDef> Fecha fin </th>
+                <td mat-cell *matCellDef="let element"> {{element.fec_fin}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="dir_obra">
+                <th mat-header-cell *matHeaderCellDef>Direccion </th>
+                <td mat-cell *matCellDef="let element"> {{element.dir_obra}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="ciudad_obra">
+                <th mat-header-cell *matHeaderCellDef> Ciudad obra </th>
+                <td mat-cell *matCellDef="let element"> {{element.ciudad_obra}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="nom_ingeniero">
+                <th mat-header-cell *matHeaderCellDef>Area Total </th>
+                <td mat-cell *matCellDef="let element"> {{element.nom_ingeniero}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="tel_obra">
+                <th mat-header-cell *matHeaderCellDef>telefono obra </th>
+                <td mat-cell *matCellDef="let element"> {{element.tel_obra}} </td>
+            </ng-container>
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="dir_entrega_fac">
+                <th mat-header-cell *matHeaderCellDef>Direccion entrega</th>
+                <td mat-cell *matCellDef="let element"> {{element.dir_entrega_fac}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="obra">
+                <th mat-header-cell *matHeaderCellDef>Obra</th>
+                <td mat-cell *matCellDef="let element"> {{element.obra}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef>Estado</th>
+                <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="val_metro">
+                <th mat-header-cell *matHeaderCellDef>Valor metro</th>
+                <td mat-cell *matCellDef="let element"> {{element.val_metro}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="porcentaje">
+                <th mat-header-cell *matHeaderCellDef>Porcentaje</th>
+                <td mat-cell *matCellDef="let element"> {{element.porcentaje}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <br>
+        <br><br>
+        <mat-paginator style="margin-top: 14px;" #paginator class="custom-paginator" [length]="length" [pageSize]="pageSize"
+            (page)="pageEvent($event)" [pageSizeOptions]="pageSizeOptions">
+        </mat-paginator>
+
+    </div>
+</div>
+
 <app-footer></app-footer>
