@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovimientosComponent } from './movimientos.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { MenuComponent } from 'src/app/shared/menu/menu.component';
-import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { MenuModule } from 'src/app/shared/menu/menu.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { MovimientosRoutingModule } from './movimientos-routing.module';

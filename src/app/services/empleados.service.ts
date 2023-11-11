@@ -19,9 +19,9 @@ export class EmpleadosService {
    * @param {body} body json
    * @returns json
    */
-  getEmpleados() {
+  getEmpleados(page?: any, pageSize: number = 10) {
     // return this.http.get(this.api + "/v1/empleado");
-    return this.http.get(this.api + '/empleados' );
+    return this.http.get(`${this.api}/empleados?page=${page}&limit=${pageSize} `);
   }
   /**
   * @author Daniel Dominguez

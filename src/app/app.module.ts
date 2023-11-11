@@ -41,7 +41,6 @@ import { MenuPrincipalComponent } from './shared/menu-principal/menu-principal.c
     HttpClientModule,
     MaterialModule,
     RouterModule,
-    AppRoutingModule,
     ReactiveFormsModule,
     FooterModule,
     MatDialogModule,
